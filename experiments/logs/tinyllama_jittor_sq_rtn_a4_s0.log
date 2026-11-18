@@ -1,0 +1,499 @@
+BEGIN_TASK {"id": "tinyllama_jittor_sq_rtn_a4_s0", "kind": "eval", "model": "tinyllama", "stack": "jittor", "method": "rtn", "bits": 4, "seed": 0, "rotate": true, "dependency": "tinyllama_jittor_train_s0"}
+[i 1118 06:03:48.413983 72 compiler.py:964] Jittor(1.3.8.5) src: /root/miniconda3/envs/jittor_env/lib/python3.10/site-packages/jittor
+[i 1118 06:03:48.418053 72 compiler.py:965] g++ at /usr/bin/g++(11.3.0)
+[i 1118 06:03:48.418088 72 compiler.py:966] cache_path: /root/.cache/jittor/jt1.3.8/g++11.3.0/py3.10.22/Linux-5.15.0-7x34/IntelRXeonRPlaxb0/default
+[i 1118 06:03:48.422779 72 compiler.py:909] Found nvcc(12.8.93) at /root/miniconda3/envs/jittor_env/bin/nvcc
+[i 1118 06:03:48.424869 72 __init__.py:411] Found addr2line(2.38) at /usr/bin/addr2line.
+[i 1118 06:03:48.667249 72 compiler.py:1019] cuda key:cu12.8.93_sm_120
+[i 1118 06:03:48.919493 72 __init__.py:227] Total mem: 1007.50GB, using 16 procs for compiling.
+[i 1118 06:03:48.997386 72 jit_compiler.cc:28] Load cc_path: /usr/bin/g++
+[i 1118 06:03:48.997403 72 jit_compiler.cc:31] Load nvcc_path: /root/miniconda3/envs/jittor_env/bin/nvcc
+[i 1118 06:03:49.254402 72 init.cc:62] Found cuda archs: [120,]
+[w 1118 06:03:49.286821 72 compile_extern.py:203] CUDA related path found in LD_LIBRARY_PATH or PATH(['/root/autodl-tmp/cuda128_lib', '/root/miniconda3/bin', '/root/miniconda3/condabin', '/root/miniconda3/bin', '/usr/local/bin', '/usr/local/nvidia/bin', '/usr/local/cuda/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin']), This path may cause jittor found the wrong libs, please unset LD_LIBRARY_PATH and remove cuda lib path in Path. 
+Or you can let jittor install cuda for you: `python3.x -m jittor_utils.install_cuda`
+[i 1118 06:03:49.604659 72 cuda_flags.cc:49] CUDA enabled.
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[w 1118 06:03:50.229147 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.229249 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.229459 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.229494 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.229645 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.229678 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.229817 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.229854 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.230062 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.230097 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.230227 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.230260 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.230385 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.230414 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.230532 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.230562 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.230697 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.230728 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.230858 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.230889 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.231026 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.231059 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.231191 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.231221 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.231351 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.231385 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.231518 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.231549 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.231675 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.231709 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.231844 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.231907 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.232046 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.232078 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.232208 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.232239 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.232367 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.232396 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.232525 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.232556 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.232683 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.232714 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.232846 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.232876 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 06:03:50.232926 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+2026-11-18 06:03:55,777 - spinquant - INFO - Fusing normalization scales before rotation.
+2026-11-18 06:03:55,777 INFO Fusing normalization scales before rotation.
+2026-11-18 06:03:55,778 - spinquant - INFO - Rotation fusion started; R1 uses CPU FP64 matrix products. GPU utilization may be low during this stage.
+2026-11-18 06:03:55,778 INFO Rotation fusion started; R1 uses CPU FP64 matrix products. GPU utilization may be low during this stage.
+2026-11-18 06:03:56,096 - spinquant - INFO - Loading learned R1/R2 from /root/autodl-tmp/SpinQuant_jittor/outputs/full_A_20261118_w16a4kv4_seed0/rotations/tinyllama_jittor_train_s0/R.npy.
+2026-11-18 06:03:56,096 INFO Loading learned R1/R2 from /root/autodl-tmp/SpinQuant_jittor/outputs/full_A_20261118_w16a4kv4_seed0/rotations/tinyllama_jittor_train_s0/R.npy.
+2026-11-18 06:03:56,105 - spinquant - INFO - Rotation fusion: embedding weights.
+2026-11-18 06:03:56,105 INFO Rotation fusion: embedding weights.
+2026-11-18 06:03:57,270 - spinquant - INFO - Rotation fusion: output-head weights.
+2026-11-18 06:03:57,270 INFO Rotation fusion: output-head weights.
+2026-11-18 06:03:58,360 - spinquant - INFO - Rotation fusion: decoder layer 1/22 (elapsed 2.6s).
+2026-11-18 06:03:58,360 INFO Rotation fusion: decoder layer 1/22 (elapsed 2.6s).
+2026-11-18 06:03:59,211 - spinquant - INFO - Rotation fusion: decoder layer 2/22 (elapsed 3.4s).
+2026-11-18 06:03:59,211 INFO Rotation fusion: decoder layer 2/22 (elapsed 3.4s).
+2026-11-18 06:04:00,078 - spinquant - INFO - Rotation fusion: decoder layer 3/22 (elapsed 4.3s).
+2026-11-18 06:04:00,078 INFO Rotation fusion: decoder layer 3/22 (elapsed 4.3s).
+2026-11-18 06:04:00,949 - spinquant - INFO - Rotation fusion: decoder layer 4/22 (elapsed 5.2s).
+2026-11-18 06:04:00,949 INFO Rotation fusion: decoder layer 4/22 (elapsed 5.2s).
+2026-11-18 06:04:01,827 - spinquant - INFO - Rotation fusion: decoder layer 5/22 (elapsed 6.0s).
+2026-11-18 06:04:01,827 INFO Rotation fusion: decoder layer 5/22 (elapsed 6.0s).
+2026-11-18 06:04:02,706 - spinquant - INFO - Rotation fusion: decoder layer 6/22 (elapsed 6.9s).
+2026-11-18 06:04:02,706 INFO Rotation fusion: decoder layer 6/22 (elapsed 6.9s).
+2026-11-18 06:04:03,586 - spinquant - INFO - Rotation fusion: decoder layer 7/22 (elapsed 7.8s).
+2026-11-18 06:04:03,586 INFO Rotation fusion: decoder layer 7/22 (elapsed 7.8s).
+2026-11-18 06:04:04,466 - spinquant - INFO - Rotation fusion: decoder layer 8/22 (elapsed 8.7s).
+2026-11-18 06:04:04,466 INFO Rotation fusion: decoder layer 8/22 (elapsed 8.7s).
+2026-11-18 06:04:05,343 - spinquant - INFO - Rotation fusion: decoder layer 9/22 (elapsed 9.6s).
+2026-11-18 06:04:05,343 INFO Rotation fusion: decoder layer 9/22 (elapsed 9.6s).
+2026-11-18 06:04:06,215 - spinquant - INFO - Rotation fusion: decoder layer 10/22 (elapsed 10.4s).
+2026-11-18 06:04:06,215 INFO Rotation fusion: decoder layer 10/22 (elapsed 10.4s).
+2026-11-18 06:04:07,133 - spinquant - INFO - Rotation fusion: decoder layer 11/22 (elapsed 11.4s).
+2026-11-18 06:04:07,133 INFO Rotation fusion: decoder layer 11/22 (elapsed 11.4s).
+2026-11-18 06:04:08,031 - spinquant - INFO - Rotation fusion: decoder layer 12/22 (elapsed 12.3s).
+2026-11-18 06:04:08,031 INFO Rotation fusion: decoder layer 12/22 (elapsed 12.3s).
+2026-11-18 06:04:08,907 - spinquant - INFO - Rotation fusion: decoder layer 13/22 (elapsed 13.1s).
+2026-11-18 06:04:08,907 INFO Rotation fusion: decoder layer 13/22 (elapsed 13.1s).
+2026-11-18 06:04:09,778 - spinquant - INFO - Rotation fusion: decoder layer 14/22 (elapsed 14.0s).
+2026-11-18 06:04:09,778 INFO Rotation fusion: decoder layer 14/22 (elapsed 14.0s).
+2026-11-18 06:04:10,635 - spinquant - INFO - Rotation fusion: decoder layer 15/22 (elapsed 14.9s).
+2026-11-18 06:04:10,635 INFO Rotation fusion: decoder layer 15/22 (elapsed 14.9s).
+2026-11-18 06:04:11,458 - spinquant - INFO - Rotation fusion: decoder layer 16/22 (elapsed 15.7s).
+2026-11-18 06:04:11,458 INFO Rotation fusion: decoder layer 16/22 (elapsed 15.7s).
+2026-11-18 06:04:12,319 - spinquant - INFO - Rotation fusion: decoder layer 17/22 (elapsed 16.5s).
+2026-11-18 06:04:12,319 INFO Rotation fusion: decoder layer 17/22 (elapsed 16.5s).
+2026-11-18 06:04:13,153 - spinquant - INFO - Rotation fusion: decoder layer 18/22 (elapsed 17.4s).
+2026-11-18 06:04:13,153 INFO Rotation fusion: decoder layer 18/22 (elapsed 17.4s).
+2026-11-18 06:04:13,962 - spinquant - INFO - Rotation fusion: decoder layer 19/22 (elapsed 18.2s).
+2026-11-18 06:04:13,962 INFO Rotation fusion: decoder layer 19/22 (elapsed 18.2s).
+2026-11-18 06:04:14,788 - spinquant - INFO - Rotation fusion: decoder layer 20/22 (elapsed 19.0s).
+2026-11-18 06:04:14,788 INFO Rotation fusion: decoder layer 20/22 (elapsed 19.0s).
+2026-11-18 06:04:15,674 - spinquant - INFO - Rotation fusion: decoder layer 21/22 (elapsed 19.9s).
+2026-11-18 06:04:15,674 INFO Rotation fusion: decoder layer 21/22 (elapsed 19.9s).
+2026-11-18 06:04:16,508 - spinquant - INFO - Rotation fusion: decoder layer 22/22 (elapsed 20.7s).
+2026-11-18 06:04:16,508 INFO Rotation fusion: decoder layer 22/22 (elapsed 20.7s).
+2026-11-18 06:04:17,474 - spinquant - INFO - Rotation fusion complete in 21.7s.
+2026-11-18 06:04:17,474 INFO Rotation fusion complete in 21.7s.
+2026-11-18 06:04:17,518 - spinquant - INFO - Starting RTN weight quantization.
+2026-11-18 06:04:17,518 INFO Starting RTN weight quantization.
+2026-11-18 06:04:17,518 - spinquant - INFO - RTN weight quantization: decoder layer 1/22.
+2026-11-18 06:04:17,518 INFO RTN weight quantization: decoder layer 1/22.
+2026-11-18 06:04:17,831 - spinquant - INFO - RTN weight quantization: decoder layer 2/22.
+2026-11-18 06:04:17,831 INFO RTN weight quantization: decoder layer 2/22.
+2026-11-18 06:04:18,053 - spinquant - INFO - RTN weight quantization: decoder layer 3/22.
+2026-11-18 06:04:18,053 INFO RTN weight quantization: decoder layer 3/22.
+2026-11-18 06:04:18,284 - spinquant - INFO - RTN weight quantization: decoder layer 4/22.
+2026-11-18 06:04:18,284 INFO RTN weight quantization: decoder layer 4/22.
+2026-11-18 06:04:18,505 - spinquant - INFO - RTN weight quantization: decoder layer 5/22.
+2026-11-18 06:04:18,505 INFO RTN weight quantization: decoder layer 5/22.
+2026-11-18 06:04:18,723 - spinquant - INFO - RTN weight quantization: decoder layer 6/22.
+2026-11-18 06:04:18,723 INFO RTN weight quantization: decoder layer 6/22.
+2026-11-18 06:04:18,946 - spinquant - INFO - RTN weight quantization: decoder layer 7/22.
+2026-11-18 06:04:18,946 INFO RTN weight quantization: decoder layer 7/22.
+2026-11-18 06:04:19,167 - spinquant - INFO - RTN weight quantization: decoder layer 8/22.
+2026-11-18 06:04:19,167 INFO RTN weight quantization: decoder layer 8/22.
+2026-11-18 06:04:19,386 - spinquant - INFO - RTN weight quantization: decoder layer 9/22.
+2026-11-18 06:04:19,386 INFO RTN weight quantization: decoder layer 9/22.
+2026-11-18 06:04:19,607 - spinquant - INFO - RTN weight quantization: decoder layer 10/22.
+2026-11-18 06:04:19,607 INFO RTN weight quantization: decoder layer 10/22.
+2026-11-18 06:04:19,829 - spinquant - INFO - RTN weight quantization: decoder layer 11/22.
+2026-11-18 06:04:19,829 INFO RTN weight quantization: decoder layer 11/22.
+2026-11-18 06:04:20,049 - spinquant - INFO - RTN weight quantization: decoder layer 12/22.
+2026-11-18 06:04:20,049 INFO RTN weight quantization: decoder layer 12/22.
+2026-11-18 06:04:20,271 - spinquant - INFO - RTN weight quantization: decoder layer 13/22.
+2026-11-18 06:04:20,271 INFO RTN weight quantization: decoder layer 13/22.
+2026-11-18 06:04:20,493 - spinquant - INFO - RTN weight quantization: decoder layer 14/22.
+2026-11-18 06:04:20,493 INFO RTN weight quantization: decoder layer 14/22.
+2026-11-18 06:04:20,715 - spinquant - INFO - RTN weight quantization: decoder layer 15/22.
+2026-11-18 06:04:20,715 INFO RTN weight quantization: decoder layer 15/22.
+2026-11-18 06:04:20,939 - spinquant - INFO - RTN weight quantization: decoder layer 16/22.
+2026-11-18 06:04:20,939 INFO RTN weight quantization: decoder layer 16/22.
+2026-11-18 06:04:21,161 - spinquant - INFO - RTN weight quantization: decoder layer 17/22.
+2026-11-18 06:04:21,161 INFO RTN weight quantization: decoder layer 17/22.
+2026-11-18 06:04:21,381 - spinquant - INFO - RTN weight quantization: decoder layer 18/22.
+2026-11-18 06:04:21,381 INFO RTN weight quantization: decoder layer 18/22.
+2026-11-18 06:04:21,601 - spinquant - INFO - RTN weight quantization: decoder layer 19/22.
+2026-11-18 06:04:21,601 INFO RTN weight quantization: decoder layer 19/22.
+2026-11-18 06:04:21,823 - spinquant - INFO - RTN weight quantization: decoder layer 20/22.
+2026-11-18 06:04:21,823 INFO RTN weight quantization: decoder layer 20/22.
+2026-11-18 06:04:22,054 - spinquant - INFO - RTN weight quantization: decoder layer 21/22.
+2026-11-18 06:04:22,054 INFO RTN weight quantization: decoder layer 21/22.
+2026-11-18 06:04:22,276 - spinquant - INFO - RTN weight quantization: decoder layer 22/22.
+2026-11-18 06:04:22,276 INFO RTN weight quantization: decoder layer 22/22.
+2026-11-18 06:04:22,496 - spinquant - INFO - Weight quantization complete.
+2026-11-18 06:04:22,496 INFO Weight quantization complete.
+QUANTIZATION_COMPLETE 26.734416235238314
+PPL_PROGRESS 1/166 elapsed=0.2s
+PPL_PROGRESS 10/166 elapsed=2.3s
+PPL_PROGRESS 20/166 elapsed=4.6s
+PPL_PROGRESS 30/166 elapsed=6.9s
+PPL_PROGRESS 40/166 elapsed=9.2s
+PPL_PROGRESS 50/166 elapsed=11.4s
+PPL_PROGRESS 60/166 elapsed=13.7s
+PPL_PROGRESS 70/166 elapsed=15.9s
+PPL_PROGRESS 80/166 elapsed=18.2s
+PPL_PROGRESS 90/166 elapsed=20.4s
+PPL_PROGRESS 100/166 elapsed=22.7s
+PPL_PROGRESS 110/166 elapsed=24.9s
+PPL_PROGRESS 120/166 elapsed=27.2s
+PPL_PROGRESS 130/166 elapsed=29.4s
+PPL_PROGRESS 140/166 elapsed=31.7s
+PPL_PROGRESS 150/166 elapsed=34.0s
+PPL_PROGRESS 160/166 elapsed=36.3s
+PPL_PROGRESS 166/166 elapsed=37.7s
+FINAL_RESULT {"ppl": 11.099379634320211, "nll_sum": 817865.7700400446, "evaluated_tokens": 339802, "test_blocks": 166, "quant_seconds": 26.734416235238314, "warmup_seconds": 0.9392670169472694, "eval_seconds": 37.670048320665956, "evaluated_tokens_per_second": 9020.482190716573, "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7", "rotation_sha256": "0a490118da42cf80685cdfb3b82fe35895b97a1dc332266de5f68ba96f86ddc3", "id": "tinyllama_jittor_sq_rtn_a4_s0", "kind": "eval", "model": "tinyllama", "stack": "jittor", "method": "rtn", "bits": 4, "seed": 0, "rotate": true, "dependency": "tinyllama_jittor_train_s0", "status": "complete", "base_weight_dtype": "float32", "model_load_seconds": 7.445872377604246, "worker_seconds": 72.80906300246716, "max_rss_kib": 9142388, "versions": {"jittor": "1.3.8.5", "transformers": "5.20.2", "numpy": "1.26.4"}}

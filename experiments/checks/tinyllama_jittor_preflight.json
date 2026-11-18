@@ -1,0 +1,29 @@
+{
+  "steps": 2,
+  "loss_records": 2,
+  "first_loss": 2.6066372394561768,
+  "last_loss": 2.460646867752075,
+  "mean_loss": 2.533642053604126,
+  "training_seconds": 6.118238123133779,
+  "initial_fixed_probe_loss": 2.3175705671310425,
+  "final_fixed_probe_loss": 2.3052605390548706,
+  "orthogonality_probe_relative_error": 4.6031027522985823e-07,
+  "rotation_sha256": "f21a512e5fcb471fca192e541ca236cf18d58a1f56737c10a2a33ab619a1b533",
+  "initial_rotation_sha256": "8ca5a0ea3d34d30eca38412c086118cedfeb33bd73ab140aa3bbb5affd6184c1",
+  "training_data_sha256": "d31277395112280f43a3cd4e64a74e6dab262f8d4d760a31ab0328ea94292b6c",
+  "id": "tinyllama_jittor_preflight",
+  "kind": "train",
+  "model": "tinyllama",
+  "stack": "jittor",
+  "seed": 0,
+  "status": "complete",
+  "base_weight_dtype": "float32",
+  "model_load_seconds": 7.482785442844033,
+  "worker_seconds": 15.656950652599335,
+  "max_rss_kib": 9142580,
+  "versions": {
+    "jittor": "1.3.8.5",
+    "transformers": "5.20.2",
+    "numpy": "1.26.4"
+  }
+}

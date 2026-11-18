@@ -1,0 +1,29 @@
+{
+  "ppl": 524.0416156068701,
+  "nll_sum": 2089242.0748853844,
+  "evaluated_tokens": 333661,
+  "test_blocks": 163,
+  "quant_seconds": 12.66038154438138,
+  "warmup_seconds": 7.890432083979249,
+  "eval_seconds": 65.98114702291787,
+  "evaluated_tokens_per_second": 5056.91421041993,
+  "test_sha256": "168d1667bc8ef768d3195ed07f6498ce3f4f8b6cdbb2ee968d793bec1155dce9",
+  "id": "mistral_jittor_rtn_a4_s0",
+  "kind": "eval",
+  "model": "mistral",
+  "stack": "jittor",
+  "method": "rtn",
+  "bits": 4,
+  "seed": 0,
+  "rotate": false,
+  "status": "complete",
+  "base_weight_dtype": "float16",
+  "model_load_seconds": 60.2394820060581,
+  "worker_seconds": 146.79193659126759,
+  "max_rss_kib": 42967020,
+  "versions": {
+    "jittor": "1.3.8.5",
+    "transformers": "5.20.2",
+    "numpy": "1.26.4"
+  }
+}

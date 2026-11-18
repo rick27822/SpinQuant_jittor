@@ -1,0 +1,31 @@
+{
+  "ppl": 5.253506688734234,
+  "nll_sum": 553508.8296358463,
+  "evaluated_tokens": 333661,
+  "test_blocks": 163,
+  "quant_seconds": 0.7924936339259148,
+  "warmup_seconds": 0.6709811892360449,
+  "eval_seconds": 32.122615898028016,
+  "evaluated_tokens_per_second": 10387.105491632243,
+  "test_sha256": "168d1667bc8ef768d3195ed07f6498ce3f4f8b6cdbb2ee968d793bec1155dce9",
+  "id": "mistral_official_float_a16_s0",
+  "kind": "eval",
+  "model": "mistral",
+  "stack": "official",
+  "method": "float",
+  "bits": 16,
+  "seed": 0,
+  "rotate": false,
+  "status": "complete",
+  "base_weight_dtype": "float16",
+  "model_load_seconds": 5.451991181820631,
+  "worker_seconds": 39.044796995818615,
+  "max_rss_kib": 28927352,
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "4.44.2",
+    "numpy": "1.26.4"
+  },
+  "torch_peak_allocated_bytes": 15676571136,
+  "torch_peak_reserved_bytes": 15839789056
+}

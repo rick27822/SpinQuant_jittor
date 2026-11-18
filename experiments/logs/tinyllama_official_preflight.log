@@ -1,0 +1,11 @@
+BEGIN_TASK {"id": "tinyllama_official_preflight", "kind": "train", "model": "tinyllama", "stack": "official", "seed": 0}
+2026-11-18 05:15:47,909 INFO GPU memory (from rotate_model): 6.30 -> 4.53 GB (-1.77 GB)
+Applying R4 rotation to W_down:   0%|          | 0/22 [00:00<?, ?layer/s]Applying R4 rotation to W_down:   5%|▍         | 1/22 [00:00<00:03,  6.17layer/s]Applying R4 rotation to W_down: 100%|██████████| 22/22 [00:00<00:00, 131.46layer/s]
+2026-11-18 05:15:48,132 INFO GPU memory (from prepare_model): 4.53 -> 4.49 GB (-0.04 GB)
+/root/miniconda3/envs/torch_env/lib/python3.10/site-packages/transformers/modeling_utils.py:4713: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+INITIAL_FIXED_PROBE_LOSS 2.2975767850875854
+TRAIN_STEP {"step": 0, "loss": 2.617655038833618, "learning_rate": 1.5, "grad_l2": 6.852362729000021, "step_seconds": 9.032434964552522}
+TRAIN_STEP {"step": 1, "loss": 2.4556057453155518, "learning_rate": 1.4996299202742986, "grad_l2": 6.782821461100678, "step_seconds": 8.968952214345336}
+FINAL_FIXED_PROBE_LOSS 2.3034439086914062
+FINAL_RESULT {"steps": 2, "loss_records": 2, "first_loss": 2.617655038833618, "last_loss": 2.4556057453155518, "mean_loss": 2.536630392074585, "training_seconds": 18.00225219130516, "initial_fixed_probe_loss": 2.2975767850875854, "final_fixed_probe_loss": 2.3034439086914062, "orthogonality_probe_relative_error": 4.648632625503524e-07, "rotation_sha256": "56b3f13fe774fa8d1017cec7dead4ec2350f60cef6dcb3b49157a11594d8b0cd", "initial_rotation_sha256": "8ca5a0ea3d34d30eca38412c086118cedfeb33bd73ab140aa3bbb5affd6184c1", "training_data_sha256": "d31277395112280f43a3cd4e64a74e6dab262f8d4d760a31ab0328ea94292b6c", "id": "tinyllama_official_preflight", "kind": "train", "model": "tinyllama", "stack": "official", "seed": 0, "status": "complete", "base_weight_dtype": "float32", "model_load_seconds": 2.8547085113823414, "worker_seconds": 33.7683847155422, "max_rss_kib": 7084360, "versions": {"torch": "2.11.0+cu128", "transformers": "4.44.2", "numpy": "1.26.4"}, "torch_peak_allocated_bytes": 7536252416, "torch_peak_reserved_bytes": 8579448832}

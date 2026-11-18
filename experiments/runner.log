@@ -1,0 +1,72 @@
+START tinyllama_official_preflight
+END tinyllama_official_preflight exit= 0
+START tinyllama_jittor_preflight
+END tinyllama_jittor_preflight exit= 0
+START mistral_official_preflight
+END mistral_official_preflight exit= 0
+START mistral_jittor_preflight
+END mistral_jittor_preflight exit= 0
+START tinyllama_official_float_a16_s0
+END tinyllama_official_float_a16_s0 exit= 0
+START tinyllama_official_rtn_a16_s0
+END tinyllama_official_rtn_a16_s0 exit= 0
+START tinyllama_official_rtn_a4_s0
+END tinyllama_official_rtn_a4_s0 exit= 0
+START tinyllama_jittor_float_a16_s0
+END tinyllama_jittor_float_a16_s0 exit= 0
+START tinyllama_jittor_rtn_a16_s0
+END tinyllama_jittor_rtn_a16_s0 exit= 0
+START tinyllama_jittor_rtn_a4_s0
+END tinyllama_jittor_rtn_a4_s0 exit= 0
+START mistral_official_float_a16_s0
+END mistral_official_float_a16_s0 exit= 0
+START mistral_official_rtn_a16_s0
+END mistral_official_rtn_a16_s0 exit= 0
+START mistral_official_rtn_a4_s0
+END mistral_official_rtn_a4_s0 exit= 0
+START mistral_jittor_float_a16_s0
+END mistral_jittor_float_a16_s0 exit= 0
+START mistral_jittor_rtn_a16_s0
+END mistral_jittor_rtn_a16_s0 exit= 0
+START mistral_jittor_rtn_a4_s0
+END mistral_jittor_rtn_a4_s0 exit= 0
+START tinyllama_official_train_s0
+END tinyllama_official_train_s0 exit= 0
+START tinyllama_official_sq_rtn_a16_s0
+END tinyllama_official_sq_rtn_a16_s0 exit= 0
+START tinyllama_official_sq_rtn_a4_s0
+END tinyllama_official_sq_rtn_a4_s0 exit= 0
+START tinyllama_jittor_train_s0
+END tinyllama_jittor_train_s0 exit= 0
+START tinyllama_jittor_sq_rtn_a16_s0
+END tinyllama_jittor_sq_rtn_a16_s0 exit= 0
+START tinyllama_jittor_sq_rtn_a4_s0
+END tinyllama_jittor_sq_rtn_a4_s0 exit= 0
+START mistral_official_train_s0
+END mistral_official_train_s0 exit= 0
+START mistral_official_sq_rtn_a16_s0
+END mistral_official_sq_rtn_a16_s0 exit= 0
+START mistral_official_sq_rtn_a4_s0
+END mistral_official_sq_rtn_a4_s0 exit= 0
+START mistral_jittor_train_s0
+END mistral_jittor_train_s0 exit= 0
+START mistral_jittor_sq_rtn_a16_s0
+END mistral_jittor_sq_rtn_a16_s0 exit= 0
+START mistral_jittor_sq_rtn_a4_s0
+END mistral_jittor_sq_rtn_a4_s0 exit= 0
+START tinyllama_official_gptq_a16_s0
+END tinyllama_official_gptq_a16_s0 exit= 0
+START tinyllama_official_gptq_a4_s0
+END tinyllama_official_gptq_a4_s0 exit= 0
+START tinyllama_official_sq_gptq_a16_s0
+END tinyllama_official_sq_gptq_a16_s0 exit= 0
+START tinyllama_official_sq_gptq_a4_s0
+END tinyllama_official_sq_gptq_a4_s0 exit= 0
+START tinyllama_jittor_gptq_a16_s0
+END tinyllama_jittor_gptq_a16_s0 exit= 0
+START tinyllama_jittor_gptq_a4_s0
+END tinyllama_jittor_gptq_a4_s0 exit= 0
+START tinyllama_jittor_sq_gptq_a16_s0
+END tinyllama_jittor_sq_gptq_a16_s0 exit= 0
+START tinyllama_jittor_sq_gptq_a4_s0
+END tinyllama_jittor_sq_gptq_a4_s0 exit= 0

@@ -1,0 +1,27 @@
+BEGIN_TASK {"id": "mistral_official_rtn_a4_s0", "kind": "eval", "model": "mistral", "stack": "official", "method": "rtn", "bits": 4, "seed": 0, "rotate": false}
+2026-11-18 05:33:52,380 INFO PyTorch version 2.11.0+cu128 available.
+/root/miniconda3/envs/torch_env/lib/python3.10/site-packages/transformers/modeling_utils.py:4713: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+(RtN Quant.) Layers:   0%|          | 0/32 [00:00<?, ?it/s](RtN Quant.) Layers:   3%|▎         | 1/32 [00:01<00:35,  1.15s/it](RtN Quant.) Layers:   6%|▋         | 2/32 [00:02<00:31,  1.05s/it](RtN Quant.) Layers:   9%|▉         | 3/32 [00:03<00:29,  1.01s/it](RtN Quant.) Layers:  12%|█▎        | 4/32 [00:04<00:27,  1.01it/s](RtN Quant.) Layers:  16%|█▌        | 5/32 [00:05<00:26,  1.02it/s](RtN Quant.) Layers:  19%|█▉        | 6/32 [00:05<00:25,  1.03it/s](RtN Quant.) Layers:  22%|██▏       | 7/32 [00:06<00:24,  1.02it/s](RtN Quant.) Layers:  25%|██▌       | 8/32 [00:07<00:23,  1.03it/s](RtN Quant.) Layers:  28%|██▊       | 9/32 [00:08<00:22,  1.03it/s](RtN Quant.) Layers:  31%|███▏      | 10/32 [00:09<00:21,  1.03it/s](RtN Quant.) Layers:  34%|███▍      | 11/32 [00:10<00:20,  1.03it/s](RtN Quant.) Layers:  38%|███▊      | 12/32 [00:11<00:19,  1.03it/s](RtN Quant.) Layers:  41%|████      | 13/32 [00:12<00:18,  1.03it/s](RtN Quant.) Layers:  44%|████▍     | 14/32 [00:13<00:17,  1.03it/s](RtN Quant.) Layers:  47%|████▋     | 15/32 [00:14<00:16,  1.03it/s](RtN Quant.) Layers:  50%|█████     | 16/32 [00:15<00:15,  1.03it/s](RtN Quant.) Layers:  53%|█████▎    | 17/32 [00:16<00:14,  1.03it/s](RtN Quant.) Layers:  56%|█████▋    | 18/32 [00:17<00:13,  1.03it/s](RtN Quant.) Layers:  59%|█████▉    | 19/32 [00:18<00:12,  1.03it/s](RtN Quant.) Layers:  62%|██████▎   | 20/32 [00:19<00:11,  1.04it/s](RtN Quant.) Layers:  66%|██████▌   | 21/32 [00:20<00:10,  1.04it/s](RtN Quant.) Layers:  69%|██████▉   | 22/32 [00:21<00:09,  1.04it/s](RtN Quant.) Layers:  72%|███████▏  | 23/32 [00:22<00:08,  1.04it/s](RtN Quant.) Layers:  75%|███████▌  | 24/32 [00:23<00:07,  1.03it/s](RtN Quant.) Layers:  78%|███████▊  | 25/32 [00:24<00:06,  1.03it/s](RtN Quant.) Layers:  81%|████████▏ | 26/32 [00:25<00:05,  1.03it/s](RtN Quant.) Layers:  84%|████████▍ | 27/32 [00:26<00:04,  1.03it/s](RtN Quant.) Layers:  88%|████████▊ | 28/32 [00:27<00:03,  1.03it/s](RtN Quant.) Layers:  91%|█████████ | 29/32 [00:28<00:02,  1.03it/s](RtN Quant.) Layers:  94%|█████████▍| 30/32 [00:29<00:01,  1.03it/s](RtN Quant.) Layers:  97%|█████████▋| 31/32 [00:30<00:00,  1.03it/s](RtN Quant.) Layers: 100%|██████████| 32/32 [00:31<00:00,  1.03it/s](RtN Quant.) Layers: 100%|██████████| 32/32 [00:31<00:00,  1.03it/s]
+2026-11-18 05:34:23,795 INFO GPU memory (from rtn_fwrd): 0.93 -> 0.93 GB (0.00 GB)
+QUANTIZATION_COMPLETE 35.41981895454228
+2026-11-18 05:34:27,806 WARNING Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+PPL_PROGRESS 1/163 elapsed=0.3s
+PPL_PROGRESS 10/163 elapsed=3.2s
+PPL_PROGRESS 20/163 elapsed=6.3s
+PPL_PROGRESS 30/163 elapsed=9.5s
+PPL_PROGRESS 40/163 elapsed=12.7s
+PPL_PROGRESS 50/163 elapsed=15.8s
+PPL_PROGRESS 60/163 elapsed=19.0s
+PPL_PROGRESS 70/163 elapsed=22.2s
+PPL_PROGRESS 80/163 elapsed=25.3s
+PPL_PROGRESS 90/163 elapsed=28.5s
+PPL_PROGRESS 100/163 elapsed=31.7s
+PPL_PROGRESS 110/163 elapsed=34.8s
+PPL_PROGRESS 120/163 elapsed=38.0s
+PPL_PROGRESS 130/163 elapsed=41.2s
+PPL_PROGRESS 140/163 elapsed=44.4s
+PPL_PROGRESS 150/163 elapsed=47.6s
+PPL_PROGRESS 160/163 elapsed=50.7s
+PPL_PROGRESS 163/163 elapsed=51.7s
+FINAL_RESULT {"ppl": 496.9469316083471, "nll_sum": 2071528.7273251116, "evaluated_tokens": 333661, "test_blocks": 163, "quant_seconds": 35.41981895454228, "warmup_seconds": 1.0238908361643553, "eval_seconds": 51.69402992911637, "evaluated_tokens_per_second": 6454.536441781014, "test_sha256": "168d1667bc8ef768d3195ed07f6498ce3f4f8b6cdbb2ee968d793bec1155dce9", "id": "mistral_official_rtn_a4_s0", "kind": "eval", "model": "mistral", "stack": "official", "method": "rtn", "bits": 4, "seed": 0, "rotate": false, "status": "complete", "base_weight_dtype": "float16", "model_load_seconds": 8.241573533043265, "worker_seconds": 96.3867497779429, "max_rss_kib": 28927540, "versions": {"torch": "2.11.0+cu128", "transformers": "4.44.2", "numpy": "1.26.4"}, "torch_peak_allocated_bytes": 15676325376, "torch_peak_reserved_bytes": 15986589696}

@@ -1,0 +1,30 @@
+BEGIN_TASK {"id": "tinyllama_official_sq_rtn_a4_s0", "kind": "eval", "model": "tinyllama", "stack": "official", "method": "rtn", "bits": 4, "seed": 0, "rotate": true, "dependency": "tinyllama_official_train_s0"}
+2026-11-18 05:58:28,472 INFO PyTorch version 2.11.0+cu128 available.
+2026-11-18 05:58:29,824 INFO GPU memory (from rotate_model): 6.30 -> 4.33 GB (-1.97 GB)
+Rotating:   0%|          | 0/22 [00:00<?, ?layer/s]Rotating:   5%|▍         | 1/22 [00:00<00:11,  1.85layer/s]Rotating:   9%|▉         | 2/22 [00:00<00:08,  2.24layer/s]Rotating:  14%|█▎        | 3/22 [00:01<00:07,  2.38layer/s]Rotating:  18%|█▊        | 4/22 [00:01<00:07,  2.49layer/s]Rotating:  23%|██▎       | 5/22 [00:02<00:06,  2.55layer/s]Rotating:  27%|██▋       | 6/22 [00:02<00:06,  2.57layer/s]Rotating:  32%|███▏      | 7/22 [00:02<00:05,  2.58layer/s]Rotating:  36%|███▋      | 8/22 [00:03<00:05,  2.60layer/s]Rotating:  41%|████      | 9/22 [00:03<00:04,  2.62layer/s]Rotating:  45%|████▌     | 10/22 [00:03<00:04,  2.63layer/s]Rotating:  50%|█████     | 11/22 [00:04<00:04,  2.67layer/s]Rotating:  55%|█████▍    | 12/22 [00:04<00:03,  2.69layer/s]Rotating:  59%|█████▉    | 13/22 [00:05<00:03,  2.70layer/s]Rotating:  64%|██████▎   | 14/22 [00:05<00:02,  2.68layer/s]Rotating:  68%|██████▊   | 15/22 [00:05<00:02,  2.69layer/s]Rotating:  73%|███████▎  | 16/22 [00:06<00:02,  2.69layer/s]Rotating:  77%|███████▋  | 17/22 [00:06<00:01,  2.70layer/s]Rotating:  82%|████████▏ | 18/22 [00:06<00:01,  2.70layer/s]Rotating:  86%|████████▋ | 19/22 [00:07<00:01,  2.71layer/s]Rotating:  91%|█████████ | 20/22 [00:07<00:00,  2.71layer/s]Rotating:  95%|█████████▌| 21/22 [00:08<00:00,  2.72layer/s]Rotating: 100%|██████████| 22/22 [00:08<00:00,  2.68layer/s]Rotating: 100%|██████████| 22/22 [00:08<00:00,  2.62layer/s]
+2026-11-18 05:58:38,317 INFO GPU memory (from ptq_model): 4.33 -> 0.04 GB (-4.28 GB)
+/root/miniconda3/envs/torch_env/lib/python3.10/site-packages/transformers/modeling_utils.py:4713: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+(RtN Quant.) Layers:   0%|          | 0/22 [00:00<?, ?it/s](RtN Quant.) Layers:   5%|▍         | 1/22 [00:00<00:08,  2.61it/s](RtN Quant.) Layers:   9%|▉         | 2/22 [00:00<00:06,  3.21it/s](RtN Quant.) Layers:  14%|█▎        | 3/22 [00:00<00:05,  3.41it/s](RtN Quant.) Layers:  18%|█▊        | 4/22 [00:01<00:05,  3.53it/s](RtN Quant.) Layers:  23%|██▎       | 5/22 [00:01<00:04,  3.62it/s](RtN Quant.) Layers:  27%|██▋       | 6/22 [00:01<00:04,  3.57it/s](RtN Quant.) Layers:  32%|███▏      | 7/22 [00:02<00:04,  3.53it/s](RtN Quant.) Layers:  36%|███▋      | 8/22 [00:02<00:03,  3.59it/s](RtN Quant.) Layers:  41%|████      | 9/22 [00:02<00:03,  3.64it/s](RtN Quant.) Layers:  45%|████▌     | 10/22 [00:02<00:03,  3.68it/s](RtN Quant.) Layers:  50%|█████     | 11/22 [00:03<00:02,  3.69it/s](RtN Quant.) Layers:  55%|█████▍    | 12/22 [00:03<00:02,  3.71it/s](RtN Quant.) Layers:  59%|█████▉    | 13/22 [00:03<00:02,  3.72it/s](RtN Quant.) Layers:  64%|██████▎   | 14/22 [00:03<00:02,  3.75it/s](RtN Quant.) Layers:  68%|██████▊   | 15/22 [00:04<00:01,  3.73it/s](RtN Quant.) Layers:  73%|███████▎  | 16/22 [00:04<00:01,  3.73it/s](RtN Quant.) Layers:  77%|███████▋  | 17/22 [00:04<00:01,  3.74it/s](RtN Quant.) Layers:  82%|████████▏ | 18/22 [00:04<00:01,  3.72it/s](RtN Quant.) Layers:  86%|████████▋ | 19/22 [00:05<00:00,  3.66it/s](RtN Quant.) Layers:  91%|█████████ | 20/22 [00:05<00:00,  3.61it/s](RtN Quant.) Layers:  95%|█████████▌| 21/22 [00:05<00:00,  3.63it/s](RtN Quant.) Layers: 100%|██████████| 22/22 [00:06<00:00,  3.63it/s](RtN Quant.) Layers: 100%|██████████| 22/22 [00:06<00:00,  3.62it/s]
+2026-11-18 05:58:44,488 INFO GPU memory (from rtn_fwrd): 0.17 -> 0.17 GB (0.00 GB)
+QUANTIZATION_COMPLETE 17.371473290026188
+2026-11-18 05:58:45,525 WARNING Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+PPL_PROGRESS 1/166 elapsed=0.2s
+PPL_PROGRESS 10/166 elapsed=2.0s
+PPL_PROGRESS 20/166 elapsed=3.9s
+PPL_PROGRESS 30/166 elapsed=5.9s
+PPL_PROGRESS 40/166 elapsed=7.8s
+PPL_PROGRESS 50/166 elapsed=9.8s
+PPL_PROGRESS 60/166 elapsed=11.8s
+PPL_PROGRESS 70/166 elapsed=13.7s
+PPL_PROGRESS 80/166 elapsed=15.7s
+PPL_PROGRESS 90/166 elapsed=17.7s
+PPL_PROGRESS 100/166 elapsed=19.6s
+PPL_PROGRESS 110/166 elapsed=21.6s
+PPL_PROGRESS 120/166 elapsed=23.6s
+PPL_PROGRESS 130/166 elapsed=25.6s
+PPL_PROGRESS 140/166 elapsed=27.5s
+PPL_PROGRESS 150/166 elapsed=29.5s
+PPL_PROGRESS 160/166 elapsed=31.5s
+PPL_PROGRESS 166/166 elapsed=32.6s
+FINAL_RESULT {"ppl": 11.092414002920737, "nll_sum": 817652.4537486958, "evaluated_tokens": 339802, "test_blocks": 166, "quant_seconds": 17.371473290026188, "warmup_seconds": 0.46339423954486847, "eval_seconds": 32.6296249050647, "evaluated_tokens_per_second": 10413.910701966317, "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7", "rotation_sha256": "3b7ed2e18c96c6b682522cd8d2f1128be6dce525fbafbb8efc63e3b7061a7b14", "id": "tinyllama_official_sq_rtn_a4_s0", "kind": "eval", "model": "tinyllama", "stack": "official", "method": "rtn", "bits": 4, "seed": 0, "rotate": true, "dependency": "tinyllama_official_train_s0", "status": "complete", "base_weight_dtype": "float32", "model_load_seconds": 2.463272787630558, "worker_seconds": 52.9493792951107, "max_rss_kib": 7084832, "versions": {"torch": "2.11.0+cu128", "transformers": "4.44.2", "numpy": "1.26.4"}, "torch_peak_allocated_bytes": 5601484288, "torch_peak_reserved_bytes": 5647630336}

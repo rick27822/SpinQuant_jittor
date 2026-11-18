@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "tensors": 291,
+  "shards": [
+    {
+      "file": "pytorch_model-00001-of-00002.bin",
+      "sha256": "67b1ea77d83cf017d6aa2fd9aadc6ad043a0cb3233a1cf9c422916b88350991f",
+      "tensors": 203
+    },
+    {
+      "file": "pytorch_model-00002-of-00002.bin",
+      "sha256": "1feecce04754087e8e9a320847916ed57c6539ed0e5e2cd0ebdc7a816cc3773e",
+      "tensors": 88
+    }
+  ]
+}

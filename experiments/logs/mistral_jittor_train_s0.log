@@ -1,0 +1,902 @@
+BEGIN_TASK {"id": "mistral_jittor_train_s0", "kind": "train", "model": "mistral", "stack": "jittor", "seed": 0}
+[i 1118 09:21:50.171167 20 compiler.py:964] Jittor(1.3.8.5) src: /root/miniconda3/envs/jittor_env/lib/python3.10/site-packages/jittor
+[i 1118 09:21:50.175681 20 compiler.py:965] g++ at /usr/bin/g++(11.3.0)
+[i 1118 09:21:50.175717 20 compiler.py:966] cache_path: /root/.cache/jittor/jt1.3.8/g++11.3.0/py3.10.22/Linux-5.15.0-7x34/IntelRXeonRPlaxb0/default
+[i 1118 09:21:50.179189 20 compiler.py:909] Found nvcc(12.8.93) at /root/miniconda3/envs/jittor_env/bin/nvcc
+[i 1118 09:21:50.182421 20 __init__.py:411] Found addr2line(2.38) at /usr/bin/addr2line.
+[i 1118 09:21:50.420214 20 compiler.py:1019] cuda key:cu12.8.93_sm_120
+[i 1118 09:21:50.670129 20 __init__.py:227] Total mem: 1007.50GB, using 16 procs for compiling.
+[i 1118 09:21:50.745246 20 jit_compiler.cc:28] Load cc_path: /usr/bin/g++
+[i 1118 09:21:50.745264 20 jit_compiler.cc:31] Load nvcc_path: /root/miniconda3/envs/jittor_env/bin/nvcc
+[i 1118 09:21:50.996334 20 init.cc:62] Found cuda archs: [120,]
+[w 1118 09:21:51.038522 20 compile_extern.py:203] CUDA related path found in LD_LIBRARY_PATH or PATH(['/root/autodl-tmp/cuda128_lib', '/root/miniconda3/bin', '/root/miniconda3/condabin', '/root/miniconda3/bin', '/usr/local/bin', '/usr/local/nvidia/bin', '/usr/local/cuda/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin']), This path may cause jittor found the wrong libs, please unset LD_LIBRARY_PATH and remove cuda lib path in Path. 
+Or you can let jittor install cuda for you: `python3.x -m jittor_utils.install_cuda`
+[i 1118 09:21:51.358056 20 cuda_flags.cc:49] CUDA enabled.
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[w 1118 09:21:51.952548 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.952638 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.952920 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.952952 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.953096 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.953124 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.953253 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.953289 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.953405 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.953431 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.953538 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.953563 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.953672 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.953697 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.953805 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.953832 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.953946 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.953973 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.954101 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.954128 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.954245 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.954273 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.954387 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.954413 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.954551 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.954578 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.954696 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.954722 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.954837 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.954862 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.954986 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.955012 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.955136 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.955162 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.955280 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.955306 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.955418 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.955444 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.955561 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.955585 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.955701 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.955726 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.955856 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.955886 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.956011 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.956041 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.956156 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.956183 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.956300 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.956326 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.956464 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.956489 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.956603 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.956627 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.956741 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.956765 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.956877 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.956910 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.957022 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.957048 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.957158 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.957182 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.957288 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.957312 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:21:51.957352 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.722201 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.726745 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.727325 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.727786 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.728288 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.728735 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.729173 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.729601 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.730081 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.730520 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.730932 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.731344 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.731748 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.732162 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.732566 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.732967 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.734614 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.735114 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.735576 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.736003 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.736424 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.736823 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.737230 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.737626 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.738009 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.738390 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.738781 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.739167 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.739549 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.739980 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.740389 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.740787 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 09:22:50.741208 20 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+INITIAL_FIXED_PROBE_LOSS 2.138227105140686
+TRAIN_STEP {"step": 0, "loss": 1.8046157360076904, "learning_rate": 1.5, "grad_l2": 20.45089766824969, "step_seconds": 6.729355761781335}
+TRAIN_STEP {"step": 1, "loss": 2.6459555625915527, "learning_rate": 1.4996299202742986, "grad_l2": 17.67911651874108, "step_seconds": 6.544605847448111}
+TRAIN_STEP {"step": 2, "loss": 2.555403470993042, "learning_rate": 1.4985200463212036, "grad_l2": 21.182193914161193, "step_seconds": 6.932907920330763}
+TRAIN_STEP {"step": 3, "loss": 2.6090617179870605, "learning_rate": 1.4966714734523099, "grad_l2": 16.594872140237726, "step_seconds": 6.770188653841615}
+TRAIN_STEP {"step": 4, "loss": 2.3801863193511963, "learning_rate": 1.4940860259858586, "grad_l2": 15.061408226700314, "step_seconds": 6.520759886130691}
+TRAIN_STEP {"step": 5, "loss": 2.2465755939483643, "learning_rate": 1.4907662554463532, "grad_l2": 15.166924668701647, "step_seconds": 6.478341551497579}
+TRAIN_STEP {"step": 6, "loss": 2.0098466873168945, "learning_rate": 1.4867154380465166, "grad_l2": 15.367758533051243, "step_seconds": 7.047165174037218}
+TRAIN_STEP {"step": 7, "loss": 2.6561293601989746, "learning_rate": 1.4819375714540606, "grad_l2": 22.234320907009177, "step_seconds": 6.524145066738129}
+TRAIN_STEP {"step": 8, "loss": 2.2139980792999268, "learning_rate": 1.4764373708464733, "grad_l2": 20.729708271518977, "step_seconds": 6.359233824536204}
+TRAIN_STEP {"step": 9, "loss": 1.7107832431793213, "learning_rate": 1.4702202642577074, "grad_l2": 19.233058343428247, "step_seconds": 6.604720449075103}
+TRAIN_STEP {"step": 10, "loss": 1.8661755323410034, "learning_rate": 1.4632923872213652, "grad_l2": 23.886884370955023, "step_seconds": 6.543244084343314}
+TRAIN_STEP {"step": 11, "loss": 2.446927309036255, "learning_rate": 1.4556605767156692, "grad_l2": 17.37441066231957, "step_seconds": 6.522753890603781}
+TRAIN_STEP {"step": 12, "loss": 2.1393282413482666, "learning_rate": 1.4473323644161886, "grad_l2": 26.51343410165892, "step_seconds": 6.590202601626515}
+TRAIN_STEP {"step": 13, "loss": 1.8801416158676147, "learning_rate": 1.4383159692629857, "grad_l2": 15.67639546433058, "step_seconds": 6.593198316171765}
+TRAIN_STEP {"step": 14, "loss": 2.2876713275909424, "learning_rate": 1.4286202893495146, "grad_l2": 14.615564209523479, "step_seconds": 6.721464719623327}
+TRAIN_STEP {"step": 15, "loss": 2.4144375324249268, "learning_rate": 1.4182548931412757, "grad_l2": 12.876409370995377, "step_seconds": 6.822159707546234}
+TRAIN_STEP {"step": 16, "loss": 2.2207679748535156, "learning_rate": 1.4072300100328976, "grad_l2": 14.818483162105498, "step_seconds": 6.508566839620471}
+TRAIN_STEP {"step": 17, "loss": 2.46897554397583, "learning_rate": 1.3955565202529576, "grad_l2": 17.426070523022027, "step_seconds": 6.59335664473474}
+TRAIN_STEP {"step": 18, "loss": 2.0531017780303955, "learning_rate": 1.3832459441265113, "grad_l2": 12.461013848297421, "step_seconds": 6.9258916936814785}
+TRAIN_STEP {"step": 19, "loss": 1.9059076309204102, "learning_rate": 1.3703104307059213, "grad_l2": 11.829563688173371, "step_seconds": 6.537513980641961}
+TRAIN_STEP {"step": 20, "loss": 1.942908763885498, "learning_rate": 1.3567627457812106, "grad_l2": 15.16358471359358, "step_seconds": 6.54437418282032}
+TRAIN_STEP {"step": 21, "loss": 2.21549916267395, "learning_rate": 1.3426162592817676, "grad_l2": 15.490579204211308, "step_seconds": 6.532772626727819}
+TRAIN_STEP {"step": 22, "loss": 2.4008870124816895, "learning_rate": 1.327884932081842, "grad_l2": 14.749085579218864, "step_seconds": 6.511671867221594}
+TRAIN_STEP {"step": 23, "loss": 2.432394504547119, "learning_rate": 1.3125833022228446, "grad_l2": 17.236761813508895, "step_seconds": 6.344806460663676}
+TRAIN_STEP {"step": 24, "loss": 2.2990264892578125, "learning_rate": 1.2967264705660586, "grad_l2": 19.81292347008419, "step_seconds": 6.381754716858268}
+TRAIN_STEP {"step": 25, "loss": 2.461214780807495, "learning_rate": 1.2803300858899105, "grad_l2": 18.85534007814191, "step_seconds": 6.336181554943323}
+TRAIN_STEP {"step": 26, "loss": 1.9553993940353394, "learning_rate": 1.2634103294465167, "grad_l2": 16.055479030598605, "step_seconds": 6.6946114134043455}
+TRAIN_STEP {"step": 27, "loss": 1.179433822631836, "learning_rate": 1.2459838989927388, "grad_l2": 9.3710344702925, "step_seconds": 6.366683820262551}
+TRAIN_STEP {"step": 28, "loss": 1.6494288444519043, "learning_rate": 1.2280679923115172, "grad_l2": 15.386224989843623, "step_seconds": 6.447871241718531}
+TRAIN_STEP {"step": 29, "loss": 2.026265859603882, "learning_rate": 1.2096802902397323, "grad_l2": 16.091211414658485, "step_seconds": 6.285358734428883}
+TRAIN_STEP {"step": 30, "loss": 1.7448787689208984, "learning_rate": 1.190838939219355, "grad_l2": 13.076310531274245, "step_seconds": 6.343647073954344}
+TRAIN_STEP {"step": 31, "loss": 1.9248247146606445, "learning_rate": 1.171562533389098, "grad_l2": 20.45177494669974, "step_seconds": 6.330580038949847}
+TRAIN_STEP {"step": 32, "loss": 1.9530293941497803, "learning_rate": 1.1518700962342474, "grad_l2": 17.96636765940638, "step_seconds": 6.31535879150033}
+TRAIN_STEP {"step": 33, "loss": 1.967354416847229, "learning_rate": 1.1317810618127786, "grad_l2": 15.434218682620115, "step_seconds": 6.500480080023408}
+TRAIN_STEP {"step": 34, "loss": 1.6790117025375366, "learning_rate": 1.1113152555762864, "grad_l2": 20.40641183503418, "step_seconds": 6.579902719706297}
+TRAIN_STEP {"step": 35, "loss": 1.8003548383712769, "learning_rate": 1.09049287480466, "grad_l2": 20.622203321802232, "step_seconds": 6.566496063023806}
+TRAIN_STEP {"step": 36, "loss": 1.5628901720046997, "learning_rate": 1.0693344686738044, "grad_l2": 13.53118358373416, "step_seconds": 6.6365156546235085}
+TRAIN_STEP {"step": 37, "loss": 1.706517219543457, "learning_rate": 1.0478609179760854, "grad_l2": 11.75223188222181, "step_seconds": 6.543209630995989}
+TRAIN_STEP {"step": 38, "loss": 2.038750410079956, "learning_rate": 1.0260934145135086, "grad_l2": 22.67056674325525, "step_seconds": 6.378026457503438}
+TRAIN_STEP {"step": 39, "loss": 2.1085400581359863, "learning_rate": 1.0040534401839687, "grad_l2": 15.117300477884637, "step_seconds": 6.392258575186133}
+TRAIN_STEP {"step": 40, "loss": 2.009617328643799, "learning_rate": 0.9817627457812106, "grad_l2": 13.305076637759495, "step_seconds": 6.346342723816633}
+TRAIN_STEP {"step": 41, "loss": 1.649235486984253, "learning_rate": 0.959243329529422, "grad_l2": 12.599416761981177, "step_seconds": 6.456578604876995}
+TRAIN_STEP {"step": 42, "loss": 1.6713175773620605, "learning_rate": 0.936517415373641, "grad_l2": 17.258236204489233, "step_seconds": 6.487881563603878}
+TRAIN_STEP {"step": 43, "loss": 1.6397916078567505, "learning_rate": 0.913607431047407, "grad_l2": 27.308351258032996, "step_seconds": 6.356201495975256}
+TRAIN_STEP {"step": 44, "loss": 1.6873148679733276, "learning_rate": 0.8905359859392936, "grad_l2": 18.430841508907942, "step_seconds": 6.383041616529226}
+TRAIN_STEP {"step": 45, "loss": 2.2219152450561523, "learning_rate": 0.8673258487801732, "grad_l2": 16.204713426488183, "step_seconds": 6.301579188555479}
+TRAIN_STEP {"step": 46, "loss": 2.628523111343384, "learning_rate": 0.8439999251732284, "grad_l2": 15.424264964222287, "step_seconds": 6.530532907694578}
+TRAIN_STEP {"step": 47, "loss": 2.345273733139038, "learning_rate": 0.8205812349888857, "grad_l2": 14.288878312078282, "step_seconds": 6.367810344323516}
+TRAIN_STEP {"step": 48, "loss": 2.555614948272705, "learning_rate": 0.7970928896469851, "grad_l2": 17.187669933327893, "step_seconds": 6.5646548345685005}
+TRAIN_STEP {"step": 49, "loss": 1.8108959197998047, "learning_rate": 0.7735580693085962, "grad_l2": 17.00703547006372, "step_seconds": 6.5861219968646765}
+TRAIN_STEP {"step": 50, "loss": 2.214773416519165, "learning_rate": 0.75, "grad_l2": 12.071380476755492, "step_seconds": 6.593119245022535}
+TRAIN_STEP {"step": 51, "loss": 1.715921401977539, "learning_rate": 0.7264419306914038, "grad_l2": 14.526457392249137, "step_seconds": 6.5276392959058285}
+TRAIN_STEP {"step": 52, "loss": 1.7587193250656128, "learning_rate": 0.702907110353015, "grad_l2": 21.003816876325125, "step_seconds": 6.47923319414258}
+TRAIN_STEP {"step": 53, "loss": 1.7271630764007568, "learning_rate": 0.6794187650111143, "grad_l2": 15.540745496171944, "step_seconds": 6.415918815881014}
+TRAIN_STEP {"step": 54, "loss": 2.191650390625, "learning_rate": 0.6560000748267719, "grad_l2": 15.211850797266456, "step_seconds": 6.354188928380609}
+TRAIN_STEP {"step": 55, "loss": 1.8535807132720947, "learning_rate": 0.6326741512198268, "grad_l2": 15.812340793926028, "step_seconds": 6.4307912196964025}
+TRAIN_STEP {"step": 56, "loss": 1.7305665016174316, "learning_rate": 0.6094640140607066, "grad_l2": 28.33458183729084, "step_seconds": 6.469480177387595}
+TRAIN_STEP {"step": 57, "loss": 2.408409357070923, "learning_rate": 0.5863925689525933, "grad_l2": 13.386765529584553, "step_seconds": 6.610397774726152}
+TRAIN_STEP {"step": 58, "loss": 2.107877016067505, "learning_rate": 0.5634825846263589, "grad_l2": 14.970283473586086, "step_seconds": 6.729122204706073}
+TRAIN_STEP {"step": 59, "loss": 2.100659132003784, "learning_rate": 0.5407566704705782, "grad_l2": 16.913172773373297, "step_seconds": 6.602693544700742}
+TRAIN_STEP {"step": 60, "loss": 2.0250627994537354, "learning_rate": 0.5182372542187896, "grad_l2": 21.70317741531297, "step_seconds": 6.497650492936373}
+TRAIN_STEP {"step": 61, "loss": 1.1649179458618164, "learning_rate": 0.4959465598160315, "grad_l2": 15.739076762643517, "step_seconds": 6.5153426099568605}
+TRAIN_STEP {"step": 62, "loss": 1.8865896463394165, "learning_rate": 0.4739065854864917, "grad_l2": 14.78467066272092, "step_seconds": 6.530907932668924}
+TRAIN_STEP {"step": 63, "loss": 1.953121542930603, "learning_rate": 0.45213908202391445, "grad_l2": 14.620817863107678, "step_seconds": 6.5483558177948}
+TRAIN_STEP {"step": 64, "loss": 1.737992286682129, "learning_rate": 0.4306655313261955, "grad_l2": 16.61704166799888, "step_seconds": 6.6901759803295135}
+TRAIN_STEP {"step": 65, "loss": 2.177975654602051, "learning_rate": 0.40950712519533994, "grad_l2": 21.860671451286038, "step_seconds": 6.6949843894690275}
+TRAIN_STEP {"step": 66, "loss": 1.968104362487793, "learning_rate": 0.3886847444237134, "grad_l2": 15.949618462743095, "step_seconds": 6.776690388098359}
+TRAIN_STEP {"step": 67, "loss": 1.9854185581207275, "learning_rate": 0.3682189381872215, "grad_l2": 14.78785970343586, "step_seconds": 6.722496507689357}
+TRAIN_STEP {"step": 68, "loss": 1.4269306659698486, "learning_rate": 0.34812990376575237, "grad_l2": 15.308928373478903, "step_seconds": 6.674073942005634}
+TRAIN_STEP {"step": 69, "loss": 1.7282788753509521, "learning_rate": 0.328437466610902, "grad_l2": 11.96336028310991, "step_seconds": 6.3826300855726}
+TRAIN_STEP {"step": 70, "loss": 1.5586854219436646, "learning_rate": 0.3091610607806452, "grad_l2": 15.272109910260458, "step_seconds": 6.500141251832247}
+TRAIN_STEP {"step": 71, "loss": 1.7829605340957642, "learning_rate": 0.29031970976026755, "grad_l2": 14.824548813048589, "step_seconds": 6.463990535587072}
+TRAIN_STEP {"step": 72, "loss": 1.7547818422317505, "learning_rate": 0.2719320076884827, "grad_l2": 11.995942255109709, "step_seconds": 6.453791772946715}
+TRAIN_STEP {"step": 73, "loss": 1.907112956047058, "learning_rate": 0.25401610100726124, "grad_l2": 32.948937092122485, "step_seconds": 6.436307413503528}
+TRAIN_STEP {"step": 74, "loss": 1.7700114250183105, "learning_rate": 0.23658967055348346, "grad_l2": 19.16193140418557, "step_seconds": 6.603291811421514}
+TRAIN_STEP {"step": 75, "loss": 1.4103705883026123, "learning_rate": 0.2196699141100894, "grad_l2": 22.246938180266802, "step_seconds": 6.310557313263416}
+TRAIN_STEP {"step": 76, "loss": 1.8222057819366455, "learning_rate": 0.2032735294339415, "grad_l2": 22.584837708822995, "step_seconds": 6.333887515589595}
+TRAIN_STEP {"step": 77, "loss": 1.749369502067566, "learning_rate": 0.1874166977771553, "grad_l2": 15.094433961365413, "step_seconds": 6.384912453591824}
+TRAIN_STEP {"step": 78, "loss": 2.2022013664245605, "learning_rate": 0.17211506791815814, "grad_l2": 16.60222964695183, "step_seconds": 6.327105209231377}
+TRAIN_STEP {"step": 79, "loss": 2.180490016937256, "learning_rate": 0.1573837407182322, "grad_l2": 13.249124190936236, "step_seconds": 6.646943628787994}
+TRAIN_STEP {"step": 80, "loss": 2.181220531463623, "learning_rate": 0.1432372542187895, "grad_l2": 15.507848613288642, "step_seconds": 6.692153848707676}
+TRAIN_STEP {"step": 81, "loss": 2.1017916202545166, "learning_rate": 0.1296895692940787, "grad_l2": 12.015791117853466, "step_seconds": 6.526978671550751}
+TRAIN_STEP {"step": 82, "loss": 2.2256815433502197, "learning_rate": 0.11675405587348886, "grad_l2": 13.780632188748362, "step_seconds": 6.436117488890886}
+TRAIN_STEP {"step": 83, "loss": 2.4318792819976807, "learning_rate": 0.10444347974704218, "grad_l2": 15.107634706074151, "step_seconds": 6.518855560570955}
+TRAIN_STEP {"step": 84, "loss": 2.2578299045562744, "learning_rate": 0.09276998996710231, "grad_l2": 12.473473152283326, "step_seconds": 6.342362035065889}
+TRAIN_STEP {"step": 85, "loss": 2.3095407485961914, "learning_rate": 0.08174510685872416, "grad_l2": 10.852191730431052, "step_seconds": 6.458817286416888}
+TRAIN_STEP {"step": 86, "loss": 2.0682878494262695, "learning_rate": 0.07137971065048548, "grad_l2": 14.805558050536899, "step_seconds": 6.593072533607483}
+TRAIN_STEP {"step": 87, "loss": 2.116976261138916, "learning_rate": 0.06168403073701431, "grad_l2": 12.239936101581359, "step_seconds": 6.522428877651691}
+TRAIN_STEP {"step": 88, "loss": 2.3602821826934814, "learning_rate": 0.05266763558381149, "grad_l2": 14.74345612613761, "step_seconds": 6.6471519861370325}
+TRAIN_STEP {"step": 89, "loss": 2.0751073360443115, "learning_rate": 0.04433942328433091, "grad_l2": 13.55943059415932, "step_seconds": 6.637669056653976}
+TRAIN_STEP {"step": 90, "loss": 2.3235886096954346, "learning_rate": 0.03670761277863485, "grad_l2": 18.022356640097957, "step_seconds": 6.698448058217764}
+TRAIN_STEP {"step": 91, "loss": 2.118231773376465, "learning_rate": 0.029779735742292784, "grad_l2": 15.462093430574484, "step_seconds": 6.700334904715419}
+TRAIN_STEP {"step": 92, "loss": 2.2786033153533936, "learning_rate": 0.023562629153526776, "grad_l2": 13.987923412473606, "step_seconds": 6.67068955861032}
+TRAIN_STEP {"step": 93, "loss": 2.230877637863159, "learning_rate": 0.018062428545939507, "grad_l2": 13.09666036233132, "step_seconds": 6.527950040996075}
+TRAIN_STEP {"step": 94, "loss": 2.267531394958496, "learning_rate": 0.01328456195348346, "grad_l2": 15.777771925309954, "step_seconds": 6.644957883283496}
+TRAIN_STEP {"step": 95, "loss": 2.246236562728882, "learning_rate": 0.009233744553646756, "grad_l2": 14.661187027694112, "step_seconds": 6.672233944758773}
+TRAIN_STEP {"step": 96, "loss": 2.379002571105957, "learning_rate": 0.005913974014141676, "grad_l2": 12.71290240528325, "step_seconds": 6.659685265272856}
+TRAIN_STEP {"step": 97, "loss": 2.336364269256592, "learning_rate": 0.0033285265476900028, "grad_l2": 12.288217221263103, "step_seconds": 6.741010528057814}
+TRAIN_STEP {"step": 98, "loss": 2.4090323448181152, "learning_rate": 0.0014799536787963308, "grad_l2": 12.679725050360707, "step_seconds": 6.683661054819822}
+TRAIN_STEP {"step": 99, "loss": 2.159428596496582, "learning_rate": 0.0003700797257013, "grad_l2": 16.352493854962578, "step_seconds": 6.683170847594738}
+FINAL_FIXED_PROBE_LOSS 2.1422643661499023
+FINAL_RESULT {"steps": 100, "loss_records": 100, "first_loss": 1.8046157360076904, "last_loss": 2.159428596496582, "mean_loss": 2.0466349685192107, "training_seconds": 654.0616546105593, "initial_fixed_probe_loss": 2.138227105140686, "final_fixed_probe_loss": 2.1422643661499023, "orthogonality_probe_relative_error": 6.024087610967399e-07, "rotation_sha256": "24ac58f25b82dfa38ff3d0551542272873e9a178006b1282cfb8b4b6a201425e", "initial_rotation_sha256": "fd6e9ddc1d44c822b3c3e02d703264a56a93318a8a71a9374a17330262197990", "training_data_sha256": "d5d76502e1b0da21e70df964be0fbc65515bb6753ca09f1a4e8caeeff40c7648", "id": "mistral_jittor_train_s0", "kind": "train", "model": "mistral", "stack": "jittor", "seed": 0, "status": "complete", "base_weight_dtype": "float16", "model_load_seconds": 58.97901165112853, "worker_seconds": 720.5509555023164, "max_rss_kib": 42966900, "versions": {"jittor": "1.3.8.5", "transformers": "5.20.2", "numpy": "1.26.4"}}

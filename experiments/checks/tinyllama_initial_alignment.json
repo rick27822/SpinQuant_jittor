@@ -1,0 +1,7 @@
+{
+  "official_loss": 2.2975767850875854,
+  "jittor_loss": 2.3175705671310425,
+  "relative_gap": 0.008702117018776656,
+  "sanity_threshold": 0.05,
+  "note": "Sanity gate only; not proof of numerical equivalence."
+}

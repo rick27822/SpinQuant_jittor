@@ -1,0 +1,557 @@
+BEGIN_TASK {"id": "mistral_jittor_float_a16_s0", "kind": "eval", "model": "mistral", "stack": "jittor", "method": "float", "bits": 16, "seed": 0, "rotate": false}
+[i 1118 05:35:24.466234 36 compiler.py:964] Jittor(1.3.8.5) src: /root/miniconda3/envs/jittor_env/lib/python3.10/site-packages/jittor
+[i 1118 05:35:24.470183 36 compiler.py:965] g++ at /usr/bin/g++(11.3.0)
+[i 1118 05:35:24.470218 36 compiler.py:966] cache_path: /root/.cache/jittor/jt1.3.8/g++11.3.0/py3.10.22/Linux-5.15.0-7x34/IntelRXeonRPlaxb0/default
+[i 1118 05:35:24.474638 36 compiler.py:909] Found nvcc(12.8.93) at /root/miniconda3/envs/jittor_env/bin/nvcc
+[i 1118 05:35:24.476371 36 __init__.py:411] Found addr2line(2.38) at /usr/bin/addr2line.
+[i 1118 05:35:24.703172 36 compiler.py:1019] cuda key:cu12.8.93_sm_120
+[i 1118 05:35:24.935633 36 __init__.py:227] Total mem: 1007.50GB, using 16 procs for compiling.
+[i 1118 05:35:25.009301 36 jit_compiler.cc:28] Load cc_path: /usr/bin/g++
+[i 1118 05:35:25.009316 36 jit_compiler.cc:31] Load nvcc_path: /root/miniconda3/envs/jittor_env/bin/nvcc
+[i 1118 05:35:25.346406 36 init.cc:62] Found cuda archs: [120,]
+[w 1118 05:35:25.376611 36 compile_extern.py:203] CUDA related path found in LD_LIBRARY_PATH or PATH(['/root/autodl-tmp/cuda128_lib', '/root/miniconda3/bin', '/root/miniconda3/condabin', '/root/miniconda3/bin', '/usr/local/bin', '/usr/local/nvidia/bin', '/usr/local/cuda/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin']), This path may cause jittor found the wrong libs, please unset LD_LIBRARY_PATH and remove cuda lib path in Path. 
+Or you can let jittor install cuda for you: `python3.x -m jittor_utils.install_cuda`
+[i 1118 05:35:25.684455 36 cuda_flags.cc:49] CUDA enabled.
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[w 1118 05:35:26.274749 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.274839 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.275138 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.275173 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.275319 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.275348 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.275483 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.275516 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.275643 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.275670 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.275784 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.275810 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.275955 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.275987 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.276102 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.276130 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.276248 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.276276 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.276402 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.276432 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.276558 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.276587 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.276717 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.276745 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.276893 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.276922 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.277048 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.277075 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.277195 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.277222 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.277343 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.277371 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.277494 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.277521 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.277642 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.277670 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.277794 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.277820 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.277942 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.277968 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.278092 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.278120 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.278237 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.278265 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.278385 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.278415 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.278534 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.278563 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.278690 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.278718 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.278858 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.278886 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.279002 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.279029 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.279142 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.279168 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.279276 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.279305 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.279414 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.279441 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.279555 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.279579 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.279696 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.279721 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 05:35:26.279764 36 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+QUANTIZATION_COMPLETE 0.042898012325167656
+
+Compiling Operators(39/39) used: 3.31s eta:    0s 
+PPL_PROGRESS 1/163 elapsed=0.3s
+PPL_PROGRESS 10/163 elapsed=3.1s
+PPL_PROGRESS 20/163 elapsed=6.0s
+PPL_PROGRESS 30/163 elapsed=8.7s
+PPL_PROGRESS 40/163 elapsed=11.5s
+PPL_PROGRESS 50/163 elapsed=14.3s
+PPL_PROGRESS 60/163 elapsed=17.1s
+PPL_PROGRESS 70/163 elapsed=19.7s
+PPL_PROGRESS 80/163 elapsed=22.4s
+PPL_PROGRESS 90/163 elapsed=25.0s
+PPL_PROGRESS 100/163 elapsed=27.6s
+PPL_PROGRESS 110/163 elapsed=30.2s
+PPL_PROGRESS 120/163 elapsed=32.8s
+PPL_PROGRESS 130/163 elapsed=35.4s
+PPL_PROGRESS 140/163 elapsed=38.0s
+PPL_PROGRESS 150/163 elapsed=40.6s
+PPL_PROGRESS 160/163 elapsed=43.2s
+PPL_PROGRESS 163/163 elapsed=44.0s
+FINAL_RESULT {"ppl": 5.253465887579591, "nll_sum": 553506.2382606504, "evaluated_tokens": 333661, "test_blocks": 163, "quant_seconds": 0.042898012325167656, "warmup_seconds": 4.3067990858107805, "eval_seconds": 44.00754098407924, "evaluated_tokens_per_second": 7581.905113051185, "test_sha256": "168d1667bc8ef768d3195ed07f6498ce3f4f8b6cdbb2ee968d793bec1155dce9", "id": "mistral_jittor_float_a16_s0", "kind": "eval", "model": "mistral", "stack": "jittor", "method": "float", "bits": 16, "seed": 0, "rotate": false, "status": "complete", "base_weight_dtype": "float16", "model_load_seconds": 64.34590293839574, "worker_seconds": 112.71400097757578, "max_rss_kib": 42966992, "versions": {"jittor": "1.3.8.5", "transformers": "5.20.2", "numpy": "1.26.4"}}

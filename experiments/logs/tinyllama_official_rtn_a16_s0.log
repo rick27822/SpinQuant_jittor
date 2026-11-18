@@ -1,0 +1,27 @@
+BEGIN_TASK {"id": "tinyllama_official_rtn_a16_s0", "kind": "eval", "model": "tinyllama", "stack": "official", "method": "rtn", "bits": 16, "seed": 0, "rotate": false}
+2026-11-18 05:27:53,644 INFO PyTorch version 2.11.0+cu128 available.
+/root/miniconda3/envs/torch_env/lib/python3.10/site-packages/transformers/modeling_utils.py:4713: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+(RtN Quant.) Layers:   0%|          | 0/22 [00:00<?, ?it/s](RtN Quant.) Layers:   5%|▍         | 1/22 [00:00<00:09,  2.16it/s](RtN Quant.) Layers:   9%|▉         | 2/22 [00:00<00:06,  2.93it/s](RtN Quant.) Layers:  14%|█▎        | 3/22 [00:00<00:05,  3.32it/s](RtN Quant.) Layers:  18%|█▊        | 4/22 [00:01<00:05,  3.55it/s](RtN Quant.) Layers:  23%|██▎       | 5/22 [00:01<00:04,  3.64it/s](RtN Quant.) Layers:  27%|██▋       | 6/22 [00:01<00:04,  3.73it/s](RtN Quant.) Layers:  32%|███▏      | 7/22 [00:01<00:03,  3.78it/s](RtN Quant.) Layers:  36%|███▋      | 8/22 [00:02<00:03,  3.84it/s](RtN Quant.) Layers:  41%|████      | 9/22 [00:02<00:03,  3.87it/s](RtN Quant.) Layers:  45%|████▌     | 10/22 [00:02<00:03,  3.91it/s](RtN Quant.) Layers:  50%|█████     | 11/22 [00:03<00:02,  3.92it/s](RtN Quant.) Layers:  55%|█████▍    | 12/22 [00:03<00:02,  3.96it/s](RtN Quant.) Layers:  59%|█████▉    | 13/22 [00:03<00:02,  3.98it/s](RtN Quant.) Layers:  64%|██████▎   | 14/22 [00:03<00:02,  3.95it/s](RtN Quant.) Layers:  68%|██████▊   | 15/22 [00:04<00:01,  3.96it/s](RtN Quant.) Layers:  73%|███████▎  | 16/22 [00:04<00:01,  3.96it/s](RtN Quant.) Layers:  77%|███████▋  | 17/22 [00:04<00:01,  3.98it/s](RtN Quant.) Layers:  82%|████████▏ | 18/22 [00:04<00:01,  3.98it/s](RtN Quant.) Layers:  86%|████████▋ | 19/22 [00:05<00:00,  3.96it/s](RtN Quant.) Layers:  91%|█████████ | 20/22 [00:05<00:00,  3.81it/s](RtN Quant.) Layers:  95%|█████████▌| 21/22 [00:05<00:00,  3.87it/s](RtN Quant.) Layers: 100%|██████████| 22/22 [00:05<00:00,  3.93it/s](RtN Quant.) Layers: 100%|██████████| 22/22 [00:05<00:00,  3.79it/s]
+2026-11-18 05:27:59,668 INFO GPU memory (from rtn_fwrd): 0.62 -> 0.62 GB (0.00 GB)
+QUANTIZATION_COMPLETE 7.240290934219956
+2026-11-18 05:28:00,341 WARNING Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+PPL_PROGRESS 1/166 elapsed=0.2s
+PPL_PROGRESS 10/166 elapsed=1.5s
+PPL_PROGRESS 20/166 elapsed=3.0s
+PPL_PROGRESS 30/166 elapsed=4.5s
+PPL_PROGRESS 40/166 elapsed=6.0s
+PPL_PROGRESS 50/166 elapsed=7.6s
+PPL_PROGRESS 60/166 elapsed=9.1s
+PPL_PROGRESS 70/166 elapsed=10.6s
+PPL_PROGRESS 80/166 elapsed=12.1s
+PPL_PROGRESS 90/166 elapsed=13.6s
+PPL_PROGRESS 100/166 elapsed=15.1s
+PPL_PROGRESS 110/166 elapsed=16.6s
+PPL_PROGRESS 120/166 elapsed=18.1s
+PPL_PROGRESS 130/166 elapsed=19.6s
+PPL_PROGRESS 140/166 elapsed=21.1s
+PPL_PROGRESS 150/166 elapsed=22.7s
+PPL_PROGRESS 160/166 elapsed=24.2s
+PPL_PROGRESS 166/166 elapsed=25.1s
+FINAL_RESULT {"ppl": 10.6941028374813, "nll_sum": 805226.2348640906, "evaluated_tokens": 339802, "test_blocks": 166, "quant_seconds": 7.240290934219956, "warmup_seconds": 0.3778657019138336, "eval_seconds": 25.071467807516456, "evaluated_tokens_per_second": 13553.334914764222, "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7", "id": "tinyllama_official_rtn_a16_s0", "kind": "eval", "model": "tinyllama", "stack": "official", "method": "rtn", "bits": 16, "seed": 0, "rotate": false, "status": "complete", "base_weight_dtype": "float32", "model_load_seconds": 2.5138237811625004, "worker_seconds": 35.210318606346846, "max_rss_kib": 7084872, "versions": {"torch": "2.11.0+cu128", "transformers": "4.44.2", "numpy": "1.26.4"}, "torch_peak_allocated_bytes": 5601473024, "torch_peak_reserved_bytes": 6157238272}

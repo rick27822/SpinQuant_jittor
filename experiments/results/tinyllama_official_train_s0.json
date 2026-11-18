@@ -1,0 +1,31 @@
+{
+  "steps": 100,
+  "loss_records": 100,
+  "first_loss": 2.617655038833618,
+  "last_loss": 1.9418457746505737,
+  "mean_loss": 2.2074084639549256,
+  "training_seconds": 896.1950766406953,
+  "initial_fixed_probe_loss": 2.2975767850875854,
+  "final_fixed_probe_loss": 2.279347777366638,
+  "orthogonality_probe_relative_error": 7.47026774661208e-07,
+  "rotation_sha256": "5515ae3518afa6744e8a1fe439d9a6f5fcebd684865ea39503e8a7c2c348c3f5",
+  "initial_rotation_sha256": "8ca5a0ea3d34d30eca38412c086118cedfeb33bd73ab140aa3bbb5affd6184c1",
+  "training_data_sha256": "d31277395112280f43a3cd4e64a74e6dab262f8d4d760a31ab0328ea94292b6c",
+  "id": "tinyllama_official_train_s0",
+  "kind": "train",
+  "model": "tinyllama",
+  "stack": "official",
+  "seed": 0,
+  "status": "complete",
+  "base_weight_dtype": "float32",
+  "model_load_seconds": 2.524968871846795,
+  "worker_seconds": 911.4932107646018,
+  "max_rss_kib": 7084540,
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "4.44.2",
+    "numpy": "1.26.4"
+  },
+  "torch_peak_allocated_bytes": 7536252416,
+  "torch_peak_reserved_bytes": 8579448832
+}

@@ -1,0 +1,6866 @@
+{
+  "protocol": {
+    "plan": "A",
+    "seeds": [
+      0
+    ],
+    "steps": 100,
+    "learning_rate": 1.5,
+    "scheduler": "cosine",
+    "batch_size": 1,
+    "gradient_accumulation": 1,
+    "gradient_clipping": 1.0,
+    "optimizer_seed": 42,
+    "official_gradient_checkpointing": true,
+    "train_w_bits": 16,
+    "train_akv_bits": 4,
+    "evaluation_seqlen": 2048,
+    "gptq_nsamples": 128,
+    "percdamp": 0.01,
+    "gptq_blocksize": 128,
+    "act_order": false,
+    "w_groupsize": -1,
+    "a_groupsize": -1,
+    "a_asym": true,
+    "k_asym": true,
+    "v_asym": true,
+    "w_clip": true,
+    "clip_ratio": 1.0,
+    "cpu_threads": 8,
+    "eval_warmup_blocks": 2,
+    "gpu_sample_interval": 10,
+    "gpu": 0,
+    "torch_python": "/root/miniconda3/envs/torch_env/bin/python",
+    "jittor_python": "/root/miniconda3/envs/jittor_env/bin/python",
+    "official_commit": "8f47aa3f00e8662caf1a484153920a07e5281c3a",
+    "official_source": "/root/autodl-tmp/SpinQuant_official_reference_8f47aa3",
+    "official_reference": "unmodified git archive; source scripts and Trainer defaults",
+    "models": {
+      "tinyllama": {
+        "path": "/root/autodl-tmp/SpinQuant_Project/data/models/TinyLlama-1.1B",
+        "dtype": "float32",
+        "train_seqlen": 2048,
+        "hidden_size": 2048,
+        "num_heads": 32,
+        "num_layers": 22,
+        "head_dim": 64
+      },
+      "mistral": {
+        "path": "/root/autodl-tmp/SpinQuant_Project/data/models/Mistral-7B-v0.1-jittor",
+        "dtype": "float16",
+        "train_seqlen": 512,
+        "hidden_size": 4096,
+        "num_heads": 32,
+        "num_layers": 32,
+        "head_dim": 128
+      }
+    },
+    "evaluation_definition": "nonoverlapping blocks; drop tail; mean FP32 next-token NLL; FP64 CPU aggregation; exp",
+    "caveats": [
+      "100-step resource-limited reproduction, not full paper-scale training.",
+      "TinyLlama exact upstream revision unconfirmed; local input hashes define model identity.",
+      "Mistral uses the same converted safetensors for both frameworks; conversion is checked tensor by tensor.",
+      "Official model, rotation, quantizer and optimizer modules run through a controlled adapter instead of HF Trainer.",
+      "No AMP loss scaling or warmup; clip global gradient norm to 1.0 per official Trainer default.",
+      "Official Trainer resets RNG to default training seed 42 after initialization; the adapter mirrors this in both frameworks.",
+      "Official gradient checkpointing is enabled; Jittor training has no checkpoint implementation. Memory/time therefore differ.",
+      "Official online weight rotations use FP64; Jittor uses working dtype. Numerical equivalence is not assumed.",
+      "Jittor SGDG uses NumPy and CPU; official uses torch. Finite precision differs.",
+      "GPTQ Hessian/factorization precision differs between frameworks.",
+      "Quantization time includes compile/setup; warmed PPL loop time is not an INT4 speed benchmark.",
+      "Fixed training probes are two held-out train blocks excluded from rotation optimization; not a test-set selection criterion."
+    ],
+    "tasks": [
+      {
+        "id": "tinyllama_official_float_a16_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "official",
+        "method": "float",
+        "bits": 16,
+        "seed": 0,
+        "rotate": false
+      },
+      {
+        "id": "tinyllama_official_rtn_a16_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "official",
+        "method": "rtn",
+        "bits": 16,
+        "seed": 0,
+        "rotate": false
+      },
+      {
+        "id": "tinyllama_official_rtn_a4_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "official",
+        "method": "rtn",
+        "bits": 4,
+        "seed": 0,
+        "rotate": false
+      },
+      {
+        "id": "tinyllama_jittor_float_a16_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "jittor",
+        "method": "float",
+        "bits": 16,
+        "seed": 0,
+        "rotate": false
+      },
+      {
+        "id": "tinyllama_jittor_rtn_a16_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "jittor",
+        "method": "rtn",
+        "bits": 16,
+        "seed": 0,
+        "rotate": false
+      },
+      {
+        "id": "tinyllama_jittor_rtn_a4_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "jittor",
+        "method": "rtn",
+        "bits": 4,
+        "seed": 0,
+        "rotate": false
+      },
+      {
+        "id": "mistral_official_float_a16_s0",
+        "kind": "eval",
+        "model": "mistral",
+        "stack": "official",
+        "method": "float",
+        "bits": 16,
+        "seed": 0,
+        "rotate": false
+      },
+      {
+        "id": "mistral_official_rtn_a16_s0",
+        "kind": "eval",
+        "model": "mistral",
+        "stack": "official",
+        "method": "rtn",
+        "bits": 16,
+        "seed": 0,
+        "rotate": false
+      },
+      {
+        "id": "mistral_official_rtn_a4_s0",
+        "kind": "eval",
+        "model": "mistral",
+        "stack": "official",
+        "method": "rtn",
+        "bits": 4,
+        "seed": 0,
+        "rotate": false
+      },
+      {
+        "id": "mistral_jittor_float_a16_s0",
+        "kind": "eval",
+        "model": "mistral",
+        "stack": "jittor",
+        "method": "float",
+        "bits": 16,
+        "seed": 0,
+        "rotate": false
+      },
+      {
+        "id": "mistral_jittor_rtn_a16_s0",
+        "kind": "eval",
+        "model": "mistral",
+        "stack": "jittor",
+        "method": "rtn",
+        "bits": 16,
+        "seed": 0,
+        "rotate": false
+      },
+      {
+        "id": "mistral_jittor_rtn_a4_s0",
+        "kind": "eval",
+        "model": "mistral",
+        "stack": "jittor",
+        "method": "rtn",
+        "bits": 4,
+        "seed": 0,
+        "rotate": false
+      },
+      {
+        "id": "tinyllama_official_train_s0",
+        "kind": "train",
+        "model": "tinyllama",
+        "stack": "official",
+        "seed": 0
+      },
+      {
+        "id": "tinyllama_official_sq_rtn_a16_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "official",
+        "method": "rtn",
+        "bits": 16,
+        "seed": 0,
+        "rotate": true,
+        "dependency": "tinyllama_official_train_s0"
+      },
+      {
+        "id": "tinyllama_official_sq_rtn_a4_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "official",
+        "method": "rtn",
+        "bits": 4,
+        "seed": 0,
+        "rotate": true,
+        "dependency": "tinyllama_official_train_s0"
+      },
+      {
+        "id": "tinyllama_jittor_train_s0",
+        "kind": "train",
+        "model": "tinyllama",
+        "stack": "jittor",
+        "seed": 0
+      },
+      {
+        "id": "tinyllama_jittor_sq_rtn_a16_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "jittor",
+        "method": "rtn",
+        "bits": 16,
+        "seed": 0,
+        "rotate": true,
+        "dependency": "tinyllama_jittor_train_s0"
+      },
+      {
+        "id": "tinyllama_jittor_sq_rtn_a4_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "jittor",
+        "method": "rtn",
+        "bits": 4,
+        "seed": 0,
+        "rotate": true,
+        "dependency": "tinyllama_jittor_train_s0"
+      },
+      {
+        "id": "mistral_official_train_s0",
+        "kind": "train",
+        "model": "mistral",
+        "stack": "official",
+        "seed": 0
+      },
+      {
+        "id": "mistral_official_sq_rtn_a16_s0",
+        "kind": "eval",
+        "model": "mistral",
+        "stack": "official",
+        "method": "rtn",
+        "bits": 16,
+        "seed": 0,
+        "rotate": true,
+        "dependency": "mistral_official_train_s0"
+      },
+      {
+        "id": "mistral_official_sq_rtn_a4_s0",
+        "kind": "eval",
+        "model": "mistral",
+        "stack": "official",
+        "method": "rtn",
+        "bits": 4,
+        "seed": 0,
+        "rotate": true,
+        "dependency": "mistral_official_train_s0"
+      },
+      {
+        "id": "mistral_jittor_train_s0",
+        "kind": "train",
+        "model": "mistral",
+        "stack": "jittor",
+        "seed": 0
+      },
+      {
+        "id": "mistral_jittor_sq_rtn_a16_s0",
+        "kind": "eval",
+        "model": "mistral",
+        "stack": "jittor",
+        "method": "rtn",
+        "bits": 16,
+        "seed": 0,
+        "rotate": true,
+        "dependency": "mistral_jittor_train_s0"
+      },
+      {
+        "id": "mistral_jittor_sq_rtn_a4_s0",
+        "kind": "eval",
+        "model": "mistral",
+        "stack": "jittor",
+        "method": "rtn",
+        "bits": 4,
+        "seed": 0,
+        "rotate": true,
+        "dependency": "mistral_jittor_train_s0"
+      },
+      {
+        "id": "tinyllama_official_gptq_a16_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "official",
+        "method": "gptq",
+        "bits": 16,
+        "seed": 0,
+        "rotate": false
+      },
+      {
+        "id": "tinyllama_official_gptq_a4_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "official",
+        "method": "gptq",
+        "bits": 4,
+        "seed": 0,
+        "rotate": false
+      },
+      {
+        "id": "tinyllama_official_sq_gptq_a16_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "official",
+        "method": "gptq",
+        "bits": 16,
+        "seed": 0,
+        "rotate": true,
+        "dependency": "tinyllama_official_train_s0"
+      },
+      {
+        "id": "tinyllama_official_sq_gptq_a4_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "official",
+        "method": "gptq",
+        "bits": 4,
+        "seed": 0,
+        "rotate": true,
+        "dependency": "tinyllama_official_train_s0"
+      },
+      {
+        "id": "tinyllama_jittor_gptq_a16_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "jittor",
+        "method": "gptq",
+        "bits": 16,
+        "seed": 0,
+        "rotate": false
+      },
+      {
+        "id": "tinyllama_jittor_gptq_a4_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "jittor",
+        "method": "gptq",
+        "bits": 4,
+        "seed": 0,
+        "rotate": false
+      },
+      {
+        "id": "tinyllama_jittor_sq_gptq_a16_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "jittor",
+        "method": "gptq",
+        "bits": 16,
+        "seed": 0,
+        "rotate": true,
+        "dependency": "tinyllama_jittor_train_s0"
+      },
+      {
+        "id": "tinyllama_jittor_sq_gptq_a4_s0",
+        "kind": "eval",
+        "model": "tinyllama",
+        "stack": "jittor",
+        "method": "gptq",
+        "bits": 4,
+        "seed": 0,
+        "rotate": true,
+        "dependency": "tinyllama_jittor_train_s0"
+      }
+    ]
+  },
+  "timing": {
+    "start": "2026-11-18T05:15:44.353803+08:00",
+    "end": "2026-11-18T11:33:16.273685+08:00",
+    "elapsed_seconds": 22651.919882774353,
+    "formal_task_wall_seconds": 21955.992718737572
+  },
+  "alignment": [
+    {
+      "model": "tinyllama",
+      "method": "FLOAT",
+      "precision": "FP32",
+      "official_ppl": 7.970236877105125,
+      "jittor_ppl": 7.970222683502634,
+      "signed_delta": -1.4193602491552326e-05,
+      "signed_relative_pct": -0.00017808256781437493,
+      "absolute_relative_pct": 0.00017808256781437493,
+      "official_id": "tinyllama_official_float_a16_s0",
+      "jittor_id": "tinyllama_jittor_float_a16_s0"
+    },
+    {
+      "model": "tinyllama",
+      "method": "RTN",
+      "precision": "W4A16",
+      "official_ppl": 10.6941028374813,
+      "jittor_ppl": 10.692187514043605,
+      "signed_delta": -0.0019153234376947381,
+      "signed_relative_pct": -0.017910089951467256,
+      "absolute_relative_pct": 0.017910089951467256,
+      "official_id": "tinyllama_official_rtn_a16_s0",
+      "jittor_id": "tinyllama_jittor_rtn_a16_s0"
+    },
+    {
+      "model": "tinyllama",
+      "method": "RTN",
+      "precision": "W4A4KV4",
+      "official_ppl": 162.72656152352013,
+      "jittor_ppl": 158.62532940792374,
+      "signed_delta": -4.101232115596389,
+      "signed_relative_pct": -2.5203212537638575,
+      "absolute_relative_pct": 2.5203212537638575,
+      "official_id": "tinyllama_official_rtn_a4_s0",
+      "jittor_id": "tinyllama_jittor_rtn_a4_s0"
+    },
+    {
+      "model": "tinyllama",
+      "method": "SpinQuant+RTN",
+      "precision": "W4A16",
+      "official_ppl": 9.223418506515182,
+      "jittor_ppl": 9.201868251498812,
+      "signed_delta": -0.0215502550163702,
+      "signed_relative_pct": -0.23364715589071494,
+      "absolute_relative_pct": 0.23364715589071494,
+      "official_id": "tinyllama_official_sq_rtn_a16_s0",
+      "jittor_id": "tinyllama_jittor_sq_rtn_a16_s0"
+    },
+    {
+      "model": "tinyllama",
+      "method": "SpinQuant+RTN",
+      "precision": "W4A4KV4",
+      "official_ppl": 11.092414002920737,
+      "jittor_ppl": 11.099379634320211,
+      "signed_delta": 0.006965631399474148,
+      "signed_relative_pct": 0.06279635251298377,
+      "absolute_relative_pct": 0.06279635251298377,
+      "official_id": "tinyllama_official_sq_rtn_a4_s0",
+      "jittor_id": "tinyllama_jittor_sq_rtn_a4_s0"
+    },
+    {
+      "model": "tinyllama",
+      "method": "GPTQ",
+      "precision": "W4A16",
+      "official_ppl": 9.049361470579967,
+      "jittor_ppl": 9.032440949106931,
+      "signed_delta": -0.016920521473036132,
+      "signed_relative_pct": -0.18698028063135474,
+      "absolute_relative_pct": 0.18698028063135474,
+      "official_id": "tinyllama_official_gptq_a16_s0",
+      "jittor_id": "tinyllama_jittor_gptq_a16_s0"
+    },
+    {
+      "model": "tinyllama",
+      "method": "GPTQ",
+      "precision": "W4A4KV4",
+      "official_ppl": 90.45472928108542,
+      "jittor_ppl": 95.30889210540774,
+      "signed_delta": 4.854162824322316,
+      "signed_relative_pct": 5.366400256683268,
+      "absolute_relative_pct": 5.366400256683268,
+      "official_id": "tinyllama_official_gptq_a4_s0",
+      "jittor_id": "tinyllama_jittor_gptq_a4_s0"
+    },
+    {
+      "model": "tinyllama",
+      "method": "SpinQuant+GPTQ",
+      "precision": "W4A16",
+      "official_ppl": 8.254007997157936,
+      "jittor_ppl": 8.262957181617253,
+      "signed_delta": 0.008949184459316584,
+      "signed_relative_pct": 0.10842228966094769,
+      "absolute_relative_pct": 0.10842228966094769,
+      "official_id": "tinyllama_official_sq_gptq_a16_s0",
+      "jittor_id": "tinyllama_jittor_sq_gptq_a16_s0"
+    },
+    {
+      "model": "tinyllama",
+      "method": "SpinQuant+GPTQ",
+      "precision": "W4A4KV4",
+      "official_ppl": 9.02576045745511,
+      "jittor_ppl": 9.020270708938748,
+      "signed_delta": -0.005489748516362525,
+      "signed_relative_pct": -0.06082311337908264,
+      "absolute_relative_pct": 0.06082311337908264,
+      "official_id": "tinyllama_official_sq_gptq_a4_s0",
+      "jittor_id": "tinyllama_jittor_sq_gptq_a4_s0"
+    },
+    {
+      "model": "mistral",
+      "method": "FLOAT",
+      "precision": "FP16",
+      "official_ppl": 5.253506688734234,
+      "jittor_ppl": 5.253465887579591,
+      "signed_delta": -4.0801154642444715e-05,
+      "signed_relative_pct": -0.0007766460967895128,
+      "absolute_relative_pct": 0.0007766460967895128,
+      "official_id": "mistral_official_float_a16_s0",
+      "jittor_id": "mistral_jittor_float_a16_s0"
+    },
+    {
+      "model": "mistral",
+      "method": "RTN",
+      "precision": "W4A16",
+      "official_ppl": 6.857750918428886,
+      "jittor_ppl": 6.860289358494414,
+      "signed_delta": 0.002538440065527503,
+      "signed_relative_pct": 0.037015635238457634,
+      "absolute_relative_pct": 0.037015635238457634,
+      "official_id": "mistral_official_rtn_a16_s0",
+      "jittor_id": "mistral_jittor_rtn_a16_s0"
+    },
+    {
+      "model": "mistral",
+      "method": "RTN",
+      "precision": "W4A4KV4",
+      "official_ppl": 496.9469316083471,
+      "jittor_ppl": 524.0416156068701,
+      "signed_delta": 27.09468399852301,
+      "signed_relative_pct": 5.452228854866292,
+      "absolute_relative_pct": 5.452228854866292,
+      "official_id": "mistral_official_rtn_a4_s0",
+      "jittor_id": "mistral_jittor_rtn_a4_s0"
+    },
+    {
+      "model": "mistral",
+      "method": "SpinQuant+RTN",
+      "precision": "W4A16",
+      "official_ppl": 5.655528551769416,
+      "jittor_ppl": 5.657497317712714,
+      "signed_delta": 0.0019687659432978677,
+      "signed_relative_pct": 0.03481135185290363,
+      "absolute_relative_pct": 0.03481135185290363,
+      "official_id": "mistral_official_sq_rtn_a16_s0",
+      "jittor_id": "mistral_jittor_sq_rtn_a16_s0"
+    },
+    {
+      "model": "mistral",
+      "method": "SpinQuant+RTN",
+      "precision": "W4A4KV4",
+      "official_ppl": 6.121279514993255,
+      "jittor_ppl": 6.0952743153577345,
+      "signed_delta": -0.02600519963552017,
+      "signed_relative_pct": -0.4248327424327569,
+      "absolute_relative_pct": 0.4248327424327569,
+      "official_id": "mistral_official_sq_rtn_a4_s0",
+      "jittor_id": "mistral_jittor_sq_rtn_a4_s0"
+    }
+  ],
+  "training": [
+    {
+      "steps": 100,
+      "loss_records": 100,
+      "first_loss": 2.617655038833618,
+      "last_loss": 1.9418457746505737,
+      "mean_loss": 2.2074084639549256,
+      "training_seconds": 896.1950766406953,
+      "initial_fixed_probe_loss": 2.2975767850875854,
+      "final_fixed_probe_loss": 2.279347777366638,
+      "orthogonality_probe_relative_error": 7.47026774661208e-07,
+      "rotation_sha256": "5515ae3518afa6744e8a1fe439d9a6f5fcebd684865ea39503e8a7c2c348c3f5",
+      "initial_rotation_sha256": "8ca5a0ea3d34d30eca38412c086118cedfeb33bd73ab140aa3bbb5affd6184c1",
+      "training_data_sha256": "d31277395112280f43a3cd4e64a74e6dab262f8d4d760a31ab0328ea94292b6c",
+      "id": "tinyllama_official_train_s0",
+      "kind": "train",
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 2.524968871846795,
+      "worker_seconds": 911.4932107646018,
+      "max_rss_kib": 7084540,
+      "versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.44.2",
+        "numpy": "1.26.4"
+      },
+      "torch_peak_allocated_bytes": 7536252416,
+      "torch_peak_reserved_bytes": 8579448832,
+      "last10_mean_loss": 2.127652478218079,
+      "first10_mean_loss": 2.2175166606903076,
+      "probe_relative_change": -0.007934014584088156,
+      "first_lr": 1.5,
+      "last_lr": 0.0003700797257013
+    },
+    {
+      "steps": 100,
+      "loss_records": 100,
+      "first_loss": 2.594762086868286,
+      "last_loss": 1.9409823417663574,
+      "mean_loss": 2.2066698873043062,
+      "training_seconds": 174.14571949280798,
+      "initial_fixed_probe_loss": 2.31453800201416,
+      "final_fixed_probe_loss": 2.2934536933898926,
+      "orthogonality_probe_relative_error": 4.6872574444023485e-07,
+      "rotation_sha256": "0a490118da42cf80685cdfb3b82fe35895b97a1dc332266de5f68ba96f86ddc3",
+      "initial_rotation_sha256": "8ca5a0ea3d34d30eca38412c086118cedfeb33bd73ab140aa3bbb5affd6184c1",
+      "training_data_sha256": "d31277395112280f43a3cd4e64a74e6dab262f8d4d760a31ab0328ea94292b6c",
+      "id": "tinyllama_jittor_train_s0",
+      "kind": "train",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 6.906211918219924,
+      "worker_seconds": 183.05738786049187,
+      "max_rss_kib": 9142492,
+      "versions": {
+        "jittor": "1.3.8.5",
+        "transformers": "5.20.2",
+        "numpy": "1.26.4"
+      },
+      "last10_mean_loss": 2.131454515457153,
+      "first10_mean_loss": 2.218420958518982,
+      "probe_relative_change": -0.00910951066948118,
+      "first_lr": 1.5,
+      "last_lr": 0.0003700797257013
+    },
+    {
+      "steps": 100,
+      "loss_records": 100,
+      "first_loss": 1.7627933025360107,
+      "last_loss": 2.148301362991333,
+      "mean_loss": 2.045591914653778,
+      "training_seconds": 11297.913047537208,
+      "initial_fixed_probe_loss": 2.151769995689392,
+      "final_fixed_probe_loss": 2.1276865005493164,
+      "orthogonality_probe_relative_error": 6.03249191044597e-07,
+      "rotation_sha256": "f8ad3bfd285572232ee8a3ca537decdcfbefc6ce2664d9069aed1394710dff04",
+      "initial_rotation_sha256": "fd6e9ddc1d44c822b3c3e02d703264a56a93318a8a71a9374a17330262197990",
+      "training_data_sha256": "d5d76502e1b0da21e70df964be0fbc65515bb6753ca09f1a4e8caeeff40c7648",
+      "id": "mistral_official_train_s0",
+      "kind": "train",
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "status": "complete",
+      "base_weight_dtype": "float16",
+      "model_load_seconds": 5.348366303369403,
+      "worker_seconds": 11453.923231359571,
+      "max_rss_kib": 28927668,
+      "versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.44.2",
+        "numpy": "1.26.4"
+      },
+      "torch_peak_allocated_bytes": 17955638784,
+      "torch_peak_reserved_bytes": 18268291072,
+      "last10_mean_loss": 2.2726718902587892,
+      "first10_mean_loss": 2.2869715809822084,
+      "probe_relative_change": -0.011192411451187545,
+      "first_lr": 1.5,
+      "last_lr": 0.0003700797257013
+    },
+    {
+      "steps": 100,
+      "loss_records": 100,
+      "first_loss": 1.8046157360076904,
+      "last_loss": 2.159428596496582,
+      "mean_loss": 2.0466349685192107,
+      "training_seconds": 654.0616546105593,
+      "initial_fixed_probe_loss": 2.138227105140686,
+      "final_fixed_probe_loss": 2.1422643661499023,
+      "orthogonality_probe_relative_error": 6.024087610967399e-07,
+      "rotation_sha256": "24ac58f25b82dfa38ff3d0551542272873e9a178006b1282cfb8b4b6a201425e",
+      "initial_rotation_sha256": "fd6e9ddc1d44c822b3c3e02d703264a56a93318a8a71a9374a17330262197990",
+      "training_data_sha256": "d5d76502e1b0da21e70df964be0fbc65515bb6753ca09f1a4e8caeeff40c7648",
+      "id": "mistral_jittor_train_s0",
+      "kind": "train",
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "status": "complete",
+      "base_weight_dtype": "float16",
+      "model_load_seconds": 58.97901165112853,
+      "worker_seconds": 720.5509555023164,
+      "max_rss_kib": 42966900,
+      "versions": {
+        "jittor": "1.3.8.5",
+        "transformers": "5.20.2",
+        "numpy": "1.26.4"
+      },
+      "last10_mean_loss": 2.2748897075653076,
+      "first10_mean_loss": 2.2832555770874023,
+      "probe_relative_change": 0.0018881348007935284,
+      "first_lr": 1.5,
+      "last_lr": 0.0003700797257013
+    }
+  ],
+  "evals": [
+    {
+      "ppl": 7.970236877105125,
+      "nll_sum": 705331.8411596535,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 0.7503842040896416,
+      "warmup_seconds": 0.540514912456274,
+      "eval_seconds": 25.099849684163928,
+      "evaluated_tokens_per_second": 13538.009361641272,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "id": "tinyllama_official_float_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "float",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false,
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 2.4683571998029947,
+      "worker_seconds": 28.86668937280774,
+      "max_rss_kib": 7085340,
+      "versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.44.2",
+        "numpy": "1.26.4"
+      },
+      "torch_peak_allocated_bytes": 5601473024,
+      "torch_peak_reserved_bytes": 6157238272
+    },
+    {
+      "ppl": 10.6941028374813,
+      "nll_sum": 805226.2348640906,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 7.240290934219956,
+      "warmup_seconds": 0.3778657019138336,
+      "eval_seconds": 25.071467807516456,
+      "evaluated_tokens_per_second": 13553.334914764222,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "id": "tinyllama_official_rtn_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "rtn",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false,
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 2.5138237811625004,
+      "worker_seconds": 35.210318606346846,
+      "max_rss_kib": 7084872,
+      "versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.44.2",
+        "numpy": "1.26.4"
+      },
+      "torch_peak_allocated_bytes": 5601473024,
+      "torch_peak_reserved_bytes": 6157238272
+    },
+    {
+      "ppl": 162.72656152352013,
+      "nll_sum": 1730295.9967617595,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 8.537346944212914,
+      "warmup_seconds": 0.5401794333010912,
+      "eval_seconds": 32.26672153174877,
+      "evaluated_tokens_per_second": 10531.035812412878,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "id": "tinyllama_official_rtn_a4_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "rtn",
+      "bits": 4,
+      "seed": 0,
+      "rotate": false,
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 2.5545823480933905,
+      "worker_seconds": 43.90520614385605,
+      "max_rss_kib": 7085260,
+      "versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.44.2",
+        "numpy": "1.26.4"
+      },
+      "torch_peak_allocated_bytes": 5601304064,
+      "torch_peak_reserved_bytes": 6186598400
+    },
+    {
+      "ppl": 7.970222683502634,
+      "nll_sum": 705331.2360309876,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 0.02760384790599346,
+      "warmup_seconds": 3.7234702222049236,
+      "eval_seconds": 24.473461942747235,
+      "evaluated_tokens_per_second": 13884.508893548715,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "id": "tinyllama_jittor_float_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "float",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false,
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 9.667914621531963,
+      "worker_seconds": 37.90077346004546,
+      "max_rss_kib": 9142456,
+      "versions": {
+        "jittor": "1.3.8.5",
+        "transformers": "5.20.2",
+        "numpy": "1.26.4"
+      }
+    },
+    {
+      "ppl": 10.692187514043605,
+      "nll_sum": 805165.370569646,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 5.285262309014797,
+      "warmup_seconds": 0.7444703932851553,
+      "eval_seconds": 24.375460689887404,
+      "evaluated_tokens_per_second": 13940.331398166063,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "id": "tinyllama_jittor_rtn_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "rtn",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false,
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 9.430766396224499,
+      "worker_seconds": 39.846449403092265,
+      "max_rss_kib": 9142660,
+      "versions": {
+        "jittor": "1.3.8.5",
+        "transformers": "5.20.2",
+        "numpy": "1.26.4"
+      }
+    },
+    {
+      "ppl": 158.62532940792374,
+      "nll_sum": 1721622.1250000212,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 5.047447206452489,
+      "warmup_seconds": 0.9664633311331272,
+      "eval_seconds": 33.7772395350039,
+      "evaluated_tokens_per_second": 10060.087937258984,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "id": "tinyllama_jittor_rtn_a4_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "rtn",
+      "bits": 4,
+      "seed": 0,
+      "rotate": false,
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 7.19930430687964,
+      "worker_seconds": 46.997611962258816,
+      "max_rss_kib": 9142660,
+      "versions": {
+        "jittor": "1.3.8.5",
+        "transformers": "5.20.2",
+        "numpy": "1.26.4"
+      }
+    },
+    {
+      "ppl": 5.253506688734234,
+      "nll_sum": 553508.8296358463,
+      "evaluated_tokens": 333661,
+      "test_blocks": 163,
+      "quant_seconds": 0.7924936339259148,
+      "warmup_seconds": 0.6709811892360449,
+      "eval_seconds": 32.122615898028016,
+      "evaluated_tokens_per_second": 10387.105491632243,
+      "test_sha256": "168d1667bc8ef768d3195ed07f6498ce3f4f8b6cdbb2ee968d793bec1155dce9",
+      "id": "mistral_official_float_a16_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "official",
+      "method": "float",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false,
+      "status": "complete",
+      "base_weight_dtype": "float16",
+      "model_load_seconds": 5.451991181820631,
+      "worker_seconds": 39.044796995818615,
+      "max_rss_kib": 28927352,
+      "versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.44.2",
+        "numpy": "1.26.4"
+      },
+      "torch_peak_allocated_bytes": 15676571136,
+      "torch_peak_reserved_bytes": 15839789056
+    },
+    {
+      "ppl": 6.857750918428886,
+      "nll_sum": 642424.0605355989,
+      "evaluated_tokens": 333661,
+      "test_blocks": 163,
+      "quant_seconds": 35.26469325274229,
+      "warmup_seconds": 0.6422940418124199,
+      "eval_seconds": 32.198480140417814,
+      "evaluated_tokens_per_second": 10362.631979674254,
+      "test_sha256": "168d1667bc8ef768d3195ed07f6498ce3f4f8b6cdbb2ee968d793bec1155dce9",
+      "id": "mistral_official_rtn_a16_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "official",
+      "method": "rtn",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false,
+      "status": "complete",
+      "base_weight_dtype": "float16",
+      "model_load_seconds": 5.293695379048586,
+      "worker_seconds": 73.40598570369184,
+      "max_rss_kib": 28927844,
+      "versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.44.2",
+        "numpy": "1.26.4"
+      },
+      "torch_peak_allocated_bytes": 15676571136,
+      "torch_peak_reserved_bytes": 15835594752
+    },
+    {
+      "ppl": 496.9469316083471,
+      "nll_sum": 2071528.7273251116,
+      "evaluated_tokens": 333661,
+      "test_blocks": 163,
+      "quant_seconds": 35.41981895454228,
+      "warmup_seconds": 1.0238908361643553,
+      "eval_seconds": 51.69402992911637,
+      "evaluated_tokens_per_second": 6454.536441781014,
+      "test_sha256": "168d1667bc8ef768d3195ed07f6498ce3f4f8b6cdbb2ee968d793bec1155dce9",
+      "id": "mistral_official_rtn_a4_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "official",
+      "method": "rtn",
+      "bits": 4,
+      "seed": 0,
+      "rotate": false,
+      "status": "complete",
+      "base_weight_dtype": "float16",
+      "model_load_seconds": 8.241573533043265,
+      "worker_seconds": 96.3867497779429,
+      "max_rss_kib": 28927540,
+      "versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.44.2",
+        "numpy": "1.26.4"
+      },
+      "torch_peak_allocated_bytes": 15676325376,
+      "torch_peak_reserved_bytes": 15986589696
+    },
+    {
+      "ppl": 5.253465887579591,
+      "nll_sum": 553506.2382606504,
+      "evaluated_tokens": 333661,
+      "test_blocks": 163,
+      "quant_seconds": 0.042898012325167656,
+      "warmup_seconds": 4.3067990858107805,
+      "eval_seconds": 44.00754098407924,
+      "evaluated_tokens_per_second": 7581.905113051185,
+      "test_sha256": "168d1667bc8ef768d3195ed07f6498ce3f4f8b6cdbb2ee968d793bec1155dce9",
+      "id": "mistral_jittor_float_a16_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "jittor",
+      "method": "float",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false,
+      "status": "complete",
+      "base_weight_dtype": "float16",
+      "model_load_seconds": 64.34590293839574,
+      "worker_seconds": 112.71400097757578,
+      "max_rss_kib": 42966992,
+      "versions": {
+        "jittor": "1.3.8.5",
+        "transformers": "5.20.2",
+        "numpy": "1.26.4"
+      }
+    },
+    {
+      "ppl": 6.860289358494414,
+      "nll_sum": 642547.5444215292,
+      "evaluated_tokens": 333661,
+      "test_blocks": 163,
+      "quant_seconds": 27.91682790964842,
+      "warmup_seconds": 1.8923033028841019,
+      "eval_seconds": 42.83911454305053,
+      "evaluated_tokens_per_second": 7788.699732920305,
+      "test_sha256": "168d1667bc8ef768d3195ed07f6498ce3f4f8b6cdbb2ee968d793bec1155dce9",
+      "id": "mistral_jittor_rtn_a16_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "jittor",
+      "method": "rtn",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false,
+      "status": "complete",
+      "base_weight_dtype": "float16",
+      "model_load_seconds": 60.91569653339684,
+      "worker_seconds": 133.57334231585264,
+      "max_rss_kib": 42966772,
+      "versions": {
+        "jittor": "1.3.8.5",
+        "transformers": "5.20.2",
+        "numpy": "1.26.4"
+      }
+    },
+    {
+      "ppl": 524.0416156068701,
+      "nll_sum": 2089242.0748853844,
+      "evaluated_tokens": 333661,
+      "test_blocks": 163,
+      "quant_seconds": 12.66038154438138,
+      "warmup_seconds": 7.890432083979249,
+      "eval_seconds": 65.98114702291787,
+      "evaluated_tokens_per_second": 5056.91421041993,
+      "test_sha256": "168d1667bc8ef768d3195ed07f6498ce3f4f8b6cdbb2ee968d793bec1155dce9",
+      "id": "mistral_jittor_rtn_a4_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "jittor",
+      "method": "rtn",
+      "bits": 4,
+      "seed": 0,
+      "rotate": false,
+      "status": "complete",
+      "base_weight_dtype": "float16",
+      "model_load_seconds": 60.2394820060581,
+      "worker_seconds": 146.79193659126759,
+      "max_rss_kib": 42967020,
+      "versions": {
+        "jittor": "1.3.8.5",
+        "transformers": "5.20.2",
+        "numpy": "1.26.4"
+      }
+    },
+    {
+      "ppl": 9.223418506515182,
+      "nll_sum": 754953.6458149387,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 17.792124718427658,
+      "warmup_seconds": 0.34644690528512,
+      "eval_seconds": 25.346669021993876,
+      "evaluated_tokens_per_second": 13406.179711627834,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "rotation_sha256": "3b7ed2e18c96c6b682522cd8d2f1128be6dce525fbafbb8efc63e3b7061a7b14",
+      "id": "tinyllama_official_sq_rtn_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "rtn",
+      "bits": 16,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "tinyllama_official_train_s0",
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 2.4806172754615545,
+      "worker_seconds": 45.98756072856486,
+      "max_rss_kib": 7085100,
+      "versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.44.2",
+        "numpy": "1.26.4"
+      },
+      "torch_peak_allocated_bytes": 5601653248,
+      "torch_peak_reserved_bytes": 6155141120
+    },
+    {
+      "ppl": 11.092414002920737,
+      "nll_sum": 817652.4537486958,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 17.371473290026188,
+      "warmup_seconds": 0.46339423954486847,
+      "eval_seconds": 32.6296249050647,
+      "evaluated_tokens_per_second": 10413.910701966317,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "rotation_sha256": "3b7ed2e18c96c6b682522cd8d2f1128be6dce525fbafbb8efc63e3b7061a7b14",
+      "id": "tinyllama_official_sq_rtn_a4_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "rtn",
+      "bits": 4,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "tinyllama_official_train_s0",
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 2.463272787630558,
+      "worker_seconds": 52.9493792951107,
+      "max_rss_kib": 7084832,
+      "versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.44.2",
+        "numpy": "1.26.4"
+      },
+      "torch_peak_allocated_bytes": 5601484288,
+      "torch_peak_reserved_bytes": 5647630336
+    },
+    {
+      "ppl": 9.201868251498812,
+      "nll_sum": 754158.7791525763,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 25.983308656141162,
+      "warmup_seconds": 0.7047870457172394,
+      "eval_seconds": 27.63733711093664,
+      "evaluated_tokens_per_second": 12295.034019957502,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "rotation_sha256": "0a490118da42cf80685cdfb3b82fe35895b97a1dc332266de5f68ba96f86ddc3",
+      "id": "tinyllama_jittor_sq_rtn_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "rtn",
+      "bits": 16,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "tinyllama_jittor_train_s0",
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 7.629512943327427,
+      "worker_seconds": 61.974519515410066,
+      "max_rss_kib": 9142524,
+      "versions": {
+        "jittor": "1.3.8.5",
+        "transformers": "5.20.2",
+        "numpy": "1.26.4"
+      }
+    },
+    {
+      "ppl": 11.099379634320211,
+      "nll_sum": 817865.7700400446,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 26.734416235238314,
+      "warmup_seconds": 0.9392670169472694,
+      "eval_seconds": 37.670048320665956,
+      "evaluated_tokens_per_second": 9020.482190716573,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "rotation_sha256": "0a490118da42cf80685cdfb3b82fe35895b97a1dc332266de5f68ba96f86ddc3",
+      "id": "tinyllama_jittor_sq_rtn_a4_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "rtn",
+      "bits": 4,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "tinyllama_jittor_train_s0",
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 7.445872377604246,
+      "worker_seconds": 72.80906300246716,
+      "max_rss_kib": 9142388,
+      "versions": {
+        "jittor": "1.3.8.5",
+        "transformers": "5.20.2",
+        "numpy": "1.26.4"
+      }
+    },
+    {
+      "ppl": 5.655528551769416,
+      "nll_sum": 578112.2500911212,
+      "evaluated_tokens": 333661,
+      "test_blocks": 163,
+      "quant_seconds": 119.50210601836443,
+      "warmup_seconds": 0.5292724277824163,
+      "eval_seconds": 32.778289606794715,
+      "evaluated_tokens_per_second": 10179.329184120526,
+      "test_sha256": "168d1667bc8ef768d3195ed07f6498ce3f4f8b6cdbb2ee968d793bec1155dce9",
+      "rotation_sha256": "a510db2e32b7a7ab096e2ca47e5e046ba76062f28dd1c466933a6b57fcc74d1f",
+      "id": "mistral_official_sq_rtn_a16_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "official",
+      "method": "rtn",
+      "bits": 16,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "mistral_official_train_s0",
+      "status": "complete",
+      "base_weight_dtype": "float16",
+      "model_load_seconds": 5.119358386844397,
+      "worker_seconds": 157.98954606242478,
+      "max_rss_kib": 28927748,
+      "versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.44.2",
+        "numpy": "1.26.4"
+      },
+      "torch_peak_allocated_bytes": 15676685824,
+      "torch_peak_reserved_bytes": 15835594752
+    },
+    {
+      "ppl": 6.121279514993255,
+      "nll_sum": 604517.3722618412,
+      "evaluated_tokens": 333661,
+      "test_blocks": 163,
+      "quant_seconds": 121.32013145647943,
+      "warmup_seconds": 0.8321967404335737,
+      "eval_seconds": 52.21532639488578,
+      "evaluated_tokens_per_second": 6390.096989467069,
+      "test_sha256": "168d1667bc8ef768d3195ed07f6498ce3f4f8b6cdbb2ee968d793bec1155dce9",
+      "rotation_sha256": "a510db2e32b7a7ab096e2ca47e5e046ba76062f28dd1c466933a6b57fcc74d1f",
+      "id": "mistral_official_sq_rtn_a4_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "official",
+      "method": "rtn",
+      "bits": 4,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "mistral_official_train_s0",
+      "status": "complete",
+      "base_weight_dtype": "float16",
+      "model_load_seconds": 5.136047191917896,
+      "worker_seconds": 179.564181888476,
+      "max_rss_kib": 28927264,
+      "versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.44.2",
+        "numpy": "1.26.4"
+      },
+      "torch_peak_allocated_bytes": 15676440064,
+      "torch_peak_reserved_bytes": 15986589696
+    },
+    {
+      "ppl": 5.657497317712714,
+      "nll_sum": 578228.3817834937,
+      "evaluated_tokens": 333661,
+      "test_blocks": 163,
+      "quant_seconds": 190.93251826800406,
+      "warmup_seconds": 3.0859033223241568,
+      "eval_seconds": 53.22782988473773,
+      "evaluated_tokens_per_second": 6268.544119167109,
+      "test_sha256": "168d1667bc8ef768d3195ed07f6498ce3f4f8b6cdbb2ee968d793bec1155dce9",
+      "rotation_sha256": "24ac58f25b82dfa38ff3d0551542272873e9a178006b1282cfb8b4b6a201425e",
+      "id": "mistral_jittor_sq_rtn_a16_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "jittor",
+      "method": "rtn",
+      "bits": 16,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "mistral_jittor_train_s0",
+      "status": "complete",
+      "base_weight_dtype": "float16",
+      "model_load_seconds": 62.9238689802587,
+      "worker_seconds": 310.23280543647707,
+      "max_rss_kib": 42966752,
+      "versions": {
+        "jittor": "1.3.8.5",
+        "transformers": "5.20.2",
+        "numpy": "1.26.4"
+      }
+    },
+    {
+      "ppl": 6.0952743153577345,
+      "nll_sum": 603096.8515254644,
+      "evaluated_tokens": 333661,
+      "test_blocks": 163,
+      "quant_seconds": 186.1045416072011,
+      "warmup_seconds": 7.416984044015408,
+      "eval_seconds": 78.1599336117506,
+      "evaluated_tokens_per_second": 4268.951937157701,
+      "test_sha256": "168d1667bc8ef768d3195ed07f6498ce3f4f8b6cdbb2ee968d793bec1155dce9",
+      "rotation_sha256": "24ac58f25b82dfa38ff3d0551542272873e9a178006b1282cfb8b4b6a201425e",
+      "id": "mistral_jittor_sq_rtn_a4_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "jittor",
+      "method": "rtn",
+      "bits": 4,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "mistral_jittor_train_s0",
+      "status": "complete",
+      "base_weight_dtype": "float16",
+      "model_load_seconds": 58.03220270015299,
+      "worker_seconds": 329.7789121083915,
+      "max_rss_kib": 42966744,
+      "versions": {
+        "jittor": "1.3.8.5",
+        "transformers": "5.20.2",
+        "numpy": "1.26.4"
+      }
+    },
+    {
+      "ppl": 9.049361470579967,
+      "nll_sum": 748479.8943736199,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 184.31273631937802,
+      "warmup_seconds": 0.3036377225071192,
+      "eval_seconds": 25.06770072504878,
+      "evaluated_tokens_per_second": 13555.371660411378,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "calibration_sha256": "93bd8fd355ff9326de39ffb7ab8f39ef0f84f64c9bc4fe67f9b7427cee75ae2d",
+      "id": "tinyllama_official_gptq_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "gptq",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false,
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 2.6341174989938736,
+      "worker_seconds": 212.32668204791844,
+      "max_rss_kib": 7084756,
+      "versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.44.2",
+        "numpy": "1.26.4"
+      },
+      "torch_peak_allocated_bytes": 7765758464,
+      "torch_peak_reserved_bytes": 8319401984
+    },
+    {
+      "ppl": 90.45472928108542,
+      "nll_sum": 1530756.8686475342,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 186.03661824204028,
+      "warmup_seconds": 0.4158002007752657,
+      "eval_seconds": 32.26645716279745,
+      "evaluated_tokens_per_second": 10531.122096409908,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "calibration_sha256": "93bd8fd355ff9326de39ffb7ab8f39ef0f84f64c9bc4fe67f9b7427cee75ae2d",
+      "id": "tinyllama_official_gptq_a4_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "gptq",
+      "bits": 4,
+      "seed": 0,
+      "rotate": false,
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 2.5048270002007484,
+      "worker_seconds": 221.232084043324,
+      "max_rss_kib": 7085196,
+      "versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.44.2",
+        "numpy": "1.26.4"
+      },
+      "torch_peak_allocated_bytes": 7765589504,
+      "torch_peak_reserved_bytes": 7811891200
+    },
+    {
+      "ppl": 8.254007997157936,
+      "nll_sum": 717219.7076900543,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 195.6497560236603,
+      "warmup_seconds": 0.30714395083487034,
+      "eval_seconds": 25.33327023498714,
+      "evaluated_tokens_per_second": 13413.27025086197,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "calibration_sha256": "93bd8fd355ff9326de39ffb7ab8f39ef0f84f64c9bc4fe67f9b7427cee75ae2d",
+      "rotation_sha256": "3b7ed2e18c96c6b682522cd8d2f1128be6dce525fbafbb8efc63e3b7061a7b14",
+      "id": "tinyllama_official_sq_gptq_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "gptq",
+      "bits": 16,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "tinyllama_official_train_s0",
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 2.412816233932972,
+      "worker_seconds": 223.7258774060756,
+      "max_rss_kib": 7137328,
+      "versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.44.2",
+        "numpy": "1.26.4"
+      },
+      "torch_peak_allocated_bytes": 7765938688,
+      "torch_peak_reserved_bytes": 8323596288
+    },
+    {
+      "ppl": 9.02576045745511,
+      "nll_sum": 747592.5226533776,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 197.40404277667403,
+      "warmup_seconds": 0.4067695774137974,
+      "eval_seconds": 32.68266190029681,
+      "evaluated_tokens_per_second": 10397.011144215096,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "calibration_sha256": "93bd8fd355ff9326de39ffb7ab8f39ef0f84f64c9bc4fe67f9b7427cee75ae2d",
+      "rotation_sha256": "3b7ed2e18c96c6b682522cd8d2f1128be6dce525fbafbb8efc63e3b7061a7b14",
+      "id": "tinyllama_official_sq_gptq_a4_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "gptq",
+      "bits": 4,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "tinyllama_official_train_s0",
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 2.4846339784562588,
+      "worker_seconds": 233.00222629122436,
+      "max_rss_kib": 7115908,
+      "versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "4.44.2",
+        "numpy": "1.26.4"
+      },
+      "torch_peak_allocated_bytes": 7765769728,
+      "torch_peak_reserved_bytes": 7828668416
+    },
+    {
+      "ppl": 9.032440949106931,
+      "nll_sum": 747843.9368974345,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 1307.2515395134687,
+      "warmup_seconds": 0.3254456799477339,
+      "eval_seconds": 24.345814617350698,
+      "evaluated_tokens_per_second": 13957.306639385604,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "calibration_sha256": "93bd8fd355ff9326de39ffb7ab8f39ef0f84f64c9bc4fe67f9b7427cee75ae2d",
+      "id": "tinyllama_jittor_gptq_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "gptq",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false,
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 7.109731642529368,
+      "worker_seconds": 1339.0415896568447,
+      "max_rss_kib": 14724200,
+      "versions": {
+        "jittor": "1.3.8.5",
+        "transformers": "5.20.2",
+        "numpy": "1.26.4"
+      }
+    },
+    {
+      "ppl": 95.30889210540774,
+      "nll_sum": 1548519.54796376,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 1339.397631553933,
+      "warmup_seconds": 0.533323623239994,
+      "eval_seconds": 33.789735458791256,
+      "evaluated_tokens_per_second": 10056.367573945949,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "calibration_sha256": "93bd8fd355ff9326de39ffb7ab8f39ef0f84f64c9bc4fe67f9b7427cee75ae2d",
+      "id": "tinyllama_jittor_gptq_a4_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "gptq",
+      "bits": 4,
+      "seed": 0,
+      "rotate": false,
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 7.021366687491536,
+      "worker_seconds": 1380.7517523709685,
+      "max_rss_kib": 14731060,
+      "versions": {
+        "jittor": "1.3.8.5",
+        "transformers": "5.20.2",
+        "numpy": "1.26.4"
+      }
+    },
+    {
+      "ppl": 8.262957181617253,
+      "nll_sum": 717587.9292177144,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 1380.3684858325869,
+      "warmup_seconds": 0.372958404943347,
+      "eval_seconds": 27.413375090807676,
+      "evaluated_tokens_per_second": 12395.482091292848,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "calibration_sha256": "93bd8fd355ff9326de39ffb7ab8f39ef0f84f64c9bc4fe67f9b7427cee75ae2d",
+      "rotation_sha256": "0a490118da42cf80685cdfb3b82fe35895b97a1dc332266de5f68ba96f86ddc3",
+      "id": "tinyllama_jittor_sq_gptq_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "gptq",
+      "bits": 16,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "tinyllama_jittor_train_s0",
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 7.046660186722875,
+      "worker_seconds": 1415.2240950763226,
+      "max_rss_kib": 14907616,
+      "versions": {
+        "jittor": "1.3.8.5",
+        "transformers": "5.20.2",
+        "numpy": "1.26.4"
+      }
+    },
+    {
+      "ppl": 9.020270708938748,
+      "nll_sum": 747385.7816181105,
+      "evaluated_tokens": 339802,
+      "test_blocks": 166,
+      "quant_seconds": 1392.2454088963568,
+      "warmup_seconds": 0.5666404515504837,
+      "eval_seconds": 36.99338569678366,
+      "evaluated_tokens_per_second": 9185.479879705728,
+      "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+      "calibration_sha256": "93bd8fd355ff9326de39ffb7ab8f39ef0f84f64c9bc4fe67f9b7427cee75ae2d",
+      "rotation_sha256": "0a490118da42cf80685cdfb3b82fe35895b97a1dc332266de5f68ba96f86ddc3",
+      "id": "tinyllama_jittor_sq_gptq_a4_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "gptq",
+      "bits": 4,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "tinyllama_jittor_train_s0",
+      "status": "complete",
+      "base_weight_dtype": "float32",
+      "model_load_seconds": 7.517450533807278,
+      "worker_seconds": 1437.346602132544,
+      "max_rss_kib": 14899928,
+      "versions": {
+        "jittor": "1.3.8.5",
+        "transformers": "5.20.2",
+        "numpy": "1.26.4"
+      }
+    }
+  ],
+  "performance": [
+    {
+      "id": "tinyllama_official_float_a16_s0",
+      "model": "tinyllama",
+      "stack": "official",
+      "kind": "eval",
+      "method": "float",
+      "rotate": false,
+      "akv_bits": 16,
+      "wall_seconds": 30.25094876997173,
+      "worker_seconds": 28.86668937280774,
+      "model_load_seconds": 2.4683571998029947,
+      "training_seconds": null,
+      "quant_seconds": 0.7503842040896416,
+      "warmup_seconds": 0.540514912456274,
+      "eval_seconds": 25.099849684163928,
+      "evaluated_tokens_per_second": 13538.009361641272,
+      "max_rss_gib": 6.757106781005859,
+      "sampled_peak_gpu_mib": 6565.0,
+      "source": "results/tinyllama_official_float_a16_s0.json; logs/tinyllama_official_float_a16_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_official_rtn_a16_s0",
+      "model": "tinyllama",
+      "stack": "official",
+      "kind": "eval",
+      "method": "rtn",
+      "rotate": false,
+      "akv_bits": 16,
+      "wall_seconds": 40.264138754457235,
+      "worker_seconds": 35.210318606346846,
+      "model_load_seconds": 2.5138237811625004,
+      "training_seconds": null,
+      "quant_seconds": 7.240290934219956,
+      "warmup_seconds": 0.3778657019138336,
+      "eval_seconds": 25.071467807516456,
+      "evaluated_tokens_per_second": 13553.334914764222,
+      "max_rss_gib": 6.756660461425781,
+      "sampled_peak_gpu_mib": 6567.0,
+      "source": "results/tinyllama_official_rtn_a16_s0.json; logs/tinyllama_official_rtn_a16_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_official_rtn_a4_s0",
+      "model": "tinyllama",
+      "stack": "official",
+      "kind": "eval",
+      "method": "rtn",
+      "rotate": false,
+      "akv_bits": 4,
+      "wall_seconds": 50.419884039089084,
+      "worker_seconds": 43.90520614385605,
+      "model_load_seconds": 2.5545823480933905,
+      "training_seconds": null,
+      "quant_seconds": 8.537346944212914,
+      "warmup_seconds": 0.5401794333010912,
+      "eval_seconds": 32.26672153174877,
+      "evaluated_tokens_per_second": 10531.035812412878,
+      "max_rss_gib": 6.757030487060547,
+      "sampled_peak_gpu_mib": 6595.0,
+      "source": "results/tinyllama_official_rtn_a4_s0.json; logs/tinyllama_official_rtn_a4_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_jittor_float_a16_s0",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "kind": "eval",
+      "method": "float",
+      "rotate": false,
+      "akv_bits": 16,
+      "wall_seconds": 40.34787363000214,
+      "worker_seconds": 37.90077346004546,
+      "model_load_seconds": 9.667914621531963,
+      "training_seconds": null,
+      "quant_seconds": 0.02760384790599346,
+      "warmup_seconds": 3.7234702222049236,
+      "eval_seconds": 24.473461942747235,
+      "evaluated_tokens_per_second": 13884.508893548715,
+      "max_rss_gib": 8.718925476074219,
+      "sampled_peak_gpu_mib": 6165.0,
+      "source": "results/tinyllama_jittor_float_a16_s0.json; logs/tinyllama_jittor_float_a16_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_jittor_rtn_a16_s0",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "kind": "eval",
+      "method": "rtn",
+      "rotate": false,
+      "akv_bits": 16,
+      "wall_seconds": 50.420193426311016,
+      "worker_seconds": 39.846449403092265,
+      "model_load_seconds": 9.430766396224499,
+      "training_seconds": null,
+      "quant_seconds": 5.285262309014797,
+      "warmup_seconds": 0.7444703932851553,
+      "eval_seconds": 24.375460689887404,
+      "evaluated_tokens_per_second": 13940.331398166063,
+      "max_rss_gib": 8.719120025634766,
+      "sampled_peak_gpu_mib": 6345.0,
+      "source": "results/tinyllama_jittor_rtn_a16_s0.json; logs/tinyllama_jittor_rtn_a16_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_jittor_rtn_a4_s0",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "kind": "eval",
+      "method": "rtn",
+      "rotate": false,
+      "akv_bits": 4,
+      "wall_seconds": 50.40308387577534,
+      "worker_seconds": 46.997611962258816,
+      "model_load_seconds": 7.19930430687964,
+      "training_seconds": null,
+      "quant_seconds": 5.047447206452489,
+      "warmup_seconds": 0.9664633311331272,
+      "eval_seconds": 33.7772395350039,
+      "evaluated_tokens_per_second": 10060.087937258984,
+      "max_rss_gib": 8.719120025634766,
+      "sampled_peak_gpu_mib": 7101.0,
+      "source": "results/tinyllama_jittor_rtn_a4_s0.json; logs/tinyllama_jittor_rtn_a4_s0.exit.json"
+    },
+    {
+      "id": "mistral_official_float_a16_s0",
+      "model": "mistral",
+      "stack": "official",
+      "kind": "eval",
+      "method": "float",
+      "rotate": false,
+      "akv_bits": 16,
+      "wall_seconds": 40.3551705442369,
+      "worker_seconds": 39.044796995818615,
+      "model_load_seconds": 5.451991181820631,
+      "training_seconds": null,
+      "quant_seconds": 0.7924936339259148,
+      "warmup_seconds": 0.6709811892360449,
+      "eval_seconds": 32.122615898028016,
+      "evaluated_tokens_per_second": 10387.105491632243,
+      "max_rss_gib": 27.58727264404297,
+      "sampled_peak_gpu_mib": 15799.0,
+      "source": "results/mistral_official_float_a16_s0.json; logs/mistral_official_float_a16_s0.exit.json"
+    },
+    {
+      "id": "mistral_official_rtn_a16_s0",
+      "model": "mistral",
+      "stack": "official",
+      "kind": "eval",
+      "method": "rtn",
+      "rotate": false,
+      "akv_bits": 16,
+      "wall_seconds": 80.71884892322123,
+      "worker_seconds": 73.40598570369184,
+      "model_load_seconds": 5.293695379048586,
+      "training_seconds": null,
+      "quant_seconds": 35.26469325274229,
+      "warmup_seconds": 0.6422940418124199,
+      "eval_seconds": 32.198480140417814,
+      "evaluated_tokens_per_second": 10362.631979674254,
+      "max_rss_gib": 27.58774185180664,
+      "sampled_peak_gpu_mib": 15797.0,
+      "source": "results/mistral_official_rtn_a16_s0.json; logs/mistral_official_rtn_a16_s0.exit.json"
+    },
+    {
+      "id": "mistral_official_rtn_a4_s0",
+      "model": "mistral",
+      "stack": "official",
+      "kind": "eval",
+      "method": "rtn",
+      "rotate": false,
+      "akv_bits": 4,
+      "wall_seconds": 100.92993275262415,
+      "worker_seconds": 96.3867497779429,
+      "model_load_seconds": 8.241573533043265,
+      "training_seconds": null,
+      "quant_seconds": 35.41981895454228,
+      "warmup_seconds": 1.0238908361643553,
+      "eval_seconds": 51.69402992911637,
+      "evaluated_tokens_per_second": 6454.536441781014,
+      "max_rss_gib": 27.587451934814453,
+      "sampled_peak_gpu_mib": 16001.0,
+      "source": "results/mistral_official_rtn_a4_s0.json; logs/mistral_official_rtn_a4_s0.exit.json"
+    },
+    {
+      "id": "mistral_jittor_float_a16_s0",
+      "model": "mistral",
+      "stack": "jittor",
+      "kind": "eval",
+      "method": "float",
+      "rotate": false,
+      "akv_bits": 16,
+      "wall_seconds": 121.02286884188652,
+      "worker_seconds": 112.71400097757578,
+      "model_load_seconds": 64.34590293839574,
+      "training_seconds": null,
+      "quant_seconds": 0.042898012325167656,
+      "warmup_seconds": 4.3067990858107805,
+      "eval_seconds": 44.00754098407924,
+      "evaluated_tokens_per_second": 7581.905113051185,
+      "max_rss_gib": 40.97651672363281,
+      "sampled_peak_gpu_mib": 16093.0,
+      "source": "results/mistral_jittor_float_a16_s0.json; logs/mistral_jittor_float_a16_s0.exit.json"
+    },
+    {
+      "id": "mistral_jittor_rtn_a16_s0",
+      "model": "mistral",
+      "stack": "jittor",
+      "kind": "eval",
+      "method": "rtn",
+      "rotate": false,
+      "akv_bits": 16,
+      "wall_seconds": 141.15292264521122,
+      "worker_seconds": 133.57334231585264,
+      "model_load_seconds": 60.91569653339684,
+      "training_seconds": null,
+      "quant_seconds": 27.91682790964842,
+      "warmup_seconds": 1.8923033028841019,
+      "eval_seconds": 42.83911454305053,
+      "evaluated_tokens_per_second": 7788.699732920305,
+      "max_rss_gib": 40.9763069152832,
+      "sampled_peak_gpu_mib": 17377.0,
+      "source": "results/mistral_jittor_rtn_a16_s0.json; logs/mistral_jittor_rtn_a16_s0.exit.json"
+    },
+    {
+      "id": "mistral_jittor_rtn_a4_s0",
+      "model": "mistral",
+      "stack": "jittor",
+      "kind": "eval",
+      "method": "rtn",
+      "rotate": false,
+      "akv_bits": 4,
+      "wall_seconds": 151.19715701974928,
+      "worker_seconds": 146.79193659126759,
+      "model_load_seconds": 60.2394820060581,
+      "training_seconds": null,
+      "quant_seconds": 12.66038154438138,
+      "warmup_seconds": 7.890432083979249,
+      "eval_seconds": 65.98114702291787,
+      "evaluated_tokens_per_second": 5056.91421041993,
+      "max_rss_gib": 40.97654342651367,
+      "sampled_peak_gpu_mib": 25669.0,
+      "source": "results/mistral_jittor_rtn_a4_s0.json; logs/mistral_jittor_rtn_a4_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_official_train_s0",
+      "model": "tinyllama",
+      "stack": "official",
+      "kind": "train",
+      "method": "W16A4KV4 training",
+      "rotate": null,
+      "akv_bits": null,
+      "wall_seconds": 917.2136855516583,
+      "worker_seconds": 911.4932107646018,
+      "model_load_seconds": 2.524968871846795,
+      "training_seconds": 896.1950766406953,
+      "quant_seconds": null,
+      "warmup_seconds": null,
+      "eval_seconds": null,
+      "evaluated_tokens_per_second": null,
+      "max_rss_gib": 6.756343841552734,
+      "sampled_peak_gpu_mib": 8951.0,
+      "source": "results/tinyllama_official_train_s0.json; logs/tinyllama_official_train_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_official_sq_rtn_a16_s0",
+      "model": "tinyllama",
+      "stack": "official",
+      "kind": "eval",
+      "method": "rtn",
+      "rotate": true,
+      "akv_bits": 16,
+      "wall_seconds": 50.44253173656762,
+      "worker_seconds": 45.98756072856486,
+      "model_load_seconds": 2.4806172754615545,
+      "training_seconds": null,
+      "quant_seconds": 17.792124718427658,
+      "warmup_seconds": 0.34644690528512,
+      "eval_seconds": 25.346669021993876,
+      "evaluated_tokens_per_second": 13406.179711627834,
+      "max_rss_gib": 6.756877899169922,
+      "sampled_peak_gpu_mib": 6565.0,
+      "source": "results/tinyllama_official_sq_rtn_a16_s0.json; logs/tinyllama_official_sq_rtn_a16_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_official_sq_rtn_a4_s0",
+      "model": "tinyllama",
+      "stack": "official",
+      "kind": "eval",
+      "method": "rtn",
+      "rotate": true,
+      "akv_bits": 4,
+      "wall_seconds": 60.58073236979544,
+      "worker_seconds": 52.9493792951107,
+      "model_load_seconds": 2.463272787630558,
+      "training_seconds": null,
+      "quant_seconds": 17.371473290026188,
+      "warmup_seconds": 0.46339423954486847,
+      "eval_seconds": 32.6296249050647,
+      "evaluated_tokens_per_second": 10413.910701966317,
+      "max_rss_gib": 6.756622314453125,
+      "sampled_peak_gpu_mib": 6081.0,
+      "source": "results/tinyllama_official_sq_rtn_a4_s0.json; logs/tinyllama_official_sq_rtn_a4_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_jittor_train_s0",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "kind": "train",
+      "method": "W16A4KV4 training",
+      "rotate": null,
+      "akv_bits": null,
+      "wall_seconds": 191.6909660063684,
+      "worker_seconds": 183.05738786049187,
+      "model_load_seconds": 6.906211918219924,
+      "training_seconds": 174.14571949280798,
+      "quant_seconds": null,
+      "warmup_seconds": null,
+      "eval_seconds": null,
+      "evaluated_tokens_per_second": null,
+      "max_rss_gib": 8.71895980834961,
+      "sampled_peak_gpu_mib": 53717.0,
+      "source": "results/tinyllama_jittor_train_s0.json; logs/tinyllama_jittor_train_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_jittor_sq_rtn_a16_s0",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "kind": "eval",
+      "method": "rtn",
+      "rotate": true,
+      "akv_bits": 16,
+      "wall_seconds": 70.5905254073441,
+      "worker_seconds": 61.974519515410066,
+      "model_load_seconds": 7.629512943327427,
+      "training_seconds": null,
+      "quant_seconds": 25.983308656141162,
+      "warmup_seconds": 0.7047870457172394,
+      "eval_seconds": 27.63733711093664,
+      "evaluated_tokens_per_second": 12295.034019957502,
+      "max_rss_gib": 8.718990325927734,
+      "sampled_peak_gpu_mib": 7787.0,
+      "source": "results/tinyllama_jittor_sq_rtn_a16_s0.json; logs/tinyllama_jittor_sq_rtn_a16_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_jittor_sq_rtn_a4_s0",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "kind": "eval",
+      "method": "rtn",
+      "rotate": true,
+      "akv_bits": 4,
+      "wall_seconds": 80.76191127859056,
+      "worker_seconds": 72.80906300246716,
+      "model_load_seconds": 7.445872377604246,
+      "training_seconds": null,
+      "quant_seconds": 26.734416235238314,
+      "warmup_seconds": 0.9392670169472694,
+      "eval_seconds": 37.670048320665956,
+      "evaluated_tokens_per_second": 9020.482190716573,
+      "max_rss_gib": 8.718860626220703,
+      "sampled_peak_gpu_mib": 7787.0,
+      "source": "results/tinyllama_jittor_sq_rtn_a4_s0.json; logs/tinyllama_jittor_sq_rtn_a4_s0.exit.json"
+    },
+    {
+      "id": "mistral_official_train_s0",
+      "model": "mistral",
+      "stack": "official",
+      "kind": "train",
+      "method": "W16A4KV4 training",
+      "rotate": null,
+      "akv_bits": null,
+      "wall_seconds": 11458.121794920415,
+      "worker_seconds": 11453.923231359571,
+      "model_load_seconds": 5.348366303369403,
+      "training_seconds": 11297.913047537208,
+      "quant_seconds": null,
+      "warmup_seconds": null,
+      "eval_seconds": null,
+      "evaluated_tokens_per_second": null,
+      "max_rss_gib": 27.587574005126953,
+      "sampled_peak_gpu_mib": 18193.0,
+      "source": "results/mistral_official_train_s0.json; logs/mistral_official_train_s0.exit.json"
+    },
+    {
+      "id": "mistral_official_sq_rtn_a16_s0",
+      "model": "mistral",
+      "stack": "official",
+      "kind": "eval",
+      "method": "rtn",
+      "rotate": true,
+      "akv_bits": 16,
+      "wall_seconds": 161.25755859538913,
+      "worker_seconds": 157.98954606242478,
+      "model_load_seconds": 5.119358386844397,
+      "training_seconds": null,
+      "quant_seconds": 119.50210601836443,
+      "warmup_seconds": 0.5292724277824163,
+      "eval_seconds": 32.778289606794715,
+      "evaluated_tokens_per_second": 10179.329184120526,
+      "max_rss_gib": 27.587650299072266,
+      "sampled_peak_gpu_mib": 15797.0,
+      "source": "results/mistral_official_sq_rtn_a16_s0.json; logs/mistral_official_sq_rtn_a16_s0.exit.json"
+    },
+    {
+      "id": "mistral_official_sq_rtn_a4_s0",
+      "model": "mistral",
+      "stack": "official",
+      "kind": "eval",
+      "method": "rtn",
+      "rotate": true,
+      "akv_bits": 4,
+      "wall_seconds": 181.58086425065994,
+      "worker_seconds": 179.564181888476,
+      "model_load_seconds": 5.136047191917896,
+      "training_seconds": null,
+      "quant_seconds": 121.32013145647943,
+      "warmup_seconds": 0.8321967404335737,
+      "eval_seconds": 52.21532639488578,
+      "evaluated_tokens_per_second": 6390.096989467069,
+      "max_rss_gib": 27.587188720703125,
+      "sampled_peak_gpu_mib": 15941.0,
+      "source": "results/mistral_official_sq_rtn_a4_s0.json; logs/mistral_official_sq_rtn_a4_s0.exit.json"
+    },
+    {
+      "id": "mistral_jittor_train_s0",
+      "model": "mistral",
+      "stack": "jittor",
+      "kind": "train",
+      "method": "W16A4KV4 training",
+      "rotate": null,
+      "akv_bits": null,
+      "wall_seconds": 725.8815130162984,
+      "worker_seconds": 720.5509555023164,
+      "model_load_seconds": 58.97901165112853,
+      "training_seconds": 654.0616546105593,
+      "quant_seconds": null,
+      "warmup_seconds": null,
+      "eval_seconds": null,
+      "evaluated_tokens_per_second": null,
+      "max_rss_gib": 40.9764289855957,
+      "sampled_peak_gpu_mib": 47015.0,
+      "source": "results/mistral_jittor_train_s0.json; logs/mistral_jittor_train_s0.exit.json"
+    },
+    {
+      "id": "mistral_jittor_sq_rtn_a16_s0",
+      "model": "mistral",
+      "stack": "jittor",
+      "kind": "eval",
+      "method": "rtn",
+      "rotate": true,
+      "akv_bits": 16,
+      "wall_seconds": 312.66395089402795,
+      "worker_seconds": 310.23280543647707,
+      "model_load_seconds": 62.9238689802587,
+      "training_seconds": null,
+      "quant_seconds": 190.93251826800406,
+      "warmup_seconds": 3.0859033223241568,
+      "eval_seconds": 53.22782988473773,
+      "evaluated_tokens_per_second": 6268.544119167109,
+      "max_rss_gib": 40.976287841796875,
+      "sampled_peak_gpu_mib": 44437.0,
+      "source": "results/mistral_jittor_sq_rtn_a16_s0.json; logs/mistral_jittor_sq_rtn_a16_s0.exit.json"
+    },
+    {
+      "id": "mistral_jittor_sq_rtn_a4_s0",
+      "model": "mistral",
+      "stack": "jittor",
+      "kind": "eval",
+      "method": "rtn",
+      "rotate": true,
+      "akv_bits": 4,
+      "wall_seconds": 332.57305736094713,
+      "worker_seconds": 329.7789121083915,
+      "model_load_seconds": 58.03220270015299,
+      "training_seconds": null,
+      "quant_seconds": 186.1045416072011,
+      "warmup_seconds": 7.416984044015408,
+      "eval_seconds": 78.1599336117506,
+      "evaluated_tokens_per_second": 4268.951937157701,
+      "max_rss_gib": 40.976280212402344,
+      "sampled_peak_gpu_mib": 44437.0,
+      "source": "results/mistral_jittor_sq_rtn_a4_s0.json; logs/mistral_jittor_sq_rtn_a4_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_official_gptq_a16_s0",
+      "model": "tinyllama",
+      "stack": "official",
+      "kind": "eval",
+      "method": "gptq",
+      "rotate": false,
+      "akv_bits": 16,
+      "wall_seconds": 221.91173204779625,
+      "worker_seconds": 212.32668204791844,
+      "model_load_seconds": 2.6341174989938736,
+      "training_seconds": null,
+      "quant_seconds": 184.31273631937802,
+      "warmup_seconds": 0.3036377225071192,
+      "eval_seconds": 25.06770072504878,
+      "evaluated_tokens_per_second": 13555.371660411378,
+      "max_rss_gib": 6.756549835205078,
+      "sampled_peak_gpu_mib": 10303.0,
+      "source": "results/tinyllama_official_gptq_a16_s0.json; logs/tinyllama_official_gptq_a16_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_official_gptq_a4_s0",
+      "model": "tinyllama",
+      "stack": "official",
+      "kind": "eval",
+      "method": "gptq",
+      "rotate": false,
+      "akv_bits": 4,
+      "wall_seconds": 232.0582104343921,
+      "worker_seconds": 221.232084043324,
+      "model_load_seconds": 2.5048270002007484,
+      "training_seconds": null,
+      "quant_seconds": 186.03661824204028,
+      "warmup_seconds": 0.4158002007752657,
+      "eval_seconds": 32.26645716279745,
+      "evaluated_tokens_per_second": 10531.122096409908,
+      "max_rss_gib": 6.756969451904297,
+      "sampled_peak_gpu_mib": 10303.0,
+      "source": "results/tinyllama_official_gptq_a4_s0.json; logs/tinyllama_official_gptq_a4_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_official_sq_gptq_a16_s0",
+      "model": "tinyllama",
+      "stack": "official",
+      "kind": "eval",
+      "method": "gptq",
+      "rotate": true,
+      "akv_bits": 16,
+      "wall_seconds": 231.71121835522354,
+      "worker_seconds": 223.7258774060756,
+      "model_load_seconds": 2.412816233932972,
+      "training_seconds": null,
+      "quant_seconds": 195.6497560236603,
+      "warmup_seconds": 0.30714395083487034,
+      "eval_seconds": 25.33327023498714,
+      "evaluated_tokens_per_second": 13413.27025086197,
+      "max_rss_gib": 6.8066864013671875,
+      "sampled_peak_gpu_mib": 8701.0,
+      "source": "results/tinyllama_official_sq_gptq_a16_s0.json; logs/tinyllama_official_sq_gptq_a16_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_official_sq_gptq_a4_s0",
+      "model": "tinyllama",
+      "stack": "official",
+      "kind": "eval",
+      "method": "gptq",
+      "rotate": true,
+      "akv_bits": 4,
+      "wall_seconds": 242.13716139644384,
+      "worker_seconds": 233.00222629122436,
+      "model_load_seconds": 2.4846339784562588,
+      "training_seconds": null,
+      "quant_seconds": 197.40404277667403,
+      "warmup_seconds": 0.4067695774137974,
+      "eval_seconds": 32.68266190029681,
+      "evaluated_tokens_per_second": 10397.011144215096,
+      "max_rss_gib": 6.786258697509766,
+      "sampled_peak_gpu_mib": 8229.0,
+      "source": "results/tinyllama_official_sq_gptq_a4_s0.json; logs/tinyllama_official_sq_gptq_a4_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_jittor_gptq_a16_s0",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "kind": "eval",
+      "method": "gptq",
+      "rotate": false,
+      "akv_bits": 16,
+      "wall_seconds": 1341.5940940547734,
+      "worker_seconds": 1339.0415896568447,
+      "model_load_seconds": 7.109731642529368,
+      "training_seconds": null,
+      "quant_seconds": 1307.2515395134687,
+      "warmup_seconds": 0.3254456799477339,
+      "eval_seconds": 24.345814617350698,
+      "evaluated_tokens_per_second": 13957.306639385604,
+      "max_rss_gib": 14.042091369628906,
+      "sampled_peak_gpu_mib": 6349.0,
+      "source": "results/tinyllama_jittor_gptq_a16_s0.json; logs/tinyllama_jittor_gptq_a16_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_jittor_gptq_a4_s0",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "kind": "eval",
+      "method": "gptq",
+      "rotate": false,
+      "akv_bits": 4,
+      "wall_seconds": 1381.817422363907,
+      "worker_seconds": 1380.7517523709685,
+      "model_load_seconds": 7.021366687491536,
+      "training_seconds": null,
+      "quant_seconds": 1339.397631553933,
+      "warmup_seconds": 0.533323623239994,
+      "eval_seconds": 33.789735458791256,
+      "evaluated_tokens_per_second": 10056.367573945949,
+      "max_rss_gib": 14.048633575439453,
+      "sampled_peak_gpu_mib": 6349.0,
+      "source": "results/tinyllama_jittor_gptq_a4_s0.json; logs/tinyllama_jittor_gptq_a4_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_jittor_sq_gptq_a16_s0",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "kind": "eval",
+      "method": "gptq",
+      "rotate": true,
+      "akv_bits": 16,
+      "wall_seconds": 1422.1484583560377,
+      "worker_seconds": 1415.2240950763226,
+      "model_load_seconds": 7.046660186722875,
+      "training_seconds": null,
+      "quant_seconds": 1380.3684858325869,
+      "warmup_seconds": 0.372958404943347,
+      "eval_seconds": 27.413375090807676,
+      "evaluated_tokens_per_second": 12395.482091292848,
+      "max_rss_gib": 14.217010498046875,
+      "sampled_peak_gpu_mib": 9113.0,
+      "source": "results/tinyllama_jittor_sq_gptq_a16_s0.json; logs/tinyllama_jittor_sq_gptq_a16_s0.exit.json"
+    },
+    {
+      "id": "tinyllama_jittor_sq_gptq_a4_s0",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "kind": "eval",
+      "method": "gptq",
+      "rotate": true,
+      "akv_bits": 4,
+      "wall_seconds": 1441.772307118401,
+      "worker_seconds": 1437.346602132544,
+      "model_load_seconds": 7.517450533807278,
+      "training_seconds": null,
+      "quant_seconds": 1392.2454088963568,
+      "warmup_seconds": 0.5666404515504837,
+      "eval_seconds": 36.99338569678366,
+      "evaluated_tokens_per_second": 9185.479879705728,
+      "max_rss_gib": 14.209678649902344,
+      "sampled_peak_gpu_mib": 9113.0,
+      "source": "results/tinyllama_jittor_sq_gptq_a4_s0.json; logs/tinyllama_jittor_sq_gptq_a4_s0.exit.json"
+    }
+  ],
+  "loss": [
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 0,
+      "loss": 2.617655038833618,
+      "learning_rate": 1.5,
+      "grad_l2": 6.852362729000021,
+      "step_seconds": 8.961805507540703
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 1,
+      "loss": 2.4556057453155518,
+      "learning_rate": 1.4996299202742986,
+      "grad_l2": 6.782821461100678,
+      "step_seconds": 8.978084655478597
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 2,
+      "loss": 2.349172830581665,
+      "learning_rate": 1.4985200463212036,
+      "grad_l2": 7.807197022255138,
+      "step_seconds": 8.96443535387516
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 3,
+      "loss": 2.3736839294433594,
+      "learning_rate": 1.4966714734523099,
+      "grad_l2": 6.163093651973093,
+      "step_seconds": 8.965462990105152
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 4,
+      "loss": 2.2394046783447266,
+      "learning_rate": 1.4940860259858586,
+      "grad_l2": 6.051963671726194,
+      "step_seconds": 8.971453573554754
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 5,
+      "loss": 2.1862146854400635,
+      "learning_rate": 1.4907662554463532,
+      "grad_l2": 6.362258512180421,
+      "step_seconds": 8.95728380791843
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 6,
+      "loss": 2.2382559776306152,
+      "learning_rate": 1.4867154380465166,
+      "grad_l2": 6.5646145502536495,
+      "step_seconds": 8.961080169305205
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 7,
+      "loss": 1.7465274333953857,
+      "learning_rate": 1.4819375714540606,
+      "grad_l2": 6.906528423039344,
+      "step_seconds": 8.96299790777266
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 8,
+      "loss": 2.037064552307129,
+      "learning_rate": 1.4764373708464733,
+      "grad_l2": 6.578873760053203,
+      "step_seconds": 8.959808370098472
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 9,
+      "loss": 1.931581735610962,
+      "learning_rate": 1.4702202642577074,
+      "grad_l2": 6.931155757383079,
+      "step_seconds": 8.958671784028411
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 10,
+      "loss": 2.087224245071411,
+      "learning_rate": 1.4632923872213652,
+      "grad_l2": 7.624331459945185,
+      "step_seconds": 8.956733314320445
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 11,
+      "loss": 2.2340774536132812,
+      "learning_rate": 1.4556605767156692,
+      "grad_l2": 7.982528987485366,
+      "step_seconds": 8.960204407572746
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 12,
+      "loss": 2.4420647621154785,
+      "learning_rate": 1.4473323644161886,
+      "grad_l2": 6.858542475868315,
+      "step_seconds": 8.96158691868186
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 13,
+      "loss": 1.9997265338897705,
+      "learning_rate": 1.4383159692629857,
+      "grad_l2": 6.696872171214277,
+      "step_seconds": 8.967284973710775
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 14,
+      "loss": 2.2652809619903564,
+      "learning_rate": 1.4286202893495146,
+      "grad_l2": 6.58606519687124,
+      "step_seconds": 8.965418204665184
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 15,
+      "loss": 2.0068657398223877,
+      "learning_rate": 1.4182548931412757,
+      "grad_l2": 6.544241362007215,
+      "step_seconds": 8.9679742064327
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 16,
+      "loss": 2.1764798164367676,
+      "learning_rate": 1.4072300100328976,
+      "grad_l2": 7.825928476897402,
+      "step_seconds": 8.961191851645708
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 17,
+      "loss": 1.884043574333191,
+      "learning_rate": 1.3955565202529576,
+      "grad_l2": 6.5850221908571385,
+      "step_seconds": 8.960969379171729
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 18,
+      "loss": 1.9376779794692993,
+      "learning_rate": 1.3832459441265113,
+      "grad_l2": 6.439897536090995,
+      "step_seconds": 8.960616152733564
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 19,
+      "loss": 1.8634113073349,
+      "learning_rate": 1.3703104307059213,
+      "grad_l2": 7.436457970709397,
+      "step_seconds": 8.962843863293529
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 20,
+      "loss": 2.4800498485565186,
+      "learning_rate": 1.3567627457812106,
+      "grad_l2": 5.878017158838328,
+      "step_seconds": 8.963094100356102
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 21,
+      "loss": 2.601186752319336,
+      "learning_rate": 1.3426162592817676,
+      "grad_l2": 6.951907309160613,
+      "step_seconds": 8.95969868823886
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 22,
+      "loss": 2.4885928630828857,
+      "learning_rate": 1.327884932081842,
+      "grad_l2": 5.461019891786934,
+      "step_seconds": 8.9588832706213
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 23,
+      "loss": 2.536860942840576,
+      "learning_rate": 1.3125833022228446,
+      "grad_l2": 6.479116373182573,
+      "step_seconds": 8.958909692242742
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 24,
+      "loss": 2.5631983280181885,
+      "learning_rate": 1.2967264705660586,
+      "grad_l2": 5.892006061136783,
+      "step_seconds": 8.966450115665793
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 25,
+      "loss": 2.5605928897857666,
+      "learning_rate": 1.2803300858899105,
+      "grad_l2": 5.852726373344761,
+      "step_seconds": 8.964881774038076
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 26,
+      "loss": 2.3113059997558594,
+      "learning_rate": 1.2634103294465167,
+      "grad_l2": 6.320476245605501,
+      "step_seconds": 8.965401539579034
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 27,
+      "loss": 2.6034538745880127,
+      "learning_rate": 1.2459838989927388,
+      "grad_l2": 7.580118841237681,
+      "step_seconds": 8.960557021200657
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 28,
+      "loss": 2.0793325901031494,
+      "learning_rate": 1.2280679923115172,
+      "grad_l2": 6.24892005192483,
+      "step_seconds": 8.959889765828848
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 29,
+      "loss": 2.2878048419952393,
+      "learning_rate": 1.2096802902397323,
+      "grad_l2": 6.186032048519849,
+      "step_seconds": 8.960915833711624
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 30,
+      "loss": 2.1127548217773438,
+      "learning_rate": 1.190838939219355,
+      "grad_l2": 5.827976979939929,
+      "step_seconds": 8.961655167862773
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 31,
+      "loss": 2.248649835586548,
+      "learning_rate": 1.171562533389098,
+      "grad_l2": 6.017389254322528,
+      "step_seconds": 8.958527605980635
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 32,
+      "loss": 1.9666423797607422,
+      "learning_rate": 1.1518700962342474,
+      "grad_l2": 7.326698502813941,
+      "step_seconds": 8.960009651258588
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 33,
+      "loss": 2.2076897621154785,
+      "learning_rate": 1.1317810618127786,
+      "grad_l2": 7.486315318319606,
+      "step_seconds": 8.956888262182474
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 34,
+      "loss": 2.2829551696777344,
+      "learning_rate": 1.1113152555762864,
+      "grad_l2": 6.76002049556646,
+      "step_seconds": 8.958140645176172
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 35,
+      "loss": 2.4482014179229736,
+      "learning_rate": 1.09049287480466,
+      "grad_l2": 6.256121085978057,
+      "step_seconds": 8.962933896109462
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 36,
+      "loss": 2.43119215965271,
+      "learning_rate": 1.0693344686738044,
+      "grad_l2": 6.297303612913157,
+      "step_seconds": 8.961851255968213
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 37,
+      "loss": 2.355077028274536,
+      "learning_rate": 1.0478609179760854,
+      "grad_l2": 6.1469797996210715,
+      "step_seconds": 8.962926462292671
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 38,
+      "loss": 2.260554075241089,
+      "learning_rate": 1.0260934145135086,
+      "grad_l2": 6.5791646633024,
+      "step_seconds": 8.964467169716954
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 39,
+      "loss": 2.371453046798706,
+      "learning_rate": 1.0040534401839687,
+      "grad_l2": 7.386630636035872,
+      "step_seconds": 8.96352693066001
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 40,
+      "loss": 2.3023288249969482,
+      "learning_rate": 0.9817627457812106,
+      "grad_l2": 5.763676564065335,
+      "step_seconds": 8.963913824409246
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 41,
+      "loss": 2.116609811782837,
+      "learning_rate": 0.959243329529422,
+      "grad_l2": 6.390653150873278,
+      "step_seconds": 8.96405410580337
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 42,
+      "loss": 2.2345123291015625,
+      "learning_rate": 0.936517415373641,
+      "grad_l2": 5.8041496424586345,
+      "step_seconds": 8.961168803274632
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 43,
+      "loss": 2.4619669914245605,
+      "learning_rate": 0.913607431047407,
+      "grad_l2": 5.64284038984413,
+      "step_seconds": 8.963933296501637
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 44,
+      "loss": 2.2436270713806152,
+      "learning_rate": 0.8905359859392936,
+      "grad_l2": 6.096446619847571,
+      "step_seconds": 8.965802511200309
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 45,
+      "loss": 2.3385708332061768,
+      "learning_rate": 0.8673258487801732,
+      "grad_l2": 6.4529914698945285,
+      "step_seconds": 8.959705891087651
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 46,
+      "loss": 2.401442050933838,
+      "learning_rate": 0.8439999251732284,
+      "grad_l2": 6.749725186542133,
+      "step_seconds": 8.96437506377697
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 47,
+      "loss": 1.9841829538345337,
+      "learning_rate": 0.8205812349888857,
+      "grad_l2": 6.954187606927691,
+      "step_seconds": 8.967787047848105
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 48,
+      "loss": 1.9264193773269653,
+      "learning_rate": 0.7970928896469851,
+      "grad_l2": 6.323277474193728,
+      "step_seconds": 8.969511784613132
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 49,
+      "loss": 2.034085750579834,
+      "learning_rate": 0.7735580693085962,
+      "grad_l2": 6.782599548728906,
+      "step_seconds": 8.960644131526351
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 50,
+      "loss": 2.1283276081085205,
+      "learning_rate": 0.75,
+      "grad_l2": 6.303813028838686,
+      "step_seconds": 8.956562299281359
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 51,
+      "loss": 1.8054238557815552,
+      "learning_rate": 0.7264419306914038,
+      "grad_l2": 6.9882634653486395,
+      "step_seconds": 8.957397608086467
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 52,
+      "loss": 2.2912909984588623,
+      "learning_rate": 0.702907110353015,
+      "grad_l2": 6.991321936619409,
+      "step_seconds": 8.959749082103372
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 53,
+      "loss": 2.491426944732666,
+      "learning_rate": 0.6794187650111143,
+      "grad_l2": 6.78623321547347,
+      "step_seconds": 8.95884757488966
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 54,
+      "loss": 2.661139965057373,
+      "learning_rate": 0.6560000748267719,
+      "grad_l2": 6.030154795168561,
+      "step_seconds": 8.959608623757958
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 55,
+      "loss": 2.5889198780059814,
+      "learning_rate": 0.6326741512198268,
+      "grad_l2": 6.385318141971514,
+      "step_seconds": 8.959758887067437
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 56,
+      "loss": 2.2364249229431152,
+      "learning_rate": 0.6094640140607066,
+      "grad_l2": 6.109695564718488,
+      "step_seconds": 8.958210429176688
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 57,
+      "loss": 2.225459337234497,
+      "learning_rate": 0.5863925689525933,
+      "grad_l2": 6.755768400982036,
+      "step_seconds": 8.963418768718839
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 58,
+      "loss": 2.1924355030059814,
+      "learning_rate": 0.5634825846263589,
+      "grad_l2": 6.587412013773954,
+      "step_seconds": 8.963572051376104
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 59,
+      "loss": 2.266083002090454,
+      "learning_rate": 0.5407566704705782,
+      "grad_l2": 6.4633950995486895,
+      "step_seconds": 8.962367536500096
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 60,
+      "loss": 2.095289468765259,
+      "learning_rate": 0.5182372542187896,
+      "grad_l2": 6.063259075601838,
+      "step_seconds": 8.968644794076681
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 61,
+      "loss": 2.1694817543029785,
+      "learning_rate": 0.4959465598160315,
+      "grad_l2": 5.737334903138291,
+      "step_seconds": 8.960099440068007
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 62,
+      "loss": 2.3711557388305664,
+      "learning_rate": 0.4739065854864917,
+      "grad_l2": 6.21870545057523,
+      "step_seconds": 8.961282519623637
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 63,
+      "loss": 2.332759141921997,
+      "learning_rate": 0.45213908202391445,
+      "grad_l2": 6.15188350978934,
+      "step_seconds": 8.960190741345286
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 64,
+      "loss": 1.821032166481018,
+      "learning_rate": 0.4306655313261955,
+      "grad_l2": 5.983433371857969,
+      "step_seconds": 8.960411915555596
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 65,
+      "loss": 1.6764343976974487,
+      "learning_rate": 0.40950712519533994,
+      "grad_l2": 6.177417649777408,
+      "step_seconds": 8.962912391871214
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 66,
+      "loss": 1.8909142017364502,
+      "learning_rate": 0.3886847444237134,
+      "grad_l2": 6.56647319157955,
+      "step_seconds": 8.960867136716843
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 67,
+      "loss": 1.8315742015838623,
+      "learning_rate": 0.3682189381872215,
+      "grad_l2": 6.330148002458672,
+      "step_seconds": 8.963994935154915
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 68,
+      "loss": 1.861344575881958,
+      "learning_rate": 0.34812990376575237,
+      "grad_l2": 5.978973405580138,
+      "step_seconds": 8.965920904651284
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 69,
+      "loss": 2.10440731048584,
+      "learning_rate": 0.328437466610902,
+      "grad_l2": 6.276850878492405,
+      "step_seconds": 8.965810623019934
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 70,
+      "loss": 1.9299629926681519,
+      "learning_rate": 0.3091610607806452,
+      "grad_l2": 6.472471793317188,
+      "step_seconds": 8.964925592765212
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 71,
+      "loss": 2.1957998275756836,
+      "learning_rate": 0.29031970976026755,
+      "grad_l2": 5.632397806212737,
+      "step_seconds": 8.966911673545837
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 72,
+      "loss": 2.2897775173187256,
+      "learning_rate": 0.2719320076884827,
+      "grad_l2": 5.953973115241232,
+      "step_seconds": 8.962506100535393
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 73,
+      "loss": 2.3508083820343018,
+      "learning_rate": 0.25401610100726124,
+      "grad_l2": 6.729538838898818,
+      "step_seconds": 8.962624989449978
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 74,
+      "loss": 2.505427598953247,
+      "learning_rate": 0.23658967055348346,
+      "grad_l2": 7.117959689804226,
+      "step_seconds": 8.960765078663826
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 75,
+      "loss": 2.313194513320923,
+      "learning_rate": 0.2196699141100894,
+      "grad_l2": 7.895794955440624,
+      "step_seconds": 8.96145612001419
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 76,
+      "loss": 2.5195250511169434,
+      "learning_rate": 0.2032735294339415,
+      "grad_l2": 7.217256072991216,
+      "step_seconds": 8.960786409676075
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 77,
+      "loss": 1.8560879230499268,
+      "learning_rate": 0.1874166977771553,
+      "grad_l2": 7.461469937446784,
+      "step_seconds": 8.959095440804958
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 78,
+      "loss": 1.8218939304351807,
+      "learning_rate": 0.17211506791815814,
+      "grad_l2": 6.713202583184521,
+      "step_seconds": 8.96096707507968
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 79,
+      "loss": 2.265388011932373,
+      "learning_rate": 0.1573837407182322,
+      "grad_l2": 6.872656799444701,
+      "step_seconds": 8.960146468132734
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 80,
+      "loss": 2.290912628173828,
+      "learning_rate": 0.1432372542187895,
+      "grad_l2": 6.607107623430872,
+      "step_seconds": 8.96473154053092
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 81,
+      "loss": 2.2125370502471924,
+      "learning_rate": 0.1296895692940787,
+      "grad_l2": 5.641444773809615,
+      "step_seconds": 8.968595059588552
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 82,
+      "loss": 2.2895145416259766,
+      "learning_rate": 0.11675405587348886,
+      "grad_l2": 5.985678195678768,
+      "step_seconds": 8.957531165331602
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 83,
+      "loss": 2.3584532737731934,
+      "learning_rate": 0.10444347974704218,
+      "grad_l2": 5.6880801811756525,
+      "step_seconds": 8.960443381220102
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 84,
+      "loss": 2.3728108406066895,
+      "learning_rate": 0.09276998996710231,
+      "grad_l2": 6.018842656431914,
+      "step_seconds": 8.956416917964816
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 85,
+      "loss": 2.3721067905426025,
+      "learning_rate": 0.08174510685872416,
+      "grad_l2": 6.8895367789657005,
+      "step_seconds": 8.959516860544682
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 86,
+      "loss": 1.968202829360962,
+      "learning_rate": 0.07137971065048548,
+      "grad_l2": 6.474292000702874,
+      "step_seconds": 8.957886189222336
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 87,
+      "loss": 2.014653205871582,
+      "learning_rate": 0.06168403073701431,
+      "grad_l2": 5.717195537802088,
+      "step_seconds": 8.957610031589866
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 88,
+      "loss": 2.235659599304199,
+      "learning_rate": 0.05266763558381149,
+      "grad_l2": 6.299074032586348,
+      "step_seconds": 8.959154075011611
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 89,
+      "loss": 1.946966528892517,
+      "learning_rate": 0.04433942328433091,
+      "grad_l2": 7.384476294339737,
+      "step_seconds": 8.955522459000349
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 90,
+      "loss": 2.37068510055542,
+      "learning_rate": 0.03670761277863485,
+      "grad_l2": 7.447041345091435,
+      "step_seconds": 8.955682076513767
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 91,
+      "loss": 2.047224283218384,
+      "learning_rate": 0.029779735742292784,
+      "grad_l2": 6.557760365146521,
+      "step_seconds": 8.962371395900846
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 92,
+      "loss": 2.0776383876800537,
+      "learning_rate": 0.023562629153526776,
+      "grad_l2": 6.802040714181199,
+      "step_seconds": 8.966369397938251
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 93,
+      "loss": 1.9396201372146606,
+      "learning_rate": 0.018062428545939507,
+      "grad_l2": 6.254042132059353,
+      "step_seconds": 8.963404716923833
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 94,
+      "loss": 2.0374534130096436,
+      "learning_rate": 0.01328456195348346,
+      "grad_l2": 6.494593728854191,
+      "step_seconds": 8.960644789040089
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 95,
+      "loss": 2.129220724105835,
+      "learning_rate": 0.009233744553646756,
+      "grad_l2": 7.882017804205953,
+      "step_seconds": 8.957064872607589
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 96,
+      "loss": 2.4602878093719482,
+      "learning_rate": 0.005913974014141676,
+      "grad_l2": 7.1220855320112735,
+      "step_seconds": 8.957768263295293
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 97,
+      "loss": 2.158348560333252,
+      "learning_rate": 0.0033285265476900028,
+      "grad_l2": 6.343983594085575,
+      "step_seconds": 8.957592939957976
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 98,
+      "loss": 2.1142005920410156,
+      "learning_rate": 0.0014799536787963308,
+      "grad_l2": 7.1373913933005015,
+      "step_seconds": 8.958771284669638
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0,
+      "step": 99,
+      "loss": 1.9418457746505737,
+      "learning_rate": 0.0003700797257013,
+      "grad_l2": 6.345521433515562,
+      "step_seconds": 8.958960574120283
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 0,
+      "loss": 2.594762086868286,
+      "learning_rate": 1.5,
+      "grad_l2": 6.811646186034761,
+      "step_seconds": 1.7746954467147589
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 1,
+      "loss": 2.4680521488189697,
+      "learning_rate": 1.4996299202742986,
+      "grad_l2": 6.642834601130781,
+      "step_seconds": 1.622272739186883
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 2,
+      "loss": 2.3291022777557373,
+      "learning_rate": 1.4985200463212036,
+      "grad_l2": 7.873064829520164,
+      "step_seconds": 1.6105570755898952
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 3,
+      "loss": 2.383723258972168,
+      "learning_rate": 1.4966714734523099,
+      "grad_l2": 6.159001854954588,
+      "step_seconds": 1.655550366267562
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 4,
+      "loss": 2.242729902267456,
+      "learning_rate": 1.4940860259858586,
+      "grad_l2": 5.936539231311012,
+      "step_seconds": 1.6052540894597769
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 5,
+      "loss": 2.2134318351745605,
+      "learning_rate": 1.4907662554463532,
+      "grad_l2": 6.507049351994878,
+      "step_seconds": 1.6239525638520718
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 6,
+      "loss": 2.2444183826446533,
+      "learning_rate": 1.4867154380465166,
+      "grad_l2": 7.00611526116732,
+      "step_seconds": 1.5962012968957424
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 7,
+      "loss": 1.7586185932159424,
+      "learning_rate": 1.4819375714540606,
+      "grad_l2": 7.11752604448033,
+      "step_seconds": 1.6024744268506765
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 8,
+      "loss": 2.0197880268096924,
+      "learning_rate": 1.4764373708464733,
+      "grad_l2": 7.067498564505703,
+      "step_seconds": 1.6441581528633833
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 9,
+      "loss": 1.9295830726623535,
+      "learning_rate": 1.4702202642577074,
+      "grad_l2": 6.463596516349581,
+      "step_seconds": 1.7452722545713186
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 10,
+      "loss": 2.088534355163574,
+      "learning_rate": 1.4632923872213652,
+      "grad_l2": 7.367435742859895,
+      "step_seconds": 1.7250364366918802
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 11,
+      "loss": 2.232851028442383,
+      "learning_rate": 1.4556605767156692,
+      "grad_l2": 7.961612798184546,
+      "step_seconds": 1.7144488338381052
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 12,
+      "loss": 2.455143690109253,
+      "learning_rate": 1.4473323644161886,
+      "grad_l2": 6.918553738972369,
+      "step_seconds": 1.6983397118747234
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 13,
+      "loss": 2.0064029693603516,
+      "learning_rate": 1.4383159692629857,
+      "grad_l2": 7.053429291449053,
+      "step_seconds": 1.6729955561459064
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 14,
+      "loss": 2.248386859893799,
+      "learning_rate": 1.4286202893495146,
+      "grad_l2": 6.5493772406795765,
+      "step_seconds": 1.639090832322836
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 15,
+      "loss": 2.0127813816070557,
+      "learning_rate": 1.4182548931412757,
+      "grad_l2": 6.36536303035959,
+      "step_seconds": 1.6717534586787224
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 16,
+      "loss": 2.230886697769165,
+      "learning_rate": 1.4072300100328976,
+      "grad_l2": 8.19712317735934,
+      "step_seconds": 1.7937686145305634
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 17,
+      "loss": 1.8871432542800903,
+      "learning_rate": 1.3955565202529576,
+      "grad_l2": 6.049943126042271,
+      "step_seconds": 1.8188064582645893
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 18,
+      "loss": 1.9285686016082764,
+      "learning_rate": 1.3832459441265113,
+      "grad_l2": 6.29538938622777,
+      "step_seconds": 1.7844354175031185
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 19,
+      "loss": 1.877863883972168,
+      "learning_rate": 1.3703104307059213,
+      "grad_l2": 7.424878042245634,
+      "step_seconds": 1.685028299689293
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 20,
+      "loss": 2.484496831893921,
+      "learning_rate": 1.3567627457812106,
+      "grad_l2": 6.018216995147683,
+      "step_seconds": 1.6560386512428522
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 21,
+      "loss": 2.627396583557129,
+      "learning_rate": 1.3426162592817676,
+      "grad_l2": 6.505123066168076,
+      "step_seconds": 1.6557160392403603
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 22,
+      "loss": 2.474337577819824,
+      "learning_rate": 1.327884932081842,
+      "grad_l2": 5.684565912646373,
+      "step_seconds": 1.650232471525669
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 23,
+      "loss": 2.509366273880005,
+      "learning_rate": 1.3125833022228446,
+      "grad_l2": 6.601090266393866,
+      "step_seconds": 1.647506196051836
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 24,
+      "loss": 2.5773227214813232,
+      "learning_rate": 1.2967264705660586,
+      "grad_l2": 5.757576568245727,
+      "step_seconds": 1.717104023322463
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 25,
+      "loss": 2.5551350116729736,
+      "learning_rate": 1.2803300858899105,
+      "grad_l2": 5.640966293295695,
+      "step_seconds": 1.6446183118969202
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 26,
+      "loss": 2.3256757259368896,
+      "learning_rate": 1.2634103294465167,
+      "grad_l2": 6.332204315850742,
+      "step_seconds": 1.7081092968583107
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 27,
+      "loss": 2.582778215408325,
+      "learning_rate": 1.2459838989927388,
+      "grad_l2": 7.442920885868421,
+      "step_seconds": 1.7423329185694456
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 28,
+      "loss": 2.055018424987793,
+      "learning_rate": 1.2280679923115172,
+      "grad_l2": 6.18641660937576,
+      "step_seconds": 1.7635321039706469
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 29,
+      "loss": 2.266270160675049,
+      "learning_rate": 1.2096802902397323,
+      "grad_l2": 6.123744463411047,
+      "step_seconds": 1.8213241305202246
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 30,
+      "loss": 2.0943796634674072,
+      "learning_rate": 1.190838939219355,
+      "grad_l2": 5.753822055993553,
+      "step_seconds": 1.8344787806272507
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 31,
+      "loss": 2.2387948036193848,
+      "learning_rate": 1.171562533389098,
+      "grad_l2": 5.880398653673797,
+      "step_seconds": 1.758347162976861
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 32,
+      "loss": 1.9628472328186035,
+      "learning_rate": 1.1518700962342474,
+      "grad_l2": 6.9981042736897825,
+      "step_seconds": 1.7501515429466963
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 33,
+      "loss": 2.188992738723755,
+      "learning_rate": 1.1317810618127786,
+      "grad_l2": 6.769389829790405,
+      "step_seconds": 1.7672403510659933
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 34,
+      "loss": 2.2761070728302,
+      "learning_rate": 1.1113152555762864,
+      "grad_l2": 6.677524651797547,
+      "step_seconds": 1.7708147428929806
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 35,
+      "loss": 2.4456045627593994,
+      "learning_rate": 1.09049287480466,
+      "grad_l2": 6.2426452556874,
+      "step_seconds": 1.8150031808763742
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 36,
+      "loss": 2.440365791320801,
+      "learning_rate": 1.0693344686738044,
+      "grad_l2": 6.120667629760706,
+      "step_seconds": 1.797713102772832
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 37,
+      "loss": 2.339411735534668,
+      "learning_rate": 1.0478609179760854,
+      "grad_l2": 6.264672519736594,
+      "step_seconds": 1.7792285326868296
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 38,
+      "loss": 2.247339963912964,
+      "learning_rate": 1.0260934145135086,
+      "grad_l2": 6.953529428839494,
+      "step_seconds": 1.7915197852998972
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 39,
+      "loss": 2.3657455444335938,
+      "learning_rate": 1.0040534401839687,
+      "grad_l2": 6.922017535368745,
+      "step_seconds": 1.744424371048808
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 40,
+      "loss": 2.3062198162078857,
+      "learning_rate": 0.9817627457812106,
+      "grad_l2": 5.950936992482157,
+      "step_seconds": 1.787896130234003
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 41,
+      "loss": 2.1051981449127197,
+      "learning_rate": 0.959243329529422,
+      "grad_l2": 6.366264586546855,
+      "step_seconds": 1.7901112493127584
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 42,
+      "loss": 2.239373207092285,
+      "learning_rate": 0.936517415373641,
+      "grad_l2": 5.955467472609883,
+      "step_seconds": 1.7592995632439852
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 43,
+      "loss": 2.4579720497131348,
+      "learning_rate": 0.913607431047407,
+      "grad_l2": 5.997360715501096,
+      "step_seconds": 1.7592806983739138
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 44,
+      "loss": 2.2394537925720215,
+      "learning_rate": 0.8905359859392936,
+      "grad_l2": 6.1011104594716,
+      "step_seconds": 1.6946311686187983
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 45,
+      "loss": 2.3364336490631104,
+      "learning_rate": 0.8673258487801732,
+      "grad_l2": 6.335514443980181,
+      "step_seconds": 1.677276512607932
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 46,
+      "loss": 2.4002575874328613,
+      "learning_rate": 0.8439999251732284,
+      "grad_l2": 6.698445602698644,
+      "step_seconds": 1.6590537428855896
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 47,
+      "loss": 1.9888838529586792,
+      "learning_rate": 0.8205812349888857,
+      "grad_l2": 7.611301416034771,
+      "step_seconds": 1.6849761493504047
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 48,
+      "loss": 1.9183942079544067,
+      "learning_rate": 0.7970928896469851,
+      "grad_l2": 6.751275400182089,
+      "step_seconds": 1.6549778059124947
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 49,
+      "loss": 2.0393950939178467,
+      "learning_rate": 0.7735580693085962,
+      "grad_l2": 7.457507921336511,
+      "step_seconds": 1.6887725871056318
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 50,
+      "loss": 2.1145269870758057,
+      "learning_rate": 0.75,
+      "grad_l2": 6.152948841413501,
+      "step_seconds": 1.7098599970340729
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 51,
+      "loss": 1.8239343166351318,
+      "learning_rate": 0.7264419306914038,
+      "grad_l2": 6.878882925986146,
+      "step_seconds": 1.707861540839076
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 52,
+      "loss": 2.273745536804199,
+      "learning_rate": 0.702907110353015,
+      "grad_l2": 7.163069463699127,
+      "step_seconds": 1.6687320061028004
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 53,
+      "loss": 2.462780237197876,
+      "learning_rate": 0.6794187650111143,
+      "grad_l2": 6.710435596205298,
+      "step_seconds": 1.6792121436446905
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 54,
+      "loss": 2.662492275238037,
+      "learning_rate": 0.6560000748267719,
+      "grad_l2": 5.907520928113691,
+      "step_seconds": 1.7014241497963667
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 55,
+      "loss": 2.598069906234741,
+      "learning_rate": 0.6326741512198268,
+      "grad_l2": 6.3725621926033025,
+      "step_seconds": 1.7514933366328478
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 56,
+      "loss": 2.221015453338623,
+      "learning_rate": 0.6094640140607066,
+      "grad_l2": 5.80162954323112,
+      "step_seconds": 1.7338002119213343
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 57,
+      "loss": 2.243671417236328,
+      "learning_rate": 0.5863925689525933,
+      "grad_l2": 6.443453501302262,
+      "step_seconds": 1.720387214794755
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 58,
+      "loss": 2.199028730392456,
+      "learning_rate": 0.5634825846263589,
+      "grad_l2": 6.363210940554769,
+      "step_seconds": 1.738024240359664
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 59,
+      "loss": 2.2490744590759277,
+      "learning_rate": 0.5407566704705782,
+      "grad_l2": 6.924835925211569,
+      "step_seconds": 1.7564291972666979
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 60,
+      "loss": 2.1054458618164062,
+      "learning_rate": 0.5182372542187896,
+      "grad_l2": 6.680169688728602,
+      "step_seconds": 1.7256135307252407
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 61,
+      "loss": 2.173213481903076,
+      "learning_rate": 0.4959465598160315,
+      "grad_l2": 5.767973984007328,
+      "step_seconds": 1.7527564149349928
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 62,
+      "loss": 2.3675742149353027,
+      "learning_rate": 0.4739065854864917,
+      "grad_l2": 6.376373440181046,
+      "step_seconds": 1.7324075195938349
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 63,
+      "loss": 2.3318586349487305,
+      "learning_rate": 0.45213908202391445,
+      "grad_l2": 5.799134093914112,
+      "step_seconds": 1.7758520022034645
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 64,
+      "loss": 1.8175169229507446,
+      "learning_rate": 0.4306655313261955,
+      "grad_l2": 6.0101617641106495,
+      "step_seconds": 1.7651156783103943
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 65,
+      "loss": 1.685823917388916,
+      "learning_rate": 0.40950712519533994,
+      "grad_l2": 6.188853814818843,
+      "step_seconds": 1.7516212817281485
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 66,
+      "loss": 1.8826210498809814,
+      "learning_rate": 0.3886847444237134,
+      "grad_l2": 6.336604828397563,
+      "step_seconds": 1.7559875156730413
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 67,
+      "loss": 1.8314677476882935,
+      "learning_rate": 0.3682189381872215,
+      "grad_l2": 6.335198950733727,
+      "step_seconds": 1.7668466940522194
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 68,
+      "loss": 1.8504947423934937,
+      "learning_rate": 0.34812990376575237,
+      "grad_l2": 5.920446949695438,
+      "step_seconds": 1.7496347595006227
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 69,
+      "loss": 2.1168928146362305,
+      "learning_rate": 0.328437466610902,
+      "grad_l2": 6.500074731494176,
+      "step_seconds": 1.7404765076935291
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 70,
+      "loss": 1.952647089958191,
+      "learning_rate": 0.3091610607806452,
+      "grad_l2": 6.726394145314987,
+      "step_seconds": 1.7596325371414423
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 71,
+      "loss": 2.192234992980957,
+      "learning_rate": 0.29031970976026755,
+      "grad_l2": 5.680352565120946,
+      "step_seconds": 1.7218777164816856
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 72,
+      "loss": 2.2689383029937744,
+      "learning_rate": 0.2719320076884827,
+      "grad_l2": 6.037076541175606,
+      "step_seconds": 1.733841324225068
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 73,
+      "loss": 2.369563102722168,
+      "learning_rate": 0.25401610100726124,
+      "grad_l2": 6.389778033504107,
+      "step_seconds": 1.7238578666001558
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 74,
+      "loss": 2.513241767883301,
+      "learning_rate": 0.23658967055348346,
+      "grad_l2": 7.365918237224711,
+      "step_seconds": 1.7294246293604374
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 75,
+      "loss": 2.306117534637451,
+      "learning_rate": 0.2196699141100894,
+      "grad_l2": 7.591346808952042,
+      "step_seconds": 1.8325353302061558
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 76,
+      "loss": 2.515385389328003,
+      "learning_rate": 0.2032735294339415,
+      "grad_l2": 7.186655113224479,
+      "step_seconds": 1.7775023989379406
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 77,
+      "loss": 1.8560181856155396,
+      "learning_rate": 0.1874166977771553,
+      "grad_l2": 6.481982755693866,
+      "step_seconds": 1.7668578941375017
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 78,
+      "loss": 1.8181976079940796,
+      "learning_rate": 0.17211506791815814,
+      "grad_l2": 6.586960730862004,
+      "step_seconds": 1.7675119042396545
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 79,
+      "loss": 2.271000623703003,
+      "learning_rate": 0.1573837407182322,
+      "grad_l2": 6.871342828262841,
+      "step_seconds": 1.7613315638154745
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 80,
+      "loss": 2.284986972808838,
+      "learning_rate": 0.1432372542187895,
+      "grad_l2": 6.788275776953976,
+      "step_seconds": 1.7670455407351255
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 81,
+      "loss": 2.221759557723999,
+      "learning_rate": 0.1296895692940787,
+      "grad_l2": 5.965301683640519,
+      "step_seconds": 2.0661983154714108
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 82,
+      "loss": 2.2923948764801025,
+      "learning_rate": 0.11675405587348886,
+      "grad_l2": 5.772188935438221,
+      "step_seconds": 1.8639067374169827
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 83,
+      "loss": 2.3505120277404785,
+      "learning_rate": 0.10444347974704218,
+      "grad_l2": 5.699742270375423,
+      "step_seconds": 1.8446849286556244
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 84,
+      "loss": 2.3651328086853027,
+      "learning_rate": 0.09276998996710231,
+      "grad_l2": 5.801876574590141,
+      "step_seconds": 1.7836277466267347
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 85,
+      "loss": 2.368989944458008,
+      "learning_rate": 0.08174510685872416,
+      "grad_l2": 6.930813891043174,
+      "step_seconds": 1.734241921454668
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 86,
+      "loss": 1.9827073812484741,
+      "learning_rate": 0.07137971065048548,
+      "grad_l2": 6.955262668651975,
+      "step_seconds": 1.7365944031625986
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 87,
+      "loss": 1.9972360134124756,
+      "learning_rate": 0.06168403073701431,
+      "grad_l2": 5.55518826804385,
+      "step_seconds": 1.7811752259731293
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 88,
+      "loss": 2.222139358520508,
+      "learning_rate": 0.05266763558381149,
+      "grad_l2": 6.613580567120049,
+      "step_seconds": 1.765498185530305
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 89,
+      "loss": 1.9502509832382202,
+      "learning_rate": 0.04433942328433091,
+      "grad_l2": 7.296322418629878,
+      "step_seconds": 1.8249757196754217
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 90,
+      "loss": 2.3584582805633545,
+      "learning_rate": 0.03670761277863485,
+      "grad_l2": 6.815900130862817,
+      "step_seconds": 1.8061217181384563
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 91,
+      "loss": 2.0474157333374023,
+      "learning_rate": 0.029779735742292784,
+      "grad_l2": 6.292594907222664,
+      "step_seconds": 1.7607962898910046
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 92,
+      "loss": 2.0579404830932617,
+      "learning_rate": 0.023562629153526776,
+      "grad_l2": 6.834150216220676,
+      "step_seconds": 1.852336147800088
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 93,
+      "loss": 1.951965570449829,
+      "learning_rate": 0.018062428545939507,
+      "grad_l2": 6.307217144591716,
+      "step_seconds": 1.8282456174492836
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 94,
+      "loss": 2.0642547607421875,
+      "learning_rate": 0.01328456195348346,
+      "grad_l2": 7.608849041519917,
+      "step_seconds": 1.8001486584544182
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 95,
+      "loss": 2.1400976181030273,
+      "learning_rate": 0.009233744553646756,
+      "grad_l2": 7.738378041978698,
+      "step_seconds": 1.8112224284559488
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 96,
+      "loss": 2.452937364578247,
+      "learning_rate": 0.005913974014141676,
+      "grad_l2": 6.41615192172872,
+      "step_seconds": 1.784495348110795
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 97,
+      "loss": 2.167966365814209,
+      "learning_rate": 0.0033285265476900028,
+      "grad_l2": 6.751861022923109,
+      "step_seconds": 1.804826807230711
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 98,
+      "loss": 2.1325266361236572,
+      "learning_rate": 0.0014799536787963308,
+      "grad_l2": 6.684412624001721,
+      "step_seconds": 1.7977773174643517
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 99,
+      "loss": 1.9409823417663574,
+      "learning_rate": 0.0003700797257013,
+      "grad_l2": 6.30142040433893,
+      "step_seconds": 1.8046679552644491
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 0,
+      "loss": 1.7627933025360107,
+      "learning_rate": 1.5,
+      "grad_l2": 18.24602150585457,
+      "step_seconds": 113.09320924431086
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 1,
+      "loss": 2.672602415084839,
+      "learning_rate": 1.4996299202742986,
+      "grad_l2": 18.01877446196215,
+      "step_seconds": 113.00425877422094
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 2,
+      "loss": 2.5534889698028564,
+      "learning_rate": 1.4985200463212036,
+      "grad_l2": 23.248337144749396,
+      "step_seconds": 112.97239076346159
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 3,
+      "loss": 2.5915260314941406,
+      "learning_rate": 1.4966714734523099,
+      "grad_l2": 18.109349024794014,
+      "step_seconds": 112.96985328383744
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 4,
+      "loss": 2.36413311958313,
+      "learning_rate": 1.4940860259858586,
+      "grad_l2": 15.395807434924498,
+      "step_seconds": 112.97120897658169
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 5,
+      "loss": 2.254016160964966,
+      "learning_rate": 1.4907662554463532,
+      "grad_l2": 14.010557406594184,
+      "step_seconds": 112.9830777104944
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 6,
+      "loss": 2.0255939960479736,
+      "learning_rate": 1.4867154380465166,
+      "grad_l2": 16.028871575473193,
+      "step_seconds": 112.99720072373748
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 7,
+      "loss": 2.687802314758301,
+      "learning_rate": 1.4819375714540606,
+      "grad_l2": 20.209521764973662,
+      "step_seconds": 112.98574994504452
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 8,
+      "loss": 2.235558271408081,
+      "learning_rate": 1.4764373708464733,
+      "grad_l2": 19.32434315254971,
+      "step_seconds": 112.98393801599741
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 9,
+      "loss": 1.7222012281417847,
+      "learning_rate": 1.4702202642577074,
+      "grad_l2": 20.181993349998926,
+      "step_seconds": 112.96489689685404
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 10,
+      "loss": 1.8713960647583008,
+      "learning_rate": 1.4632923872213652,
+      "grad_l2": 28.49793440495375,
+      "step_seconds": 112.9756926279515
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 11,
+      "loss": 2.449669361114502,
+      "learning_rate": 1.4556605767156692,
+      "grad_l2": 19.493990360507386,
+      "step_seconds": 112.97035813517869
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 12,
+      "loss": 2.1315622329711914,
+      "learning_rate": 1.4473323644161886,
+      "grad_l2": 24.678918915389083,
+      "step_seconds": 112.97853662073612
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 13,
+      "loss": 1.8502427339553833,
+      "learning_rate": 1.4383159692629857,
+      "grad_l2": 15.978214189274558,
+      "step_seconds": 112.9795143455267
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 14,
+      "loss": 2.2795214653015137,
+      "learning_rate": 1.4286202893495146,
+      "grad_l2": 13.789870788973847,
+      "step_seconds": 112.97446553967893
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 15,
+      "loss": 2.3974146842956543,
+      "learning_rate": 1.4182548931412757,
+      "grad_l2": 13.239577712310428,
+      "step_seconds": 112.98290262185037
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 16,
+      "loss": 2.1844356060028076,
+      "learning_rate": 1.4072300100328976,
+      "grad_l2": 14.623604036455744,
+      "step_seconds": 112.97722433321178
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 17,
+      "loss": 2.436241626739502,
+      "learning_rate": 1.3955565202529576,
+      "grad_l2": 17.475840558469162,
+      "step_seconds": 112.98292005620897
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 18,
+      "loss": 2.033012866973877,
+      "learning_rate": 1.3832459441265113,
+      "grad_l2": 11.776504017334418,
+      "step_seconds": 112.97168420255184
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 19,
+      "loss": 1.9141154289245605,
+      "learning_rate": 1.3703104307059213,
+      "grad_l2": 12.357622453088203,
+      "step_seconds": 112.97990478016436
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 20,
+      "loss": 1.9713857173919678,
+      "learning_rate": 1.3567627457812106,
+      "grad_l2": 15.304088224608362,
+      "step_seconds": 112.97395823895931
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 21,
+      "loss": 2.1900997161865234,
+      "learning_rate": 1.3426162592817676,
+      "grad_l2": 16.508899483920835,
+      "step_seconds": 112.97206272557378
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 22,
+      "loss": 2.3887922763824463,
+      "learning_rate": 1.327884932081842,
+      "grad_l2": 14.915551089609774,
+      "step_seconds": 113.07065830938518
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 23,
+      "loss": 2.429048776626587,
+      "learning_rate": 1.3125833022228446,
+      "grad_l2": 16.277899668228574,
+      "step_seconds": 112.98707280121744
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 24,
+      "loss": 2.2481789588928223,
+      "learning_rate": 1.2967264705660586,
+      "grad_l2": 16.411231232366124,
+      "step_seconds": 112.97951406799257
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 25,
+      "loss": 2.4477169513702393,
+      "learning_rate": 1.2803300858899105,
+      "grad_l2": 17.579626024097266,
+      "step_seconds": 112.98135682754219
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 26,
+      "loss": 1.9616507291793823,
+      "learning_rate": 1.2634103294465167,
+      "grad_l2": 17.19646003121743,
+      "step_seconds": 112.98336277157068
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 27,
+      "loss": 1.1824220418930054,
+      "learning_rate": 1.2459838989927388,
+      "grad_l2": 10.295135817866875,
+      "step_seconds": 112.9775251802057
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 28,
+      "loss": 1.6503385305404663,
+      "learning_rate": 1.2280679923115172,
+      "grad_l2": 14.972532719589287,
+      "step_seconds": 112.95965813845396
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 29,
+      "loss": 2.0062320232391357,
+      "learning_rate": 1.2096802902397323,
+      "grad_l2": 15.10541295847309,
+      "step_seconds": 112.96921749226749
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 30,
+      "loss": 1.7799564599990845,
+      "learning_rate": 1.190838939219355,
+      "grad_l2": 15.10405062426256,
+      "step_seconds": 112.99396795593202
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 31,
+      "loss": 1.9301772117614746,
+      "learning_rate": 1.171562533389098,
+      "grad_l2": 17.880488008534734,
+      "step_seconds": 112.99025347270072
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 32,
+      "loss": 2.00335431098938,
+      "learning_rate": 1.1518700962342474,
+      "grad_l2": 20.1041697408846,
+      "step_seconds": 113.0008457377553
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 33,
+      "loss": 1.9339598417282104,
+      "learning_rate": 1.1317810618127786,
+      "grad_l2": 18.025000641308043,
+      "step_seconds": 112.98926662839949
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 34,
+      "loss": 1.6666114330291748,
+      "learning_rate": 1.1113152555762864,
+      "grad_l2": 20.373216700594977,
+      "step_seconds": 112.97775916568935
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 35,
+      "loss": 1.7940696477890015,
+      "learning_rate": 1.09049287480466,
+      "grad_l2": 15.788008423312839,
+      "step_seconds": 112.96740395762026
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 36,
+      "loss": 1.5699175596237183,
+      "learning_rate": 1.0693344686738044,
+      "grad_l2": 12.658582302144179,
+      "step_seconds": 112.98446352779865
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 37,
+      "loss": 1.7342603206634521,
+      "learning_rate": 1.0478609179760854,
+      "grad_l2": 17.64214257328971,
+      "step_seconds": 113.0139644201845
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 38,
+      "loss": 2.034531354904175,
+      "learning_rate": 1.0260934145135086,
+      "grad_l2": 14.444197801186906,
+      "step_seconds": 113.00574125908315
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 39,
+      "loss": 2.1308858394622803,
+      "learning_rate": 1.0040534401839687,
+      "grad_l2": 14.789354109259598,
+      "step_seconds": 113.02226790226996
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 40,
+      "loss": 1.9981333017349243,
+      "learning_rate": 0.9817627457812106,
+      "grad_l2": 13.0456086048688,
+      "step_seconds": 112.99364045262337
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 41,
+      "loss": 1.66319739818573,
+      "learning_rate": 0.959243329529422,
+      "grad_l2": 15.273472969061046,
+      "step_seconds": 113.0005642324686
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 42,
+      "loss": 1.6802892684936523,
+      "learning_rate": 0.936517415373641,
+      "grad_l2": 14.953756377863897,
+      "step_seconds": 112.98699428513646
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 43,
+      "loss": 1.611914873123169,
+      "learning_rate": 0.913607431047407,
+      "grad_l2": 25.046180621888162,
+      "step_seconds": 112.98840166814625
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 44,
+      "loss": 1.703738808631897,
+      "learning_rate": 0.8905359859392936,
+      "grad_l2": 20.863416580313935,
+      "step_seconds": 112.973822100088
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 45,
+      "loss": 2.2343151569366455,
+      "learning_rate": 0.8673258487801732,
+      "grad_l2": 17.702570634724648,
+      "step_seconds": 112.97179239988327
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 46,
+      "loss": 2.6086249351501465,
+      "learning_rate": 0.8439999251732284,
+      "grad_l2": 16.166173367802823,
+      "step_seconds": 112.97608340531588
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 47,
+      "loss": 2.3575642108917236,
+      "learning_rate": 0.8205812349888857,
+      "grad_l2": 16.54778343440176,
+      "step_seconds": 112.98010384477675
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 48,
+      "loss": 2.5145633220672607,
+      "learning_rate": 0.7970928896469851,
+      "grad_l2": 14.572447881982058,
+      "step_seconds": 112.97518455423415
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 49,
+      "loss": 1.8201805353164673,
+      "learning_rate": 0.7735580693085962,
+      "grad_l2": 16.144183959900552,
+      "step_seconds": 112.97845977917314
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 50,
+      "loss": 2.2227590084075928,
+      "learning_rate": 0.75,
+      "grad_l2": 12.17703414892572,
+      "step_seconds": 112.98320451378822
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 51,
+      "loss": 1.7110320329666138,
+      "learning_rate": 0.7264419306914038,
+      "grad_l2": 17.104757325179378,
+      "step_seconds": 112.97930246591568
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 52,
+      "loss": 1.734368085861206,
+      "learning_rate": 0.702907110353015,
+      "grad_l2": 16.863875120773425,
+      "step_seconds": 112.97385834902525
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 53,
+      "loss": 1.703926920890808,
+      "learning_rate": 0.6794187650111143,
+      "grad_l2": 15.691542858718575,
+      "step_seconds": 112.97186645306647
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 54,
+      "loss": 2.2304043769836426,
+      "learning_rate": 0.6560000748267719,
+      "grad_l2": 15.599233126383274,
+      "step_seconds": 112.96496443264186
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 55,
+      "loss": 1.8777194023132324,
+      "learning_rate": 0.6326741512198268,
+      "grad_l2": 16.38056796701136,
+      "step_seconds": 112.9650146421045
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 56,
+      "loss": 1.7416186332702637,
+      "learning_rate": 0.6094640140607066,
+      "grad_l2": 24.766897442820042,
+      "step_seconds": 112.97987292520702
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 57,
+      "loss": 2.3622329235076904,
+      "learning_rate": 0.5863925689525933,
+      "grad_l2": 14.577805176284855,
+      "step_seconds": 112.97030620649457
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 58,
+      "loss": 2.1098694801330566,
+      "learning_rate": 0.5634825846263589,
+      "grad_l2": 16.185391348502815,
+      "step_seconds": 112.97672085091472
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 59,
+      "loss": 2.134207248687744,
+      "learning_rate": 0.5407566704705782,
+      "grad_l2": 16.387242195103767,
+      "step_seconds": 112.97456635907292
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 60,
+      "loss": 2.028498411178589,
+      "learning_rate": 0.5182372542187896,
+      "grad_l2": 21.19399957534781,
+      "step_seconds": 112.93653958104551
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 61,
+      "loss": 1.2122043371200562,
+      "learning_rate": 0.4959465598160315,
+      "grad_l2": 18.04557371530667,
+      "step_seconds": 112.92801763117313
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 62,
+      "loss": 1.8847240209579468,
+      "learning_rate": 0.4739065854864917,
+      "grad_l2": 17.342244850566054,
+      "step_seconds": 112.9666290730238
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 63,
+      "loss": 1.9360917806625366,
+      "learning_rate": 0.45213908202391445,
+      "grad_l2": 15.90384769436249,
+      "step_seconds": 112.96920325234532
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 64,
+      "loss": 1.7175806760787964,
+      "learning_rate": 0.4306655313261955,
+      "grad_l2": 15.050704339492391,
+      "step_seconds": 112.97140721045434
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 65,
+      "loss": 2.160654067993164,
+      "learning_rate": 0.40950712519533994,
+      "grad_l2": 19.2643026063992,
+      "step_seconds": 112.98950724303722
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 66,
+      "loss": 1.9661800861358643,
+      "learning_rate": 0.3886847444237134,
+      "grad_l2": 15.099346649881463,
+      "step_seconds": 112.97650403901935
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 67,
+      "loss": 2.029020309448242,
+      "learning_rate": 0.3682189381872215,
+      "grad_l2": 15.159633848349435,
+      "step_seconds": 112.98047800734639
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 68,
+      "loss": 1.4493608474731445,
+      "learning_rate": 0.34812990376575237,
+      "grad_l2": 15.53878789877006,
+      "step_seconds": 112.97054785490036
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 69,
+      "loss": 1.7583014965057373,
+      "learning_rate": 0.328437466610902,
+      "grad_l2": 12.85072773094623,
+      "step_seconds": 112.97757142968476
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 70,
+      "loss": 1.559950590133667,
+      "learning_rate": 0.3091610607806452,
+      "grad_l2": 15.474991656121366,
+      "step_seconds": 112.96800297312438
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 71,
+      "loss": 1.7986029386520386,
+      "learning_rate": 0.29031970976026755,
+      "grad_l2": 15.176836375353146,
+      "step_seconds": 112.97517796605825
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 72,
+      "loss": 1.75278639793396,
+      "learning_rate": 0.2719320076884827,
+      "grad_l2": 14.856856072406542,
+      "step_seconds": 112.99111108109355
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 73,
+      "loss": 1.9169518947601318,
+      "learning_rate": 0.25401610100726124,
+      "grad_l2": 12.689299178232899,
+      "step_seconds": 112.97418372146785
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 74,
+      "loss": 1.7582876682281494,
+      "learning_rate": 0.23658967055348346,
+      "grad_l2": 19.05824132250684,
+      "step_seconds": 112.98926073499024
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 75,
+      "loss": 1.4413155317306519,
+      "learning_rate": 0.2196699141100894,
+      "grad_l2": 26.72176234861617,
+      "step_seconds": 112.98508466035128
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 76,
+      "loss": 1.8283393383026123,
+      "learning_rate": 0.2032735294339415,
+      "grad_l2": 22.993471292736928,
+      "step_seconds": 112.97335038334131
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 77,
+      "loss": 1.7407342195510864,
+      "learning_rate": 0.1874166977771553,
+      "grad_l2": 13.139813029609734,
+      "step_seconds": 112.98180770687759
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 78,
+      "loss": 2.1823742389678955,
+      "learning_rate": 0.17211506791815814,
+      "grad_l2": 15.318491769158733,
+      "step_seconds": 112.98822500184178
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 79,
+      "loss": 2.172997236251831,
+      "learning_rate": 0.1573837407182322,
+      "grad_l2": 12.670300418431143,
+      "step_seconds": 112.97311290726066
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 80,
+      "loss": 2.1473653316497803,
+      "learning_rate": 0.1432372542187895,
+      "grad_l2": 15.936496480118478,
+      "step_seconds": 112.97827525436878
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 81,
+      "loss": 2.070319175720215,
+      "learning_rate": 0.1296895692940787,
+      "grad_l2": 12.898000566509214,
+      "step_seconds": 112.97111077234149
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 82,
+      "loss": 2.248180866241455,
+      "learning_rate": 0.11675405587348886,
+      "grad_l2": 13.641681410782452,
+      "step_seconds": 112.978087361902
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 83,
+      "loss": 2.432790517807007,
+      "learning_rate": 0.10444347974704218,
+      "grad_l2": 14.73132210221299,
+      "step_seconds": 112.97268039546907
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 84,
+      "loss": 2.257922887802124,
+      "learning_rate": 0.09276998996710231,
+      "grad_l2": 14.396037508889078,
+      "step_seconds": 112.96363321505487
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 85,
+      "loss": 2.315384864807129,
+      "learning_rate": 0.08174510685872416,
+      "grad_l2": 12.009265152230773,
+      "step_seconds": 112.96773641556501
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 86,
+      "loss": 2.0699658393859863,
+      "learning_rate": 0.07137971065048548,
+      "grad_l2": 14.48573277920186,
+      "step_seconds": 112.98515979014337
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 87,
+      "loss": 2.0812559127807617,
+      "learning_rate": 0.06168403073701431,
+      "grad_l2": 12.238029514045452,
+      "step_seconds": 112.9574643112719
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 88,
+      "loss": 2.3415236473083496,
+      "learning_rate": 0.05266763558381149,
+      "grad_l2": 16.410419850098553,
+      "step_seconds": 112.96177245862782
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 89,
+      "loss": 2.0812299251556396,
+      "learning_rate": 0.04433942328433091,
+      "grad_l2": 14.129386551958838,
+      "step_seconds": 112.9569478649646
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 90,
+      "loss": 2.3168692588806152,
+      "learning_rate": 0.03670761277863485,
+      "grad_l2": 19.879568583934795,
+      "step_seconds": 112.96118419617414
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 91,
+      "loss": 2.1423606872558594,
+      "learning_rate": 0.029779735742292784,
+      "grad_l2": 18.709896064254746,
+      "step_seconds": 112.96112894453108
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 92,
+      "loss": 2.2609305381774902,
+      "learning_rate": 0.023562629153526776,
+      "grad_l2": 14.036999873431553,
+      "step_seconds": 112.9635548479855
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 93,
+      "loss": 2.231218099594116,
+      "learning_rate": 0.018062428545939507,
+      "grad_l2": 13.32605848419375,
+      "step_seconds": 112.97024119831622
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 94,
+      "loss": 2.25776743888855,
+      "learning_rate": 0.01328456195348346,
+      "grad_l2": 16.99355175054459,
+      "step_seconds": 112.9711287561804
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 95,
+      "loss": 2.2327330112457275,
+      "learning_rate": 0.009233744553646756,
+      "grad_l2": 15.499357986981638,
+      "step_seconds": 112.97674353793263
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 96,
+      "loss": 2.350142002105713,
+      "learning_rate": 0.005913974014141676,
+      "grad_l2": 11.719516627453727,
+      "step_seconds": 112.9739746786654
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 97,
+      "loss": 2.3572282791137695,
+      "learning_rate": 0.0033285265476900028,
+      "grad_l2": 13.501148405230786,
+      "step_seconds": 112.95919984765351
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 98,
+      "loss": 2.429168224334717,
+      "learning_rate": 0.0014799536787963308,
+      "grad_l2": 11.670767729900671,
+      "step_seconds": 112.96622943505645
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0,
+      "step": 99,
+      "loss": 2.148301362991333,
+      "learning_rate": 0.0003700797257013,
+      "grad_l2": 16.94843595420752,
+      "step_seconds": 112.96885275840759
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 0,
+      "loss": 1.8046157360076904,
+      "learning_rate": 1.5,
+      "grad_l2": 20.45089766824969,
+      "step_seconds": 6.729355761781335
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 1,
+      "loss": 2.6459555625915527,
+      "learning_rate": 1.4996299202742986,
+      "grad_l2": 17.67911651874108,
+      "step_seconds": 6.544605847448111
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 2,
+      "loss": 2.555403470993042,
+      "learning_rate": 1.4985200463212036,
+      "grad_l2": 21.182193914161193,
+      "step_seconds": 6.932907920330763
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 3,
+      "loss": 2.6090617179870605,
+      "learning_rate": 1.4966714734523099,
+      "grad_l2": 16.594872140237726,
+      "step_seconds": 6.770188653841615
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 4,
+      "loss": 2.3801863193511963,
+      "learning_rate": 1.4940860259858586,
+      "grad_l2": 15.061408226700314,
+      "step_seconds": 6.520759886130691
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 5,
+      "loss": 2.2465755939483643,
+      "learning_rate": 1.4907662554463532,
+      "grad_l2": 15.166924668701647,
+      "step_seconds": 6.478341551497579
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 6,
+      "loss": 2.0098466873168945,
+      "learning_rate": 1.4867154380465166,
+      "grad_l2": 15.367758533051243,
+      "step_seconds": 7.047165174037218
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 7,
+      "loss": 2.6561293601989746,
+      "learning_rate": 1.4819375714540606,
+      "grad_l2": 22.234320907009177,
+      "step_seconds": 6.524145066738129
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 8,
+      "loss": 2.2139980792999268,
+      "learning_rate": 1.4764373708464733,
+      "grad_l2": 20.729708271518977,
+      "step_seconds": 6.359233824536204
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 9,
+      "loss": 1.7107832431793213,
+      "learning_rate": 1.4702202642577074,
+      "grad_l2": 19.233058343428247,
+      "step_seconds": 6.604720449075103
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 10,
+      "loss": 1.8661755323410034,
+      "learning_rate": 1.4632923872213652,
+      "grad_l2": 23.886884370955023,
+      "step_seconds": 6.543244084343314
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 11,
+      "loss": 2.446927309036255,
+      "learning_rate": 1.4556605767156692,
+      "grad_l2": 17.37441066231957,
+      "step_seconds": 6.522753890603781
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 12,
+      "loss": 2.1393282413482666,
+      "learning_rate": 1.4473323644161886,
+      "grad_l2": 26.51343410165892,
+      "step_seconds": 6.590202601626515
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 13,
+      "loss": 1.8801416158676147,
+      "learning_rate": 1.4383159692629857,
+      "grad_l2": 15.67639546433058,
+      "step_seconds": 6.593198316171765
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 14,
+      "loss": 2.2876713275909424,
+      "learning_rate": 1.4286202893495146,
+      "grad_l2": 14.615564209523479,
+      "step_seconds": 6.721464719623327
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 15,
+      "loss": 2.4144375324249268,
+      "learning_rate": 1.4182548931412757,
+      "grad_l2": 12.876409370995377,
+      "step_seconds": 6.822159707546234
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 16,
+      "loss": 2.2207679748535156,
+      "learning_rate": 1.4072300100328976,
+      "grad_l2": 14.818483162105498,
+      "step_seconds": 6.508566839620471
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 17,
+      "loss": 2.46897554397583,
+      "learning_rate": 1.3955565202529576,
+      "grad_l2": 17.426070523022027,
+      "step_seconds": 6.59335664473474
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 18,
+      "loss": 2.0531017780303955,
+      "learning_rate": 1.3832459441265113,
+      "grad_l2": 12.461013848297421,
+      "step_seconds": 6.9258916936814785
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 19,
+      "loss": 1.9059076309204102,
+      "learning_rate": 1.3703104307059213,
+      "grad_l2": 11.829563688173371,
+      "step_seconds": 6.537513980641961
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 20,
+      "loss": 1.942908763885498,
+      "learning_rate": 1.3567627457812106,
+      "grad_l2": 15.16358471359358,
+      "step_seconds": 6.54437418282032
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 21,
+      "loss": 2.21549916267395,
+      "learning_rate": 1.3426162592817676,
+      "grad_l2": 15.490579204211308,
+      "step_seconds": 6.532772626727819
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 22,
+      "loss": 2.4008870124816895,
+      "learning_rate": 1.327884932081842,
+      "grad_l2": 14.749085579218864,
+      "step_seconds": 6.511671867221594
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 23,
+      "loss": 2.432394504547119,
+      "learning_rate": 1.3125833022228446,
+      "grad_l2": 17.236761813508895,
+      "step_seconds": 6.344806460663676
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 24,
+      "loss": 2.2990264892578125,
+      "learning_rate": 1.2967264705660586,
+      "grad_l2": 19.81292347008419,
+      "step_seconds": 6.381754716858268
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 25,
+      "loss": 2.461214780807495,
+      "learning_rate": 1.2803300858899105,
+      "grad_l2": 18.85534007814191,
+      "step_seconds": 6.336181554943323
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 26,
+      "loss": 1.9553993940353394,
+      "learning_rate": 1.2634103294465167,
+      "grad_l2": 16.055479030598605,
+      "step_seconds": 6.6946114134043455
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 27,
+      "loss": 1.179433822631836,
+      "learning_rate": 1.2459838989927388,
+      "grad_l2": 9.3710344702925,
+      "step_seconds": 6.366683820262551
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 28,
+      "loss": 1.6494288444519043,
+      "learning_rate": 1.2280679923115172,
+      "grad_l2": 15.386224989843623,
+      "step_seconds": 6.447871241718531
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 29,
+      "loss": 2.026265859603882,
+      "learning_rate": 1.2096802902397323,
+      "grad_l2": 16.091211414658485,
+      "step_seconds": 6.285358734428883
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 30,
+      "loss": 1.7448787689208984,
+      "learning_rate": 1.190838939219355,
+      "grad_l2": 13.076310531274245,
+      "step_seconds": 6.343647073954344
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 31,
+      "loss": 1.9248247146606445,
+      "learning_rate": 1.171562533389098,
+      "grad_l2": 20.45177494669974,
+      "step_seconds": 6.330580038949847
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 32,
+      "loss": 1.9530293941497803,
+      "learning_rate": 1.1518700962342474,
+      "grad_l2": 17.96636765940638,
+      "step_seconds": 6.31535879150033
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 33,
+      "loss": 1.967354416847229,
+      "learning_rate": 1.1317810618127786,
+      "grad_l2": 15.434218682620115,
+      "step_seconds": 6.500480080023408
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 34,
+      "loss": 1.6790117025375366,
+      "learning_rate": 1.1113152555762864,
+      "grad_l2": 20.40641183503418,
+      "step_seconds": 6.579902719706297
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 35,
+      "loss": 1.8003548383712769,
+      "learning_rate": 1.09049287480466,
+      "grad_l2": 20.622203321802232,
+      "step_seconds": 6.566496063023806
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 36,
+      "loss": 1.5628901720046997,
+      "learning_rate": 1.0693344686738044,
+      "grad_l2": 13.53118358373416,
+      "step_seconds": 6.6365156546235085
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 37,
+      "loss": 1.706517219543457,
+      "learning_rate": 1.0478609179760854,
+      "grad_l2": 11.75223188222181,
+      "step_seconds": 6.543209630995989
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 38,
+      "loss": 2.038750410079956,
+      "learning_rate": 1.0260934145135086,
+      "grad_l2": 22.67056674325525,
+      "step_seconds": 6.378026457503438
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 39,
+      "loss": 2.1085400581359863,
+      "learning_rate": 1.0040534401839687,
+      "grad_l2": 15.117300477884637,
+      "step_seconds": 6.392258575186133
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 40,
+      "loss": 2.009617328643799,
+      "learning_rate": 0.9817627457812106,
+      "grad_l2": 13.305076637759495,
+      "step_seconds": 6.346342723816633
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 41,
+      "loss": 1.649235486984253,
+      "learning_rate": 0.959243329529422,
+      "grad_l2": 12.599416761981177,
+      "step_seconds": 6.456578604876995
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 42,
+      "loss": 1.6713175773620605,
+      "learning_rate": 0.936517415373641,
+      "grad_l2": 17.258236204489233,
+      "step_seconds": 6.487881563603878
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 43,
+      "loss": 1.6397916078567505,
+      "learning_rate": 0.913607431047407,
+      "grad_l2": 27.308351258032996,
+      "step_seconds": 6.356201495975256
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 44,
+      "loss": 1.6873148679733276,
+      "learning_rate": 0.8905359859392936,
+      "grad_l2": 18.430841508907942,
+      "step_seconds": 6.383041616529226
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 45,
+      "loss": 2.2219152450561523,
+      "learning_rate": 0.8673258487801732,
+      "grad_l2": 16.204713426488183,
+      "step_seconds": 6.301579188555479
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 46,
+      "loss": 2.628523111343384,
+      "learning_rate": 0.8439999251732284,
+      "grad_l2": 15.424264964222287,
+      "step_seconds": 6.530532907694578
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 47,
+      "loss": 2.345273733139038,
+      "learning_rate": 0.8205812349888857,
+      "grad_l2": 14.288878312078282,
+      "step_seconds": 6.367810344323516
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 48,
+      "loss": 2.555614948272705,
+      "learning_rate": 0.7970928896469851,
+      "grad_l2": 17.187669933327893,
+      "step_seconds": 6.5646548345685005
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 49,
+      "loss": 1.8108959197998047,
+      "learning_rate": 0.7735580693085962,
+      "grad_l2": 17.00703547006372,
+      "step_seconds": 6.5861219968646765
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 50,
+      "loss": 2.214773416519165,
+      "learning_rate": 0.75,
+      "grad_l2": 12.071380476755492,
+      "step_seconds": 6.593119245022535
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 51,
+      "loss": 1.715921401977539,
+      "learning_rate": 0.7264419306914038,
+      "grad_l2": 14.526457392249137,
+      "step_seconds": 6.5276392959058285
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 52,
+      "loss": 1.7587193250656128,
+      "learning_rate": 0.702907110353015,
+      "grad_l2": 21.003816876325125,
+      "step_seconds": 6.47923319414258
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 53,
+      "loss": 1.7271630764007568,
+      "learning_rate": 0.6794187650111143,
+      "grad_l2": 15.540745496171944,
+      "step_seconds": 6.415918815881014
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 54,
+      "loss": 2.191650390625,
+      "learning_rate": 0.6560000748267719,
+      "grad_l2": 15.211850797266456,
+      "step_seconds": 6.354188928380609
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 55,
+      "loss": 1.8535807132720947,
+      "learning_rate": 0.6326741512198268,
+      "grad_l2": 15.812340793926028,
+      "step_seconds": 6.4307912196964025
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 56,
+      "loss": 1.7305665016174316,
+      "learning_rate": 0.6094640140607066,
+      "grad_l2": 28.33458183729084,
+      "step_seconds": 6.469480177387595
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 57,
+      "loss": 2.408409357070923,
+      "learning_rate": 0.5863925689525933,
+      "grad_l2": 13.386765529584553,
+      "step_seconds": 6.610397774726152
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 58,
+      "loss": 2.107877016067505,
+      "learning_rate": 0.5634825846263589,
+      "grad_l2": 14.970283473586086,
+      "step_seconds": 6.729122204706073
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 59,
+      "loss": 2.100659132003784,
+      "learning_rate": 0.5407566704705782,
+      "grad_l2": 16.913172773373297,
+      "step_seconds": 6.602693544700742
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 60,
+      "loss": 2.0250627994537354,
+      "learning_rate": 0.5182372542187896,
+      "grad_l2": 21.70317741531297,
+      "step_seconds": 6.497650492936373
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 61,
+      "loss": 1.1649179458618164,
+      "learning_rate": 0.4959465598160315,
+      "grad_l2": 15.739076762643517,
+      "step_seconds": 6.5153426099568605
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 62,
+      "loss": 1.8865896463394165,
+      "learning_rate": 0.4739065854864917,
+      "grad_l2": 14.78467066272092,
+      "step_seconds": 6.530907932668924
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 63,
+      "loss": 1.953121542930603,
+      "learning_rate": 0.45213908202391445,
+      "grad_l2": 14.620817863107678,
+      "step_seconds": 6.5483558177948
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 64,
+      "loss": 1.737992286682129,
+      "learning_rate": 0.4306655313261955,
+      "grad_l2": 16.61704166799888,
+      "step_seconds": 6.6901759803295135
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 65,
+      "loss": 2.177975654602051,
+      "learning_rate": 0.40950712519533994,
+      "grad_l2": 21.860671451286038,
+      "step_seconds": 6.6949843894690275
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 66,
+      "loss": 1.968104362487793,
+      "learning_rate": 0.3886847444237134,
+      "grad_l2": 15.949618462743095,
+      "step_seconds": 6.776690388098359
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 67,
+      "loss": 1.9854185581207275,
+      "learning_rate": 0.3682189381872215,
+      "grad_l2": 14.78785970343586,
+      "step_seconds": 6.722496507689357
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 68,
+      "loss": 1.4269306659698486,
+      "learning_rate": 0.34812990376575237,
+      "grad_l2": 15.308928373478903,
+      "step_seconds": 6.674073942005634
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 69,
+      "loss": 1.7282788753509521,
+      "learning_rate": 0.328437466610902,
+      "grad_l2": 11.96336028310991,
+      "step_seconds": 6.3826300855726
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 70,
+      "loss": 1.5586854219436646,
+      "learning_rate": 0.3091610607806452,
+      "grad_l2": 15.272109910260458,
+      "step_seconds": 6.500141251832247
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 71,
+      "loss": 1.7829605340957642,
+      "learning_rate": 0.29031970976026755,
+      "grad_l2": 14.824548813048589,
+      "step_seconds": 6.463990535587072
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 72,
+      "loss": 1.7547818422317505,
+      "learning_rate": 0.2719320076884827,
+      "grad_l2": 11.995942255109709,
+      "step_seconds": 6.453791772946715
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 73,
+      "loss": 1.907112956047058,
+      "learning_rate": 0.25401610100726124,
+      "grad_l2": 32.948937092122485,
+      "step_seconds": 6.436307413503528
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 74,
+      "loss": 1.7700114250183105,
+      "learning_rate": 0.23658967055348346,
+      "grad_l2": 19.16193140418557,
+      "step_seconds": 6.603291811421514
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 75,
+      "loss": 1.4103705883026123,
+      "learning_rate": 0.2196699141100894,
+      "grad_l2": 22.246938180266802,
+      "step_seconds": 6.310557313263416
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 76,
+      "loss": 1.8222057819366455,
+      "learning_rate": 0.2032735294339415,
+      "grad_l2": 22.584837708822995,
+      "step_seconds": 6.333887515589595
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 77,
+      "loss": 1.749369502067566,
+      "learning_rate": 0.1874166977771553,
+      "grad_l2": 15.094433961365413,
+      "step_seconds": 6.384912453591824
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 78,
+      "loss": 2.2022013664245605,
+      "learning_rate": 0.17211506791815814,
+      "grad_l2": 16.60222964695183,
+      "step_seconds": 6.327105209231377
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 79,
+      "loss": 2.180490016937256,
+      "learning_rate": 0.1573837407182322,
+      "grad_l2": 13.249124190936236,
+      "step_seconds": 6.646943628787994
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 80,
+      "loss": 2.181220531463623,
+      "learning_rate": 0.1432372542187895,
+      "grad_l2": 15.507848613288642,
+      "step_seconds": 6.692153848707676
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 81,
+      "loss": 2.1017916202545166,
+      "learning_rate": 0.1296895692940787,
+      "grad_l2": 12.015791117853466,
+      "step_seconds": 6.526978671550751
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 82,
+      "loss": 2.2256815433502197,
+      "learning_rate": 0.11675405587348886,
+      "grad_l2": 13.780632188748362,
+      "step_seconds": 6.436117488890886
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 83,
+      "loss": 2.4318792819976807,
+      "learning_rate": 0.10444347974704218,
+      "grad_l2": 15.107634706074151,
+      "step_seconds": 6.518855560570955
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 84,
+      "loss": 2.2578299045562744,
+      "learning_rate": 0.09276998996710231,
+      "grad_l2": 12.473473152283326,
+      "step_seconds": 6.342362035065889
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 85,
+      "loss": 2.3095407485961914,
+      "learning_rate": 0.08174510685872416,
+      "grad_l2": 10.852191730431052,
+      "step_seconds": 6.458817286416888
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 86,
+      "loss": 2.0682878494262695,
+      "learning_rate": 0.07137971065048548,
+      "grad_l2": 14.805558050536899,
+      "step_seconds": 6.593072533607483
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 87,
+      "loss": 2.116976261138916,
+      "learning_rate": 0.06168403073701431,
+      "grad_l2": 12.239936101581359,
+      "step_seconds": 6.522428877651691
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 88,
+      "loss": 2.3602821826934814,
+      "learning_rate": 0.05266763558381149,
+      "grad_l2": 14.74345612613761,
+      "step_seconds": 6.6471519861370325
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 89,
+      "loss": 2.0751073360443115,
+      "learning_rate": 0.04433942328433091,
+      "grad_l2": 13.55943059415932,
+      "step_seconds": 6.637669056653976
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 90,
+      "loss": 2.3235886096954346,
+      "learning_rate": 0.03670761277863485,
+      "grad_l2": 18.022356640097957,
+      "step_seconds": 6.698448058217764
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 91,
+      "loss": 2.118231773376465,
+      "learning_rate": 0.029779735742292784,
+      "grad_l2": 15.462093430574484,
+      "step_seconds": 6.700334904715419
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 92,
+      "loss": 2.2786033153533936,
+      "learning_rate": 0.023562629153526776,
+      "grad_l2": 13.987923412473606,
+      "step_seconds": 6.67068955861032
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 93,
+      "loss": 2.230877637863159,
+      "learning_rate": 0.018062428545939507,
+      "grad_l2": 13.09666036233132,
+      "step_seconds": 6.527950040996075
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 94,
+      "loss": 2.267531394958496,
+      "learning_rate": 0.01328456195348346,
+      "grad_l2": 15.777771925309954,
+      "step_seconds": 6.644957883283496
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 95,
+      "loss": 2.246236562728882,
+      "learning_rate": 0.009233744553646756,
+      "grad_l2": 14.661187027694112,
+      "step_seconds": 6.672233944758773
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 96,
+      "loss": 2.379002571105957,
+      "learning_rate": 0.005913974014141676,
+      "grad_l2": 12.71290240528325,
+      "step_seconds": 6.659685265272856
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 97,
+      "loss": 2.336364269256592,
+      "learning_rate": 0.0033285265476900028,
+      "grad_l2": 12.288217221263103,
+      "step_seconds": 6.741010528057814
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 98,
+      "loss": 2.4090323448181152,
+      "learning_rate": 0.0014799536787963308,
+      "grad_l2": 12.679725050360707,
+      "step_seconds": 6.683661054819822
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0,
+      "step": 99,
+      "loss": 2.159428596496582,
+      "learning_rate": 0.0003700797257013,
+      "grad_l2": 16.352493854962578,
+      "step_seconds": 6.683170847594738
+    }
+  ],
+  "loss_comparison": [
+    {
+      "model": "tinyllama",
+      "loss_mae": 0.010934702157974242,
+      "loss_rmse": 0.01385812608251263,
+      "loss_pearson_r": 0.9981313652091327
+    },
+    {
+      "model": "mistral",
+      "loss_mae": 0.01746658205986023,
+      "loss_rmse": 0.021668502663322195,
+      "loss_pearson_r": 0.9977373863426817
+    }
+  ],
+  "rotation_gains": [
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "RTN",
+      "precision": "W4A16",
+      "direct_ppl": 10.6941028374813,
+      "spinquant_ppl": 9.223418506515182,
+      "ppl_reduction_pct": 13.752292766547736
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "RTN",
+      "precision": "W4A4KV4",
+      "direct_ppl": 162.72656152352013,
+      "spinquant_ppl": 11.092414002920737,
+      "ppl_reduction_pct": 93.18340294352163
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "GPTQ",
+      "precision": "W4A16",
+      "direct_ppl": 9.049361470579967,
+      "spinquant_ppl": 8.254007997157936,
+      "ppl_reduction_pct": 8.78905628875335
+    },
+    {
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "GPTQ",
+      "precision": "W4A4KV4",
+      "direct_ppl": 90.45472928108542,
+      "spinquant_ppl": 9.02576045745511,
+      "ppl_reduction_pct": 90.02179263683624
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "RTN",
+      "precision": "W4A16",
+      "direct_ppl": 10.692187514043605,
+      "spinquant_ppl": 9.201868251498812,
+      "ppl_reduction_pct": 13.938394370537733
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "RTN",
+      "precision": "W4A4KV4",
+      "direct_ppl": 158.62532940792374,
+      "spinquant_ppl": 11.099379634320211,
+      "ppl_reduction_pct": 93.00276968643712
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "GPTQ",
+      "precision": "W4A16",
+      "direct_ppl": 9.032440949106931,
+      "spinquant_ppl": 8.262957181617253,
+      "ppl_reduction_pct": 8.519112074192526
+    },
+    {
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "GPTQ",
+      "precision": "W4A4KV4",
+      "direct_ppl": 95.30889210540774,
+      "spinquant_ppl": 9.020270708938748,
+      "ppl_reduction_pct": 90.53575116688725
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "method": "RTN",
+      "precision": "W4A16",
+      "direct_ppl": 6.857750918428886,
+      "spinquant_ppl": 5.655528551769416,
+      "ppl_reduction_pct": 17.530854954628474
+    },
+    {
+      "model": "mistral",
+      "stack": "official",
+      "method": "RTN",
+      "precision": "W4A4KV4",
+      "direct_ppl": 496.9469316083471,
+      "spinquant_ppl": 6.121279514993255,
+      "ppl_reduction_pct": 98.76822269629838
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "method": "RTN",
+      "precision": "W4A16",
+      "direct_ppl": 6.860289358494414,
+      "spinquant_ppl": 5.657497317712714,
+      "ppl_reduction_pct": 17.53267213564982
+    },
+    {
+      "model": "mistral",
+      "stack": "jittor",
+      "method": "RTN",
+      "precision": "W4A4KV4",
+      "direct_ppl": 524.0416156068701,
+      "spinquant_ppl": 6.0952743153577345,
+      "ppl_reduction_pct": 98.83687208537836
+    }
+  ],
+  "shared_shapes": {
+    "mistral_init_s0.npy": {
+      "R1": {
+        "shape": [
+          4096,
+          4096
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.0.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.1.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.2.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.3.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.4.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.5.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.6.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.7.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.8.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.9.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.10.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.11.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.12.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.13.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.14.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.15.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.16.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.17.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.18.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.19.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.20.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.21.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.22.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.23.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.24.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.25.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.26.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.27.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.28.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.29.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.30.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.31.self_attn.R2": {
+        "shape": [
+          128,
+          128
+        ],
+        "dtype": "float32",
+        "finite": true
+      }
+    },
+    "mistral_probe.npy": {
+      "shape": [
+        2,
+        512
+      ],
+      "dtype": "int64",
+      "finite": true
+    },
+    "mistral_test.npy": {
+      "shape": [
+        163,
+        2048
+      ],
+      "dtype": "int64",
+      "finite": true
+    },
+    "mistral_train_s0.npy": {
+      "shape": [
+        100,
+        512
+      ],
+      "dtype": "int64",
+      "finite": true
+    },
+    "tinyllama_gptq_s0.npy": {
+      "shape": [
+        128,
+        2048
+      ],
+      "dtype": "int64",
+      "finite": true
+    },
+    "tinyllama_init_s0.npy": {
+      "R1": {
+        "shape": [
+          2048,
+          2048
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.0.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.1.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.2.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.3.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.4.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.5.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.6.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.7.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.8.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.9.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.10.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.11.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.12.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.13.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.14.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.15.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.16.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.17.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.18.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.19.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.20.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      },
+      "model.layers.21.self_attn.R2": {
+        "shape": [
+          64,
+          64
+        ],
+        "dtype": "float32",
+        "finite": true
+      }
+    },
+    "tinyllama_probe.npy": {
+      "shape": [
+        2,
+        2048
+      ],
+      "dtype": "int64",
+      "finite": true
+    },
+    "tinyllama_test.npy": {
+      "shape": [
+        166,
+        2048
+      ],
+      "dtype": "int64",
+      "finite": true
+    },
+    "tinyllama_train_s0.npy": {
+      "shape": [
+        100,
+        2048
+      ],
+      "dtype": "int64",
+      "finite": true
+    }
+  }
+}

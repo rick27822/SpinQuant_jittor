@@ -1,0 +1,55 @@
+BEGIN_TASK {"id": "tinyllama_official_sq_gptq_a4_s0", "kind": "eval", "model": "tinyllama", "stack": "official", "method": "gptq", "bits": 4, "seed": 0, "rotate": true, "dependency": "tinyllama_official_train_s0"}
+2026-11-18 09:56:10,014 INFO PyTorch version 2.11.0+cu128 available.
+2026-11-18 09:56:11,323 INFO GPU memory (from rotate_model): 6.30 -> 4.33 GB (-1.97 GB)
+Rotating:   0%|          | 0/22 [00:00<?, ?layer/s]Rotating:   5%|▍         | 1/22 [00:00<00:10,  1.91layer/s]Rotating:   9%|▉         | 2/22 [00:00<00:08,  2.31layer/s]Rotating:  14%|█▎        | 3/22 [00:01<00:07,  2.47layer/s]Rotating:  18%|█▊        | 4/22 [00:01<00:07,  2.55layer/s]Rotating:  23%|██▎       | 5/22 [00:02<00:06,  2.59layer/s]Rotating:  27%|██▋       | 6/22 [00:02<00:06,  2.64layer/s]Rotating:  32%|███▏      | 7/22 [00:02<00:05,  2.66layer/s]Rotating:  36%|███▋      | 8/22 [00:03<00:05,  2.70layer/s]Rotating:  41%|████      | 9/22 [00:03<00:04,  2.72layer/s]Rotating:  45%|████▌     | 10/22 [00:03<00:04,  2.73layer/s]Rotating:  50%|█████     | 11/22 [00:04<00:04,  2.70layer/s]Rotating:  55%|█████▍    | 12/22 [00:04<00:03,  2.69layer/s]Rotating:  59%|█████▉    | 13/22 [00:04<00:03,  2.71layer/s]Rotating:  64%|██████▎   | 14/22 [00:05<00:02,  2.72layer/s]Rotating:  68%|██████▊   | 15/22 [00:05<00:02,  2.73layer/s]Rotating:  73%|███████▎  | 16/22 [00:06<00:02,  2.75layer/s]Rotating:  77%|███████▋  | 17/22 [00:06<00:01,  2.75layer/s]Rotating:  82%|████████▏ | 18/22 [00:06<00:01,  2.75layer/s]Rotating:  86%|████████▋ | 19/22 [00:07<00:01,  2.76layer/s]Rotating:  91%|█████████ | 20/22 [00:07<00:00,  2.76layer/s]Rotating:  95%|█████████▌| 21/22 [00:07<00:00,  2.75layer/s]Rotating: 100%|██████████| 22/22 [00:08<00:00,  2.75layer/s]Rotating: 100%|██████████| 22/22 [00:08<00:00,  2.68layer/s]
+2026-11-18 09:56:19,631 INFO GPU memory (from ptq_model): 4.33 -> 0.04 GB (-4.28 GB)
+/root/miniconda3/envs/torch_env/lib/python3.10/site-packages/transformers/modeling_utils.py:4713: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+2026-11-18 09:56:19,656 INFO -----GPTQ Quantization-----
+
+Layer 0: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  2026-11-18 09:56:20,060 WARNING The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 1: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 2: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 3: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 4: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 5: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 6: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 7: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 8: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 9: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 10: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 11: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 12: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 13: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 14: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 15: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 16: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 17: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 18: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 19: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 20: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 21: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  2026-11-18 09:59:25,442 INFO GPU memory (from gptq_fwrd): 4.06 -> 4.06 GB (0.00 GB)
+2026-11-18 09:59:25,442 INFO -----GPTQ Quantization Done-----
+
+QUANTIZATION_COMPLETE 197.40404277667403
+2026-11-18 09:59:27,016 WARNING Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+PPL_PROGRESS 1/166 elapsed=0.2s
+PPL_PROGRESS 10/166 elapsed=2.0s
+PPL_PROGRESS 20/166 elapsed=3.9s
+PPL_PROGRESS 30/166 elapsed=5.9s
+PPL_PROGRESS 40/166 elapsed=7.9s
+PPL_PROGRESS 50/166 elapsed=9.8s
+PPL_PROGRESS 60/166 elapsed=11.8s
+PPL_PROGRESS 70/166 elapsed=13.8s
+PPL_PROGRESS 80/166 elapsed=15.7s
+PPL_PROGRESS 90/166 elapsed=17.7s
+PPL_PROGRESS 100/166 elapsed=19.7s
+PPL_PROGRESS 110/166 elapsed=21.6s
+PPL_PROGRESS 120/166 elapsed=23.6s
+PPL_PROGRESS 130/166 elapsed=25.6s
+PPL_PROGRESS 140/166 elapsed=27.6s
+PPL_PROGRESS 150/166 elapsed=29.5s
+PPL_PROGRESS 160/166 elapsed=31.5s
+PPL_PROGRESS 166/166 elapsed=32.7s
+FINAL_RESULT {"ppl": 9.02576045745511, "nll_sum": 747592.5226533776, "evaluated_tokens": 339802, "test_blocks": 166, "quant_seconds": 197.40404277667403, "warmup_seconds": 0.4067695774137974, "eval_seconds": 32.68266190029681, "evaluated_tokens_per_second": 10397.011144215096, "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7", "calibration_sha256": "93bd8fd355ff9326de39ffb7ab8f39ef0f84f64c9bc4fe67f9b7427cee75ae2d", "rotation_sha256": "3b7ed2e18c96c6b682522cd8d2f1128be6dce525fbafbb8efc63e3b7061a7b14", "id": "tinyllama_official_sq_gptq_a4_s0", "kind": "eval", "model": "tinyllama", "stack": "official", "method": "gptq", "bits": 4, "seed": 0, "rotate": true, "dependency": "tinyllama_official_train_s0", "status": "complete", "base_weight_dtype": "float32", "model_load_seconds": 2.4846339784562588, "worker_seconds": 233.00222629122436, "max_rss_kib": 7115908, "versions": {"torch": "2.11.0+cu128", "transformers": "4.44.2", "numpy": "1.26.4"}, "torch_peak_allocated_bytes": 7765769728, "torch_peak_reserved_bytes": 7828668416}

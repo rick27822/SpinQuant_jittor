@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/root/miniconda3/envs/torch_env/bin/python",
+    "-u",
+    "/root/autodl-tmp/SpinQuant_jittor/outputs/full_A_20261118_w16a4kv4_seed0/source/run_full_experiment.py",
+    "worker",
+    "--root",
+    "/root/autodl-tmp/SpinQuant_jittor/outputs/full_A_20261118_w16a4kv4_seed0",
+    "--task",
+    "tinyllama_official_gptq_a16_s0"
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "OMP_NUM_THREADS": "8",
+    "OPENBLAS_NUM_THREADS": "8",
+    "MKL_NUM_THREADS": "8",
+    "cuda_arch": "120",
+    "conv_opt": "1"
+  }
+}

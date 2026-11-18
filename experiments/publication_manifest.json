@@ -1,0 +1,1038 @@
+{
+  "archive": "full_A_20261118_w16a4kv4_seed0",
+  "full_archive_files_verified": 285,
+  "files": {
+    "protocol.json": {
+      "archive_path": "protocol.json",
+      "sha256": "938aeb0cd456680c9eeffc4c8b6d56a9173d07ed2537ba7c82cd4dd2bf1beab7"
+    },
+    "status.json": {
+      "archive_path": "status.json",
+      "sha256": "c14f6c6254f400e89e51fdc22a8cb7c54239f09f392f7b19544ff6401a684bbe"
+    },
+    "summary_status.json": {
+      "archive_path": "summary_status.json",
+      "sha256": "70c3a77316eafba246df96710391805b1ca88be60086539864b4cad9e94e9642"
+    },
+    "input_sha256.json": {
+      "archive_path": "input_sha256.json",
+      "sha256": "6f4e3c58cd3d4a3cbf4d00d51997ea9f1d5d9bd3615084abc41bc46d21fc6edb"
+    },
+    "shared_sha256.json": {
+      "archive_path": "shared_sha256.json",
+      "sha256": "4d216f9d69655605d722c87944cd80aad333547cf7da3ec9794ce13db264a000"
+    },
+    "source_sha256.json": {
+      "archive_path": "source_sha256.json",
+      "sha256": "e68eef6029482be5ae762934a075aba70d989bd35dd547d69db3e703daf5930e"
+    },
+    "download_sha256.json": {
+      "archive_path": "download_sha256.json",
+      "sha256": "16064d0634a3ccafd8299c365cb9814bdc65047c6e972a211763a39ce7f7a6ee"
+    },
+    "gpu_samples.jsonl": {
+      "archive_path": "gpu_samples.jsonl",
+      "sha256": "32e0c25d8b6adba821f1ff23bc11c8d604b4611e3abd0b764b692ca17de8f370"
+    },
+    "runner.log": {
+      "archive_path": "runner.log",
+      "sha256": "b3c5ecad3f900c12a37652fff47f7f37147c9898d842996be6bc1b0afbc23dbe"
+    },
+    "results/mistral_jittor_float_a16_s0.json": {
+      "archive_path": "results/mistral_jittor_float_a16_s0.json",
+      "sha256": "16a869775445ecad72329f8c2d21ab6fb74b0da191fa30f4ac77686bd058842b"
+    },
+    "results/mistral_jittor_rtn_a16_s0.json": {
+      "archive_path": "results/mistral_jittor_rtn_a16_s0.json",
+      "sha256": "a276bbedf83608fc330dced718928ee58a4e6342a0246b047ab9fc5d554358a5"
+    },
+    "results/mistral_jittor_rtn_a4_s0.json": {
+      "archive_path": "results/mistral_jittor_rtn_a4_s0.json",
+      "sha256": "966e4cf8e3644281f4a3e287fd8f3168c0dfcdf97ac1533b2e5ac3d9adc4af02"
+    },
+    "results/mistral_jittor_sq_rtn_a16_s0.json": {
+      "archive_path": "results/mistral_jittor_sq_rtn_a16_s0.json",
+      "sha256": "22db0047b074f6e37d12bd3c6b56b339634aa9d812c2dd7a411572122baf5713"
+    },
+    "results/mistral_jittor_sq_rtn_a4_s0.json": {
+      "archive_path": "results/mistral_jittor_sq_rtn_a4_s0.json",
+      "sha256": "e6b5b0dd88d768a903e08553c7725f52d3d67a2570e990ad0091482df8b891f0"
+    },
+    "results/mistral_jittor_train_s0.json": {
+      "archive_path": "results/mistral_jittor_train_s0.json",
+      "sha256": "e13a4e027ce5588762a327e476d3dbf31813ae2421583b66e359f660cf07544c"
+    },
+    "results/mistral_official_float_a16_s0.json": {
+      "archive_path": "results/mistral_official_float_a16_s0.json",
+      "sha256": "2409da450d9065ba69fcbd69657ad840b58ed8d8872537076f93e7ca63ed33a3"
+    },
+    "results/mistral_official_rtn_a16_s0.json": {
+      "archive_path": "results/mistral_official_rtn_a16_s0.json",
+      "sha256": "9bceb8518c637bd3957049d97ca65563d9b01e8446ca0e67189743d43c48d498"
+    },
+    "results/mistral_official_rtn_a4_s0.json": {
+      "archive_path": "results/mistral_official_rtn_a4_s0.json",
+      "sha256": "619f53b4a6ee6be015b3785aa2b9a31097b2e2fd0f37274ff7d7cc69111cc64b"
+    },
+    "results/mistral_official_sq_rtn_a16_s0.json": {
+      "archive_path": "results/mistral_official_sq_rtn_a16_s0.json",
+      "sha256": "e18aad6142a7e95ad0ae37d0abde656ca13bdb04cb77b1472b730a0ba17595bf"
+    },
+    "results/mistral_official_sq_rtn_a4_s0.json": {
+      "archive_path": "results/mistral_official_sq_rtn_a4_s0.json",
+      "sha256": "fec4c2b3eb9336ab3b4fa6ee780f1680bfb347e521d380970a8b6a2cdd30be7a"
+    },
+    "results/mistral_official_train_s0.json": {
+      "archive_path": "results/mistral_official_train_s0.json",
+      "sha256": "a33599c5c9a1d25c1e39bc2f72cc8412a80bc9da9b2bf46f272a20639aad678d"
+    },
+    "results/tinyllama_jittor_float_a16_s0.json": {
+      "archive_path": "results/tinyllama_jittor_float_a16_s0.json",
+      "sha256": "b9c6b8c44f8781ecdb097579c0e29f1ed2297ba28166867f228775b6487bfda0"
+    },
+    "results/tinyllama_jittor_gptq_a16_s0.json": {
+      "archive_path": "results/tinyllama_jittor_gptq_a16_s0.json",
+      "sha256": "61a293e0562d746c82437e8f57cbe045651656fa3dc79946f23fffb24f39efa7"
+    },
+    "results/tinyllama_jittor_gptq_a4_s0.json": {
+      "archive_path": "results/tinyllama_jittor_gptq_a4_s0.json",
+      "sha256": "9ac5c1531fac0fbc99b2e53e591b8e3f3864ca1c95ab659a2092c54319270df3"
+    },
+    "results/tinyllama_jittor_rtn_a16_s0.json": {
+      "archive_path": "results/tinyllama_jittor_rtn_a16_s0.json",
+      "sha256": "2a8fd9bb6e2f059e437c9eef4da96bba21e58ac1ed0071c24b9b557c750c6384"
+    },
+    "results/tinyllama_jittor_rtn_a4_s0.json": {
+      "archive_path": "results/tinyllama_jittor_rtn_a4_s0.json",
+      "sha256": "e75f4ccb551ab987a94c3b54ccc984caa933a6395ffb4a4ae11b21abbcfe25b6"
+    },
+    "results/tinyllama_jittor_sq_gptq_a16_s0.json": {
+      "archive_path": "results/tinyllama_jittor_sq_gptq_a16_s0.json",
+      "sha256": "01fd40a082b35cdc90fe2fcddd5808d198eae961efccbe1eb38e808e897bc6f8"
+    },
+    "results/tinyllama_jittor_sq_gptq_a4_s0.json": {
+      "archive_path": "results/tinyllama_jittor_sq_gptq_a4_s0.json",
+      "sha256": "31a8bf5c4e9a2b9e152d34366acb7cb2de607cc802184e344fa55db1318212de"
+    },
+    "results/tinyllama_jittor_sq_rtn_a16_s0.json": {
+      "archive_path": "results/tinyllama_jittor_sq_rtn_a16_s0.json",
+      "sha256": "07613d81789acb7b3451909b2914b113d5b5df564fdd725158057d1cfb70f90d"
+    },
+    "results/tinyllama_jittor_sq_rtn_a4_s0.json": {
+      "archive_path": "results/tinyllama_jittor_sq_rtn_a4_s0.json",
+      "sha256": "2fa3e35f0eec5e861494cf910b8c6fa6c6420470485ec6140950ae3f168bf1fc"
+    },
+    "results/tinyllama_jittor_train_s0.json": {
+      "archive_path": "results/tinyllama_jittor_train_s0.json",
+      "sha256": "a3194a08d3919c7eaa6239667949bda5a0abfc9f2f2f4f514ca9ffc94aeaa762"
+    },
+    "results/tinyllama_official_float_a16_s0.json": {
+      "archive_path": "results/tinyllama_official_float_a16_s0.json",
+      "sha256": "08c48b717c31139994ada3199af20467614feeb1d723ae0f4352dc6484381026"
+    },
+    "results/tinyllama_official_gptq_a16_s0.json": {
+      "archive_path": "results/tinyllama_official_gptq_a16_s0.json",
+      "sha256": "b38e635a82acdc579b6e3343892b433d543eb22a852787d00730f07d7e1127fa"
+    },
+    "results/tinyllama_official_gptq_a4_s0.json": {
+      "archive_path": "results/tinyllama_official_gptq_a4_s0.json",
+      "sha256": "bd1e9971ff9c40a231d58082a63bf9545e25c9c1193dd75cf1ee99fea8ae5be0"
+    },
+    "results/tinyllama_official_rtn_a16_s0.json": {
+      "archive_path": "results/tinyllama_official_rtn_a16_s0.json",
+      "sha256": "a1e0bfeb73d85c43644a4b3a8eb2eb5240ceb8285fd566b75a932f0e77c0ab3e"
+    },
+    "results/tinyllama_official_rtn_a4_s0.json": {
+      "archive_path": "results/tinyllama_official_rtn_a4_s0.json",
+      "sha256": "7f50cafdf44a756db277d0bec9037fef8ae50d176039d63d771e5e44f22aae83"
+    },
+    "results/tinyllama_official_sq_gptq_a16_s0.json": {
+      "archive_path": "results/tinyllama_official_sq_gptq_a16_s0.json",
+      "sha256": "4974e57ecd11a4a963fde231e5f306c26b09b30d1abe5662348b63456b4fc397"
+    },
+    "results/tinyllama_official_sq_gptq_a4_s0.json": {
+      "archive_path": "results/tinyllama_official_sq_gptq_a4_s0.json",
+      "sha256": "4d9db69d12fe38d902a8386bbdde271fc26abb6d79d71eb485372accb6730a96"
+    },
+    "results/tinyllama_official_sq_rtn_a16_s0.json": {
+      "archive_path": "results/tinyllama_official_sq_rtn_a16_s0.json",
+      "sha256": "e2c6750181ca9d629f22ae4e797c54baedb906d8a45fecd35d97fd27a6083662"
+    },
+    "results/tinyllama_official_sq_rtn_a4_s0.json": {
+      "archive_path": "results/tinyllama_official_sq_rtn_a4_s0.json",
+      "sha256": "167eb252f46cf3d607e9d112dfb90b01b9afb632b241f81bf72b153947cc3a75"
+    },
+    "results/tinyllama_official_train_s0.json": {
+      "archive_path": "results/tinyllama_official_train_s0.json",
+      "sha256": "11d17637ef133c32bb8f0d40c4c94c9ff837baed125d036153c5b86290492377"
+    },
+    "logs/mistral_jittor_float_a16_s0.command.json": {
+      "archive_path": "logs/mistral_jittor_float_a16_s0.command.json",
+      "sha256": "757658320607c4a85db5e463d8a825007af18e078c0ee9b54975dde9318f0a25"
+    },
+    "logs/mistral_jittor_float_a16_s0.exit.json": {
+      "archive_path": "logs/mistral_jittor_float_a16_s0.exit.json",
+      "sha256": "4e51234c81d8dbafd49e507c798e333d3dbaf6b9f99fabf75d97d84b2be90183"
+    },
+    "logs/mistral_jittor_float_a16_s0.log": {
+      "archive_path": "logs/mistral_jittor_float_a16_s0.log",
+      "sha256": "474f6414e763ef5706cab77919470f466a0a433b2080c315feb036965237a240"
+    },
+    "logs/mistral_jittor_preflight.command.json": {
+      "archive_path": "logs/mistral_jittor_preflight.command.json",
+      "sha256": "9a2ade04aaea65125bdf1f9275a06d025a22257bfbedb0912e2411336cb6bd91"
+    },
+    "logs/mistral_jittor_preflight.exit.json": {
+      "archive_path": "logs/mistral_jittor_preflight.exit.json",
+      "sha256": "b6ef437303564df0cb5c6610faeb63552e5934ed993e852689a8a3164c380352"
+    },
+    "logs/mistral_jittor_preflight.log": {
+      "archive_path": "logs/mistral_jittor_preflight.log",
+      "sha256": "03b0c1677375c06da8a80d8ba83097f598406693ac8e0ab50178b92eafae4f0f"
+    },
+    "logs/mistral_jittor_rtn_a16_s0.command.json": {
+      "archive_path": "logs/mistral_jittor_rtn_a16_s0.command.json",
+      "sha256": "12e2d2f7ae7ab8f9ad7fd315aa8ae10a1742add829cfe2725e16ff016cc0081c"
+    },
+    "logs/mistral_jittor_rtn_a16_s0.exit.json": {
+      "archive_path": "logs/mistral_jittor_rtn_a16_s0.exit.json",
+      "sha256": "625655b1aff24bcc51d6f336d654f7933fca24d84c085bccbda49069502a8eb4"
+    },
+    "logs/mistral_jittor_rtn_a16_s0.log": {
+      "archive_path": "logs/mistral_jittor_rtn_a16_s0.log",
+      "sha256": "9e771966fde3865b7d037d50c4e15b8d46fb95ee71440aa6aabf523be2ae98fe"
+    },
+    "logs/mistral_jittor_rtn_a4_s0.command.json": {
+      "archive_path": "logs/mistral_jittor_rtn_a4_s0.command.json",
+      "sha256": "db539237e1c3871a46360698b7c8ae776a1ef2e107d9b9016733528d1c6cef97"
+    },
+    "logs/mistral_jittor_rtn_a4_s0.exit.json": {
+      "archive_path": "logs/mistral_jittor_rtn_a4_s0.exit.json",
+      "sha256": "8605a01494f9b3825c89b1e725a03ba04b2d0b48e5fd3ba80f50c001789b084d"
+    },
+    "logs/mistral_jittor_rtn_a4_s0.log": {
+      "archive_path": "logs/mistral_jittor_rtn_a4_s0.log",
+      "sha256": "479f9561c8b216ada20ccdde35b3de64912a933824c100954881df0d0a273ddf"
+    },
+    "logs/mistral_jittor_sq_rtn_a16_s0.command.json": {
+      "archive_path": "logs/mistral_jittor_sq_rtn_a16_s0.command.json",
+      "sha256": "5e29bda6316105431390924d78ac2e3084817adb8432121208d0fde46794a80a"
+    },
+    "logs/mistral_jittor_sq_rtn_a16_s0.exit.json": {
+      "archive_path": "logs/mistral_jittor_sq_rtn_a16_s0.exit.json",
+      "sha256": "27fb99bb06f867cfed7decc5790d36c03ba4c4e2f7499118319a663695b71f9e"
+    },
+    "logs/mistral_jittor_sq_rtn_a16_s0.log": {
+      "archive_path": "logs/mistral_jittor_sq_rtn_a16_s0.log",
+      "sha256": "2debdcfc9cae90f8de35ec9624b676a59f1f29a78b1d971fd468e19561953018"
+    },
+    "logs/mistral_jittor_sq_rtn_a4_s0.command.json": {
+      "archive_path": "logs/mistral_jittor_sq_rtn_a4_s0.command.json",
+      "sha256": "84dead5c2ab6f04ef9f227060fb85c3e044959dae07250f79e4aec760f014bf7"
+    },
+    "logs/mistral_jittor_sq_rtn_a4_s0.exit.json": {
+      "archive_path": "logs/mistral_jittor_sq_rtn_a4_s0.exit.json",
+      "sha256": "a8b6c3a1219662dbd9a768dc4d3e67e4a56f484cfb1ccb25dfa58bdf204645f6"
+    },
+    "logs/mistral_jittor_sq_rtn_a4_s0.log": {
+      "archive_path": "logs/mistral_jittor_sq_rtn_a4_s0.log",
+      "sha256": "d661dc1b055411f445d7c6c0147ed46663f7bf271b8c54b3df9ca12ce5149e60"
+    },
+    "logs/mistral_jittor_train_s0.command.json": {
+      "archive_path": "logs/mistral_jittor_train_s0.command.json",
+      "sha256": "9705e6d813c825a2ad86d3485e3fc0d76e0577a5ad3465c9c0ba057f6eccc70e"
+    },
+    "logs/mistral_jittor_train_s0.exit.json": {
+      "archive_path": "logs/mistral_jittor_train_s0.exit.json",
+      "sha256": "5833e52bb3bdefd342dfd4fdfc5b43ea34e37f809e9c746ac5ff1c4a4a3d2b40"
+    },
+    "logs/mistral_jittor_train_s0.log": {
+      "archive_path": "logs/mistral_jittor_train_s0.log",
+      "sha256": "ebf77788ee3ec8189395940485f221aa1aab58f3da4bbbd8cd2dd8aeed038bed"
+    },
+    "logs/mistral_official_float_a16_s0.command.json": {
+      "archive_path": "logs/mistral_official_float_a16_s0.command.json",
+      "sha256": "a3c88eeb7ff7d734d00ed182c8581f6fd43bc8af5cdd9b16fb379a79b54277db"
+    },
+    "logs/mistral_official_float_a16_s0.exit.json": {
+      "archive_path": "logs/mistral_official_float_a16_s0.exit.json",
+      "sha256": "08c93df224cea1fbe2c274cf41f05f64baefa70b61150005261f7e1a03e4c560"
+    },
+    "logs/mistral_official_float_a16_s0.log": {
+      "archive_path": "logs/mistral_official_float_a16_s0.log",
+      "sha256": "09a948d717b6d1fb9f4695568d5561a2426abdd8b9ff19004ce844c51f9a3eda"
+    },
+    "logs/mistral_official_preflight.command.json": {
+      "archive_path": "logs/mistral_official_preflight.command.json",
+      "sha256": "cad862bb1d471a3ec8564d7483034c391444aa2d33a1b2ad65422ae48a3970fe"
+    },
+    "logs/mistral_official_preflight.exit.json": {
+      "archive_path": "logs/mistral_official_preflight.exit.json",
+      "sha256": "16ae690c857b8fe0f8725e8618d40261b52db6b41e862e66ca22edf0722e4957"
+    },
+    "logs/mistral_official_preflight.log": {
+      "archive_path": "logs/mistral_official_preflight.log",
+      "sha256": "375e8ae27d485b5dfe21a40660128a284fd91671ddd7790171ce08214fcfd169"
+    },
+    "logs/mistral_official_rtn_a16_s0.command.json": {
+      "archive_path": "logs/mistral_official_rtn_a16_s0.command.json",
+      "sha256": "4aadb02ffb696115460930a5d6affc93597ca3af6a6a879d2a0898afefab4454"
+    },
+    "logs/mistral_official_rtn_a16_s0.exit.json": {
+      "archive_path": "logs/mistral_official_rtn_a16_s0.exit.json",
+      "sha256": "d4e34428194c84247bbd888d5e94316a5a8282d5da22ecff7809aeafb3f253c9"
+    },
+    "logs/mistral_official_rtn_a16_s0.log": {
+      "archive_path": "logs/mistral_official_rtn_a16_s0.log",
+      "sha256": "d40fdffdbc994bbb524006bb7d1218284e55b4fe1e0f2053822f017af527f7ec"
+    },
+    "logs/mistral_official_rtn_a4_s0.command.json": {
+      "archive_path": "logs/mistral_official_rtn_a4_s0.command.json",
+      "sha256": "44ea65719ce83e2873329ecbebeae68b093e78a126dfa95bd21de39682f79889"
+    },
+    "logs/mistral_official_rtn_a4_s0.exit.json": {
+      "archive_path": "logs/mistral_official_rtn_a4_s0.exit.json",
+      "sha256": "c3d2c3ca4dbcff142ce9d436cbae967868a3b6e4bbb2e849152817c80912fc22"
+    },
+    "logs/mistral_official_rtn_a4_s0.log": {
+      "archive_path": "logs/mistral_official_rtn_a4_s0.log",
+      "sha256": "d3204def9bd9507b4e352a43cc32ca288e266176351c947beb405d7a79fe147d"
+    },
+    "logs/mistral_official_sq_rtn_a16_s0.command.json": {
+      "archive_path": "logs/mistral_official_sq_rtn_a16_s0.command.json",
+      "sha256": "e9333e669ecd0d091f6443ac8831e62d2fb02a659f55d2e3f3a8fb679965a1b7"
+    },
+    "logs/mistral_official_sq_rtn_a16_s0.exit.json": {
+      "archive_path": "logs/mistral_official_sq_rtn_a16_s0.exit.json",
+      "sha256": "4d58cde64576777298e98e9594e849eb09a3462933aac7ca18adffc980fb0871"
+    },
+    "logs/mistral_official_sq_rtn_a16_s0.log": {
+      "archive_path": "logs/mistral_official_sq_rtn_a16_s0.log",
+      "sha256": "18154e5d36cacd7e48c75d158a6a89e2b814732eabd44e2915078c3e5a0ed13f"
+    },
+    "logs/mistral_official_sq_rtn_a4_s0.command.json": {
+      "archive_path": "logs/mistral_official_sq_rtn_a4_s0.command.json",
+      "sha256": "5ef573f1601efc23071b96964079cb3209e0553ea265dc3c5a3ab59f3ce1ff62"
+    },
+    "logs/mistral_official_sq_rtn_a4_s0.exit.json": {
+      "archive_path": "logs/mistral_official_sq_rtn_a4_s0.exit.json",
+      "sha256": "126f018663fe24903b52876e58c8c94af18de604393cc10bcd10b64dd3c6257f"
+    },
+    "logs/mistral_official_sq_rtn_a4_s0.log": {
+      "archive_path": "logs/mistral_official_sq_rtn_a4_s0.log",
+      "sha256": "e1662a0f85a0bca591dadb6017298f92b9d14cadf579df53b88515149db497ff"
+    },
+    "logs/mistral_official_train_s0.command.json": {
+      "archive_path": "logs/mistral_official_train_s0.command.json",
+      "sha256": "1f6f1414c6bac265a202315e5a1c1c68f9c4dc27d4d5c125df406fa59c430aed"
+    },
+    "logs/mistral_official_train_s0.exit.json": {
+      "archive_path": "logs/mistral_official_train_s0.exit.json",
+      "sha256": "bffb65b7f927103e8dd6a513708a93267999979030485bf2bbbc0457fee5b7ee"
+    },
+    "logs/mistral_official_train_s0.log": {
+      "archive_path": "logs/mistral_official_train_s0.log",
+      "sha256": "83c082e6c5b4b2bba973ab5334a248f12eefa9f28c8d33f063ae406b72adf564"
+    },
+    "logs/tinyllama_jittor_float_a16_s0.command.json": {
+      "archive_path": "logs/tinyllama_jittor_float_a16_s0.command.json",
+      "sha256": "2c8a6fa6a344102967febef12a48bcdf40ba4a4d75c279ccef3164fd713cfdb1"
+    },
+    "logs/tinyllama_jittor_float_a16_s0.exit.json": {
+      "archive_path": "logs/tinyllama_jittor_float_a16_s0.exit.json",
+      "sha256": "654318cdcfb33b67a36657e7c25a11e4c264396ccb53609a5f461c88b809922a"
+    },
+    "logs/tinyllama_jittor_float_a16_s0.log": {
+      "archive_path": "logs/tinyllama_jittor_float_a16_s0.log",
+      "sha256": "70159061495c02c45b2ef77f06b941068ec28ac98b0332056fd498f5109ac26c"
+    },
+    "logs/tinyllama_jittor_gptq_a16_s0.command.json": {
+      "archive_path": "logs/tinyllama_jittor_gptq_a16_s0.command.json",
+      "sha256": "42f8191edbe6a8c33080d0e6a951be0b4d0cff6db24ff953dc1708acbc7fbca9"
+    },
+    "logs/tinyllama_jittor_gptq_a16_s0.exit.json": {
+      "archive_path": "logs/tinyllama_jittor_gptq_a16_s0.exit.json",
+      "sha256": "142df20aa9a67c1405877a6dccbaaa9d1869db276484d1aabe9138e347942fe8"
+    },
+    "logs/tinyllama_jittor_gptq_a16_s0.log": {
+      "archive_path": "logs/tinyllama_jittor_gptq_a16_s0.log",
+      "sha256": "668f87eee0f0b63008a5389bf35e5a4e281e4e9c6c7e85d9a4913022cd7a1113"
+    },
+    "logs/tinyllama_jittor_gptq_a4_s0.command.json": {
+      "archive_path": "logs/tinyllama_jittor_gptq_a4_s0.command.json",
+      "sha256": "09e5a888bfcaaee1c06357622dc19a75a21ba0a14123c6bd4b9787b73ae61b2a"
+    },
+    "logs/tinyllama_jittor_gptq_a4_s0.exit.json": {
+      "archive_path": "logs/tinyllama_jittor_gptq_a4_s0.exit.json",
+      "sha256": "79db76b9998856f6b90e0a2f7614dda60b4901576a3d081592c22ad40d725a36"
+    },
+    "logs/tinyllama_jittor_gptq_a4_s0.log": {
+      "archive_path": "logs/tinyllama_jittor_gptq_a4_s0.log",
+      "sha256": "f2105f81b4e202b70abf6c3f4cd5070b9dd8d1c59e72ce5649b1536868524ac2"
+    },
+    "logs/tinyllama_jittor_preflight.command.json": {
+      "archive_path": "logs/tinyllama_jittor_preflight.command.json",
+      "sha256": "3ba1f7c08efd87db820128f0f738a311a9b2ebf0db5ce850d92ce5aeb5682168"
+    },
+    "logs/tinyllama_jittor_preflight.exit.json": {
+      "archive_path": "logs/tinyllama_jittor_preflight.exit.json",
+      "sha256": "9fb6bf0690b27872652478a4f9cd5a2de7005860f047d7a5bd9daddb1d1e2ec4"
+    },
+    "logs/tinyllama_jittor_preflight.log": {
+      "archive_path": "logs/tinyllama_jittor_preflight.log",
+      "sha256": "869b4332ddf001ff4c66a37a6b56bc849fff703115a1f9adb46cdad03344066e"
+    },
+    "logs/tinyllama_jittor_rtn_a16_s0.command.json": {
+      "archive_path": "logs/tinyllama_jittor_rtn_a16_s0.command.json",
+      "sha256": "de2081a3ba5dd11bf40d41f676f17d2a497654fc3942a5fa4dec00c0440624a4"
+    },
+    "logs/tinyllama_jittor_rtn_a16_s0.exit.json": {
+      "archive_path": "logs/tinyllama_jittor_rtn_a16_s0.exit.json",
+      "sha256": "2f91b593b4f1de0b72c34cfa15677b2f853cf062d0d0d6448d1820dd461eb0f3"
+    },
+    "logs/tinyllama_jittor_rtn_a16_s0.log": {
+      "archive_path": "logs/tinyllama_jittor_rtn_a16_s0.log",
+      "sha256": "e5062a846ac2a56c34b37d03fa4120cd6f07ec26db970f3dffc908fc960c2bf7"
+    },
+    "logs/tinyllama_jittor_rtn_a4_s0.command.json": {
+      "archive_path": "logs/tinyllama_jittor_rtn_a4_s0.command.json",
+      "sha256": "97283f7dd0bed773cc48e1f0a9a313b132ffe1442d32b57df5faef9fbd590dc8"
+    },
+    "logs/tinyllama_jittor_rtn_a4_s0.exit.json": {
+      "archive_path": "logs/tinyllama_jittor_rtn_a4_s0.exit.json",
+      "sha256": "f9973c49ea4bf1fae6d9dab413db9b487a271e7d61a036bf37d718e13ae0cc96"
+    },
+    "logs/tinyllama_jittor_rtn_a4_s0.log": {
+      "archive_path": "logs/tinyllama_jittor_rtn_a4_s0.log",
+      "sha256": "d801658bfa6b7a562c31f171602fcf2ce7ca8651fc8598650dc7020c3d923373"
+    },
+    "logs/tinyllama_jittor_sq_gptq_a16_s0.command.json": {
+      "archive_path": "logs/tinyllama_jittor_sq_gptq_a16_s0.command.json",
+      "sha256": "71ee9afb83097e1c556e7dd59f0b9251e9c181bdbb9e618fa9a1ed2c7eb7608e"
+    },
+    "logs/tinyllama_jittor_sq_gptq_a16_s0.exit.json": {
+      "archive_path": "logs/tinyllama_jittor_sq_gptq_a16_s0.exit.json",
+      "sha256": "f4acb0986ee9ec9e19313d1865ccd127dfe6687a1787bd3a5e294c71002b8d19"
+    },
+    "logs/tinyllama_jittor_sq_gptq_a16_s0.log": {
+      "archive_path": "logs/tinyllama_jittor_sq_gptq_a16_s0.log",
+      "sha256": "bbe8cd922f91fe52d0840204d42ed64a63888476f5cbeaa0fd3b72e760be1ffe"
+    },
+    "logs/tinyllama_jittor_sq_gptq_a4_s0.command.json": {
+      "archive_path": "logs/tinyllama_jittor_sq_gptq_a4_s0.command.json",
+      "sha256": "5468b4f300dcb1bee70f7627f417207bdd37860792a3e1108d09202cb417eb12"
+    },
+    "logs/tinyllama_jittor_sq_gptq_a4_s0.exit.json": {
+      "archive_path": "logs/tinyllama_jittor_sq_gptq_a4_s0.exit.json",
+      "sha256": "32bca61c421fa75aa7f87d8c957ed49ccefefe2438f1afeff4144f24a7bf178d"
+    },
+    "logs/tinyllama_jittor_sq_gptq_a4_s0.log": {
+      "archive_path": "logs/tinyllama_jittor_sq_gptq_a4_s0.log",
+      "sha256": "e5ad6213064b4a20faeae176cf74edb031995d65a5b8c8c121bc58459f763fb1"
+    },
+    "logs/tinyllama_jittor_sq_rtn_a16_s0.command.json": {
+      "archive_path": "logs/tinyllama_jittor_sq_rtn_a16_s0.command.json",
+      "sha256": "c90084a9e4722917ac29d73e486fe180f7ef8bec41e91a12067e0fe3595a81b3"
+    },
+    "logs/tinyllama_jittor_sq_rtn_a16_s0.exit.json": {
+      "archive_path": "logs/tinyllama_jittor_sq_rtn_a16_s0.exit.json",
+      "sha256": "f63b5a381be1104163862966fec37b65b371b8b25344db79ee79b0e38956bb43"
+    },
+    "logs/tinyllama_jittor_sq_rtn_a16_s0.log": {
+      "archive_path": "logs/tinyllama_jittor_sq_rtn_a16_s0.log",
+      "sha256": "0b6e2f3e612205cdc0db3256e14c762a85a0b126ddce7ffabc0d9afbf0f66b1f"
+    },
+    "logs/tinyllama_jittor_sq_rtn_a4_s0.command.json": {
+      "archive_path": "logs/tinyllama_jittor_sq_rtn_a4_s0.command.json",
+      "sha256": "de4da6e939c4383d490b70a7b72f81651689e294f85ee6d1a9f65487dcc1b538"
+    },
+    "logs/tinyllama_jittor_sq_rtn_a4_s0.exit.json": {
+      "archive_path": "logs/tinyllama_jittor_sq_rtn_a4_s0.exit.json",
+      "sha256": "347d51f7f6f528f731b61f41db1b501145c866d16b67ad32650a69e5ab3d89c9"
+    },
+    "logs/tinyllama_jittor_sq_rtn_a4_s0.log": {
+      "archive_path": "logs/tinyllama_jittor_sq_rtn_a4_s0.log",
+      "sha256": "dbb358bf46adc2124f01e4cb183912b879524403eec7e62e926228c2841a49f4"
+    },
+    "logs/tinyllama_jittor_train_s0.command.json": {
+      "archive_path": "logs/tinyllama_jittor_train_s0.command.json",
+      "sha256": "001a805149bd518e48402a088a3495f6d3118d3338d3e6aadc93bc3f9d09dc2f"
+    },
+    "logs/tinyllama_jittor_train_s0.exit.json": {
+      "archive_path": "logs/tinyllama_jittor_train_s0.exit.json",
+      "sha256": "16e0754199cd52e7e7ee2272854b9746f01282cff8f1f7e862cd261e01648e9e"
+    },
+    "logs/tinyllama_jittor_train_s0.log": {
+      "archive_path": "logs/tinyllama_jittor_train_s0.log",
+      "sha256": "1ba611d21257e99ea9aae4493225b375f331675e1022a971c04234560d994b3a"
+    },
+    "logs/tinyllama_official_float_a16_s0.command.json": {
+      "archive_path": "logs/tinyllama_official_float_a16_s0.command.json",
+      "sha256": "10a6b5ad8d338bbc85f9e4b6abebdbe5b2879e3ba78757a5e99132dab15361ac"
+    },
+    "logs/tinyllama_official_float_a16_s0.exit.json": {
+      "archive_path": "logs/tinyllama_official_float_a16_s0.exit.json",
+      "sha256": "10814fbb42b7762e0641bb5cd6e2c2f2172fac8c7099fe623df7b47c6e50eede"
+    },
+    "logs/tinyllama_official_float_a16_s0.log": {
+      "archive_path": "logs/tinyllama_official_float_a16_s0.log",
+      "sha256": "139bf4d52d06d5166970710f639ccb86b1fdf4ddad2a5b273184fe7431d9addf"
+    },
+    "logs/tinyllama_official_gptq_a16_s0.command.json": {
+      "archive_path": "logs/tinyllama_official_gptq_a16_s0.command.json",
+      "sha256": "3d09c336ed6bf0c9eabef98af8a0cb136d461d49874feab07ac08f6544884b9b"
+    },
+    "logs/tinyllama_official_gptq_a16_s0.exit.json": {
+      "archive_path": "logs/tinyllama_official_gptq_a16_s0.exit.json",
+      "sha256": "5e2f6d034acdd3327eb9a496f01d77edfd3c5281821992986cc5b6c65aa0aca6"
+    },
+    "logs/tinyllama_official_gptq_a16_s0.log": {
+      "archive_path": "logs/tinyllama_official_gptq_a16_s0.log",
+      "sha256": "4d69f4cbaebb4b1713a369fd623994065ac40a5b893b897dbb304030dd34b2c7"
+    },
+    "logs/tinyllama_official_gptq_a4_s0.command.json": {
+      "archive_path": "logs/tinyllama_official_gptq_a4_s0.command.json",
+      "sha256": "28b1df3728fb50981be14d02b208d7d530655c144aa3b470d492357d1f569702"
+    },
+    "logs/tinyllama_official_gptq_a4_s0.exit.json": {
+      "archive_path": "logs/tinyllama_official_gptq_a4_s0.exit.json",
+      "sha256": "4e24f5de3a083ecb0cfd7cb15468ab7a8ecbe87176c1d35ec0a5d5072857d87c"
+    },
+    "logs/tinyllama_official_gptq_a4_s0.log": {
+      "archive_path": "logs/tinyllama_official_gptq_a4_s0.log",
+      "sha256": "7027a2ff0a9f61d7a5af564404094d64f98213e39f611ca7b41cb2925999cac6"
+    },
+    "logs/tinyllama_official_preflight.command.json": {
+      "archive_path": "logs/tinyllama_official_preflight.command.json",
+      "sha256": "899e90d03d52855680c55d97e23f78a0b9511afefc66e2238e08c77cd7bb71af"
+    },
+    "logs/tinyllama_official_preflight.exit.json": {
+      "archive_path": "logs/tinyllama_official_preflight.exit.json",
+      "sha256": "09250594390584942e78aa902915a16674931758d8662bacb07d89394d22e724"
+    },
+    "logs/tinyllama_official_preflight.log": {
+      "archive_path": "logs/tinyllama_official_preflight.log",
+      "sha256": "9ab702b9c8576ebabe6845299fd03458019009f04ac09244e58ba7898be71139"
+    },
+    "logs/tinyllama_official_rtn_a16_s0.command.json": {
+      "archive_path": "logs/tinyllama_official_rtn_a16_s0.command.json",
+      "sha256": "7d9daa5eaf8c5e83b4559808173fe5a4881bd3aff9817ae764a1d2b02c7bee7b"
+    },
+    "logs/tinyllama_official_rtn_a16_s0.exit.json": {
+      "archive_path": "logs/tinyllama_official_rtn_a16_s0.exit.json",
+      "sha256": "5b2baa5b17624adced61a458488f67111c9d1f4afb80e9945627bdcfb7e53611"
+    },
+    "logs/tinyllama_official_rtn_a16_s0.log": {
+      "archive_path": "logs/tinyllama_official_rtn_a16_s0.log",
+      "sha256": "f00ea267f4c08a73d4af883d498cf542636d063bdf8d3e7c4ffee9c556759257"
+    },
+    "logs/tinyllama_official_rtn_a4_s0.command.json": {
+      "archive_path": "logs/tinyllama_official_rtn_a4_s0.command.json",
+      "sha256": "4330b1550ca5993f614d68a6ebc7aa89b0b9eac3653285cf930ac0462053d37a"
+    },
+    "logs/tinyllama_official_rtn_a4_s0.exit.json": {
+      "archive_path": "logs/tinyllama_official_rtn_a4_s0.exit.json",
+      "sha256": "53e79123095e1f6591d32eccbc252a4521710402705206112c5326993df98363"
+    },
+    "logs/tinyllama_official_rtn_a4_s0.log": {
+      "archive_path": "logs/tinyllama_official_rtn_a4_s0.log",
+      "sha256": "8fda3f0b63af9421ea487109181ebe8fdde0b93c397f18c9b603f245ef0a9a0c"
+    },
+    "logs/tinyllama_official_sq_gptq_a16_s0.command.json": {
+      "archive_path": "logs/tinyllama_official_sq_gptq_a16_s0.command.json",
+      "sha256": "630df10e1e26ef5b51c80dafc3b95c517802465d6c48a7075070e67c877f6ea5"
+    },
+    "logs/tinyllama_official_sq_gptq_a16_s0.exit.json": {
+      "archive_path": "logs/tinyllama_official_sq_gptq_a16_s0.exit.json",
+      "sha256": "e4b4075c12a645a8378a9e7451fc7e6a2a08f54d486e919f918ef17ab2fd2041"
+    },
+    "logs/tinyllama_official_sq_gptq_a16_s0.log": {
+      "archive_path": "logs/tinyllama_official_sq_gptq_a16_s0.log",
+      "sha256": "6612c5d0152fe85d254ffdea9520e7285cfb51d46524385cd1abb0aeaeb15641"
+    },
+    "logs/tinyllama_official_sq_gptq_a4_s0.command.json": {
+      "archive_path": "logs/tinyllama_official_sq_gptq_a4_s0.command.json",
+      "sha256": "652703473f2f575bfa73fe857e8c486156612ae735cae8b6186dffc05edb477c"
+    },
+    "logs/tinyllama_official_sq_gptq_a4_s0.exit.json": {
+      "archive_path": "logs/tinyllama_official_sq_gptq_a4_s0.exit.json",
+      "sha256": "4dac291bfa3183794efe551561439a9ade4f4c424355e6f58872c4759f03e4d7"
+    },
+    "logs/tinyllama_official_sq_gptq_a4_s0.log": {
+      "archive_path": "logs/tinyllama_official_sq_gptq_a4_s0.log",
+      "sha256": "dea4f24c7c8d969e2c5cb872f4711440c36fbab1937800cf27eab5dd8611bf8d"
+    },
+    "logs/tinyllama_official_sq_rtn_a16_s0.command.json": {
+      "archive_path": "logs/tinyllama_official_sq_rtn_a16_s0.command.json",
+      "sha256": "064ef847a172303ef891b75455adee996f4bce5d965c2bbc7d16c24a1f95aa46"
+    },
+    "logs/tinyllama_official_sq_rtn_a16_s0.exit.json": {
+      "archive_path": "logs/tinyllama_official_sq_rtn_a16_s0.exit.json",
+      "sha256": "f3ef6b0647c4e152287828ae5d1cac570693562d77022db98970a41deff23082"
+    },
+    "logs/tinyllama_official_sq_rtn_a16_s0.log": {
+      "archive_path": "logs/tinyllama_official_sq_rtn_a16_s0.log",
+      "sha256": "5a56035f145678b97aaa8fcd2743f1716c530f0020226920216a0701c6fc3faf"
+    },
+    "logs/tinyllama_official_sq_rtn_a4_s0.command.json": {
+      "archive_path": "logs/tinyllama_official_sq_rtn_a4_s0.command.json",
+      "sha256": "c4c2b1eaa0cf66adfb95e2b943043919ae79835e4e58416327c7a5eed228b143"
+    },
+    "logs/tinyllama_official_sq_rtn_a4_s0.exit.json": {
+      "archive_path": "logs/tinyllama_official_sq_rtn_a4_s0.exit.json",
+      "sha256": "2d533f501bf747a00c3a6065022a0c0959141c3e83b02288258d063046facc1e"
+    },
+    "logs/tinyllama_official_sq_rtn_a4_s0.log": {
+      "archive_path": "logs/tinyllama_official_sq_rtn_a4_s0.log",
+      "sha256": "2b938c7ade64890686dbed7f4bde33b0c3cea98eb84c61447aa61a800b0aa788"
+    },
+    "logs/tinyllama_official_train_s0.command.json": {
+      "archive_path": "logs/tinyllama_official_train_s0.command.json",
+      "sha256": "63b3416cc63687beade78be0592c411ecb3f2c44ed21638c519deb21094d44d2"
+    },
+    "logs/tinyllama_official_train_s0.exit.json": {
+      "archive_path": "logs/tinyllama_official_train_s0.exit.json",
+      "sha256": "c89df7464cfdd422e2627319079dc2051951f3c480906628d2e18ee32382d3e7"
+    },
+    "logs/tinyllama_official_train_s0.log": {
+      "archive_path": "logs/tinyllama_official_train_s0.log",
+      "sha256": "348f7acdc536633bad366cce32cf4bcff53b45a554f1629fd46391cd693be938"
+    },
+    "source/jittor/jittor_spinquant/__init__.py": {
+      "archive_path": "source/jittor/jittor_spinquant/__init__.py",
+      "sha256": "38e11df4979db09f7c64cc14d46ac4978bda09c62c1eb7256f5ca0f14baa0212"
+    },
+    "source/jittor/jittor_spinquant/arguments.py": {
+      "archive_path": "source/jittor/jittor_spinquant/arguments.py",
+      "sha256": "20089dafc37bc5b48d2b1e3a7fee22c651d4d822137aaac59f2facd22f040f81"
+    },
+    "source/jittor/jittor_spinquant/core/__init__.py": {
+      "archive_path": "source/jittor/jittor_spinquant/core/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/jittor/jittor_spinquant/core/fuse_norm.py": {
+      "archive_path": "source/jittor/jittor_spinquant/core/fuse_norm.py",
+      "sha256": "029c749e7dd06b5d3af45e8860d386ee6e1337c571db540fc5026190dcfbe2ce"
+    },
+    "source/jittor/jittor_spinquant/core/model.py": {
+      "archive_path": "source/jittor/jittor_spinquant/core/model.py",
+      "sha256": "71891b350b084498858ecd050691fd8c203ee77b7f0bafd6b6336469894f5faa"
+    },
+    "source/jittor/jittor_spinquant/core/quant_linear.py": {
+      "archive_path": "source/jittor/jittor_spinquant/core/quant_linear.py",
+      "sha256": "9b929c0f8922bd3ee426b79c913a044419f12f0a9a05df9b051f9796b8c130de"
+    },
+    "source/jittor/jittor_spinquant/io/__init__.py": {
+      "archive_path": "source/jittor/jittor_spinquant/io/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/jittor/jittor_spinquant/io/data_utils.py": {
+      "archive_path": "source/jittor/jittor_spinquant/io/data_utils.py",
+      "sha256": "746cca83455df81e1a92692e760c3170593c243e93543e578ca3eacf969f4adb"
+    },
+    "source/jittor/jittor_spinquant/io/loader.py": {
+      "archive_path": "source/jittor/jittor_spinquant/io/loader.py",
+      "sha256": "900646fd420d789fe4486f791fc6f85cf890dfcfe5993372f511347bc3ea7c2c"
+    },
+    "source/jittor/jittor_spinquant/math/__init__.py": {
+      "archive_path": "source/jittor/jittor_spinquant/math/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/jittor/jittor_spinquant/math/hadamard.py": {
+      "archive_path": "source/jittor/jittor_spinquant/math/hadamard.py",
+      "sha256": "3d98f485b101d62e36cf152912a9d52cda81acec5324f6c5d4ab096e1673d35e"
+    },
+    "source/jittor/jittor_spinquant/math/hadamard_data.npz": {
+      "archive_path": "source/jittor/jittor_spinquant/math/hadamard_data.npz",
+      "sha256": "3ec3fc4e1798b31f9782423d387287bcdcf7ef65a0fa9ecdada2d36bf722a207"
+    },
+    "source/jittor/jittor_spinquant/misc.py": {
+      "archive_path": "source/jittor/jittor_spinquant/misc.py",
+      "sha256": "2d8b3d7c414fdda4df4469cc7844537cf6b4bc1071a63f1ef91b82185bf2c903"
+    },
+    "source/jittor/jittor_spinquant/pipeline/__init__.py": {
+      "archive_path": "source/jittor/jittor_spinquant/pipeline/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/jittor/jittor_spinquant/pipeline/eval_ptq.py": {
+      "archive_path": "source/jittor/jittor_spinquant/pipeline/eval_ptq.py",
+      "sha256": "c609d55cfe7c6b236ff367aed8692c0349921f2a2a1ae56517a869d0a41264d6"
+    },
+    "source/jittor/jittor_spinquant/pipeline/evaluator.py": {
+      "archive_path": "source/jittor/jittor_spinquant/pipeline/evaluator.py",
+      "sha256": "4fa0e21bb8651a1c037a38eee94cacd225af1ae64a5ef24d0887317d68c338e1"
+    },
+    "source/jittor/jittor_spinquant/pipeline/prepare.py": {
+      "archive_path": "source/jittor/jittor_spinquant/pipeline/prepare.py",
+      "sha256": "340d1bbc29016360bf7ff1af186aada52883f544b460fbfb58aa2607a10b59ea"
+    },
+    "source/jittor/jittor_spinquant/quant/__init__.py": {
+      "archive_path": "source/jittor/jittor_spinquant/quant/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/jittor/jittor_spinquant/quant/gptq.py": {
+      "archive_path": "source/jittor/jittor_spinquant/quant/gptq.py",
+      "sha256": "f403c4ad7e8265c315e388a7b2b93b16a1ac219af5bdb84c386da12cb6d204cd"
+    },
+    "source/jittor/jittor_spinquant/quant/gptq_math.py": {
+      "archive_path": "source/jittor/jittor_spinquant/quant/gptq_math.py",
+      "sha256": "88e854fe9141644bece102004609e15880d59e4b290c9546b6cd4f1bbf4b1171"
+    },
+    "source/jittor/jittor_spinquant/quant/quantization.py": {
+      "archive_path": "source/jittor/jittor_spinquant/quant/quantization.py",
+      "sha256": "ce829d5f309caa6aa482bdfffecce750ce48eec821395b0b4b8c7756ed13cb01"
+    },
+    "source/jittor/jittor_spinquant/quant/rtn.py": {
+      "archive_path": "source/jittor/jittor_spinquant/quant/rtn.py",
+      "sha256": "ade4b555f60eca49e6ebb5052b2276cc447265ed0b324eea85920d0497f275b6"
+    },
+    "source/jittor/jittor_spinquant/rotation/__init__.py": {
+      "archive_path": "source/jittor/jittor_spinquant/rotation/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/jittor/jittor_spinquant/rotation/optimizer.py": {
+      "archive_path": "source/jittor/jittor_spinquant/rotation/optimizer.py",
+      "sha256": "e30d5e1b8a64c2bbf8f3a76866dbb63a3f355331cb76a01768a579fbbd970344"
+    },
+    "source/jittor/jittor_spinquant/rotation/rotation_utils.py": {
+      "archive_path": "source/jittor/jittor_spinquant/rotation/rotation_utils.py",
+      "sha256": "f6adc3f86b43397d43fac76e834775532cdcdc9552bf0cf078d0394d7cb358bd"
+    },
+    "source/jittor/jittor_spinquant/tools/__init__.py": {
+      "archive_path": "source/jittor/jittor_spinquant/tools/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/jittor/jittor_spinquant/tools/diag_forward.py": {
+      "archive_path": "source/jittor/jittor_spinquant/tools/diag_forward.py",
+      "sha256": "e20de1246de7d541f6375d5fac6fc251d1530ca27e08ffb509067accf08e5fac"
+    },
+    "source/jittor/jittor_spinquant/tools/smoke_real.py": {
+      "archive_path": "source/jittor/jittor_spinquant/tools/smoke_real.py",
+      "sha256": "69b9c00ce1c82793c78da6a5767605a949e3289308f111e29777417769df2992"
+    },
+    "source/jittor/jittor_spinquant/tools/verify_math.py": {
+      "archive_path": "source/jittor/jittor_spinquant/tools/verify_math.py",
+      "sha256": "885fd7289e1646ed23e0c1acdb2486345522692d4d037cde1491daa3bc95bf68"
+    },
+    "source/jittor/jittor_spinquant/train/__init__.py": {
+      "archive_path": "source/jittor/jittor_spinquant/train/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/jittor/jittor_spinquant/train/train_rotation.py": {
+      "archive_path": "source/jittor/jittor_spinquant/train/train_rotation.py",
+      "sha256": "7866b8b3bba8d200d18ca0b0f4e7030b47b5276209406e9042b7e77bc46ce306"
+    },
+    "source/official/CODE_OF_CONDUCT.md": {
+      "archive_path": "source/official/CODE_OF_CONDUCT.md",
+      "sha256": "b161b3e2ec4712ebf69efc38ef796d2c701a323aac51cf11759d38e9c56c39bd"
+    },
+    "source/official/CONTRIBUTING.md": {
+      "archive_path": "source/official/CONTRIBUTING.md",
+      "sha256": "3b9ec474f44149f395580a28052e19bfd16b40b32e74254e97ae6e850c774219"
+    },
+    "source/official/LICENSE": {
+      "archive_path": "source/official/LICENSE",
+      "sha256": "1d8ca66080a2701508a70be4ddad4be28c509bcc3397a682fb8edf767fdd7a00"
+    },
+    "source/official/README.md": {
+      "archive_path": "source/official/README.md",
+      "sha256": "7c7e2029bea5cc4f3d0434c6ce640df3d1e9acb6891c2b6b45c7533aacc6799b"
+    },
+    "source/official/SpinQuant.png": {
+      "archive_path": "source/official/SpinQuant.png",
+      "sha256": "92228912c6b6248a31ba32022a09c3696f358ee6291bdf73de2e472cb1bef532"
+    },
+    "source/official/eval_utils/gptq_utils.py": {
+      "archive_path": "source/official/eval_utils/gptq_utils.py",
+      "sha256": "4b6fcd3078c5a22378d6cba07d614d145ac2481617109338ad0381b78d9dc366"
+    },
+    "source/official/eval_utils/main.py": {
+      "archive_path": "source/official/eval_utils/main.py",
+      "sha256": "b25bd96420fe844c6c26ba2feb09b4e89e7ef504511d312c23155f97f4dff417"
+    },
+    "source/official/eval_utils/modeling_llama.py": {
+      "archive_path": "source/official/eval_utils/modeling_llama.py",
+      "sha256": "4ba31dc40c0a6dffbdb8e1df8a4f9a86293b49cc68af07df0e531b7a6c96d8cf"
+    },
+    "source/official/eval_utils/rotation_utils.py": {
+      "archive_path": "source/official/eval_utils/rotation_utils.py",
+      "sha256": "d1e44cb7c64bd3f09d0ba45d6aa27c1b314ad33daf5d31ec44a96048e3e60453"
+    },
+    "source/official/optimize_rotation.py": {
+      "archive_path": "source/official/optimize_rotation.py",
+      "sha256": "ba044d26e0944cb6ce5cfab2314270a1aa141d484e3ff0aff26d42a4bec6e3e3"
+    },
+    "source/official/ptq.py": {
+      "archive_path": "source/official/ptq.py",
+      "sha256": "1838c288e2b3259585c3a602187cd3bd11b4d4b5dbff534279b9e25c8decc379"
+    },
+    "source/official/requirement.txt": {
+      "archive_path": "source/official/requirement.txt",
+      "sha256": "f5feff26cc735d3df9c88cf3dcb1654db022feb34bf279e3f9f7c4d692a2b89f"
+    },
+    "source/official/scripts/10_optimize_rotation.sh": {
+      "archive_path": "source/official/scripts/10_optimize_rotation.sh",
+      "sha256": "4569601e5d11ebf01c64f5659dfdb771817afc83915c3f13de7427f36f43b987"
+    },
+    "source/official/scripts/11_optimize_rotation_fsdp.sh": {
+      "archive_path": "source/official/scripts/11_optimize_rotation_fsdp.sh",
+      "sha256": "c1e65c9784def26d17e5ed0c2584757e2cff6cff8e160fa68eda2f7543ece15c"
+    },
+    "source/official/scripts/2_eval_ptq.sh": {
+      "archive_path": "source/official/scripts/2_eval_ptq.sh",
+      "sha256": "6a776b08dc79b51cbb7299c54b73b37d3d11ed7f0ddaf6cd8bd405fe6a2410e5"
+    },
+    "source/official/scripts/31_optimize_rotation_executorch.sh": {
+      "archive_path": "source/official/scripts/31_optimize_rotation_executorch.sh",
+      "sha256": "da3d124f916ca84e5cd48fd85f9668aaef25aadbd9b6744996dd7be46de38f6a"
+    },
+    "source/official/scripts/32_eval_ptq_executorch.sh": {
+      "archive_path": "source/official/scripts/32_eval_ptq_executorch.sh",
+      "sha256": "2bd44b414a13d9c236290ac8462a161e69a8e802266a13e0f4a0b2afa6e020c6"
+    },
+    "source/official/train_utils/apply_r3_r4.py": {
+      "archive_path": "source/official/train_utils/apply_r3_r4.py",
+      "sha256": "f11da8a973bdb2f66dde6eb929f29f99a860165ae94bd9b2da9567937a45d87a"
+    },
+    "source/official/train_utils/fsdp_trainer.py": {
+      "archive_path": "source/official/train_utils/fsdp_trainer.py",
+      "sha256": "602eddd7c11277d383d453e037c7b134525ac815066ed8a4c030f9ef049add75"
+    },
+    "source/official/train_utils/main.py": {
+      "archive_path": "source/official/train_utils/main.py",
+      "sha256": "345daf63b9527d829dcfd5a97e9bbd89ee388ac1d0cb4e0c7c5c8c0ab4cbb5be"
+    },
+    "source/official/train_utils/modeling_llama_quant.py": {
+      "archive_path": "source/official/train_utils/modeling_llama_quant.py",
+      "sha256": "135c53561addca5d6506d5257173db743c9d1968a0e315038a546d9c0a3d7ce8"
+    },
+    "source/official/train_utils/optimizer.py": {
+      "archive_path": "source/official/train_utils/optimizer.py",
+      "sha256": "115bfba5260129bd818e60ea083d25a68519c66a3daf2c56a115caf14bcf1bb3"
+    },
+    "source/official/train_utils/quant_linear.py": {
+      "archive_path": "source/official/train_utils/quant_linear.py",
+      "sha256": "eb90718e8dd5bddcdd62f8b135bf39ab0b8d627d395954c4838ce5b6b09fb252"
+    },
+    "source/official/train_utils/rtn_utils.py": {
+      "archive_path": "source/official/train_utils/rtn_utils.py",
+      "sha256": "fedd8de097651f868173ca1fb508b30276d80709c868008d7c445e201bdb80ec"
+    },
+    "source/official/utils/convert_to_executorch.py": {
+      "archive_path": "source/official/utils/convert_to_executorch.py",
+      "sha256": "5e3bbe6a5a3e616572c76c8da3cd5da5d372aee0bafe3beba655f061124e7540"
+    },
+    "source/official/utils/data_utils.py": {
+      "archive_path": "source/official/utils/data_utils.py",
+      "sha256": "ca26818cc5a22f0e693fd9539f5a93c2c53d50d7edefcee4d74e878fb863310f"
+    },
+    "source/official/utils/eval_utils.py": {
+      "archive_path": "source/official/utils/eval_utils.py",
+      "sha256": "79a1bb3de421de1e6ff10b3dd55c0b1b340b3ad0558bd1cea09e80e5da9f23a6"
+    },
+    "source/official/utils/fuse_norm_utils.py": {
+      "archive_path": "source/official/utils/fuse_norm_utils.py",
+      "sha256": "eb82b672ddc4e3818d53a9e156295071653b2a1140b2689ca8c6e4c863a926bd"
+    },
+    "source/official/utils/hadamard_utils.py": {
+      "archive_path": "source/official/utils/hadamard_utils.py",
+      "sha256": "b2d805ab9698a02410c2748c83ecc755a7d60785e1e7ee30b14e404b2300703b"
+    },
+    "source/official/utils/model_utils.py": {
+      "archive_path": "source/official/utils/model_utils.py",
+      "sha256": "f681c3bc97faf3760c3aae19750c4a51ce9b2eaf561eba81e4e2a129d6d583f5"
+    },
+    "source/official/utils/monkeypatch.py": {
+      "archive_path": "source/official/utils/monkeypatch.py",
+      "sha256": "8b645db00b37cffc3daca9a7201aca052c558611aa569906260b80082852c429"
+    },
+    "source/official/utils/process_args.py": {
+      "archive_path": "source/official/utils/process_args.py",
+      "sha256": "22af1f5ae3cfa2c90b6bcf95f5f8fd3cd0d506e42f33b914d2fc4c6c2da40f9a"
+    },
+    "source/official/utils/quant_utils.py": {
+      "archive_path": "source/official/utils/quant_utils.py",
+      "sha256": "90c721fc5cd2bbfd20d8d9b7b6aa0f210e5bc5b095e728b5a6bc89ba8f6aebe8"
+    },
+    "source/official/utils/utils.py": {
+      "archive_path": "source/official/utils/utils.py",
+      "sha256": "32a07ec4a845701b903b878d11ececd5152bc34f04035dd47c7a02253348e089"
+    },
+    "source/run_full_experiment.py": {
+      "archive_path": "source/run_full_experiment.py",
+      "sha256": "51148e6d07460dfec49865299abbb0523e3015e6dbd83aa4f9de3694b353ae6f"
+    },
+    "checks/mistral_conversion.json": {
+      "archive_path": "checks/mistral_conversion.json",
+      "sha256": "3c84d16850579d867c826c00393e410ea8972f7f70dc5b785262a0546c759426"
+    },
+    "checks/mistral_initial_alignment.json": {
+      "archive_path": "checks/mistral_initial_alignment.json",
+      "sha256": "e2e613392d571c6b19d270b5c81fe9ddcb339b811d13d86b539061b5e73aaffd"
+    },
+    "checks/mistral_jittor_preflight.json": {
+      "archive_path": "checks/mistral_jittor_preflight.json",
+      "sha256": "c68b0457bd9b2cc44f415616b0e33074e630306ad215a9d6badcbf7b5415cef8"
+    },
+    "checks/mistral_official_preflight.json": {
+      "archive_path": "checks/mistral_official_preflight.json",
+      "sha256": "ea3df3eff1385eec699f4daa294cc6c296853f82d049837ccd83709f42c85d4a"
+    },
+    "checks/official_reference.json": {
+      "archive_path": "checks/official_reference.json",
+      "sha256": "757188ec4aba71c18876baa486de3742f95952ac4fadd374326cd424510fde28"
+    },
+    "checks/tinyllama_initial_alignment.json": {
+      "archive_path": "checks/tinyllama_initial_alignment.json",
+      "sha256": "544881fe70d5a9a8e5dea14c9b7f8201bdc86b19e17529683d11166919f02733"
+    },
+    "checks/tinyllama_jittor_preflight.json": {
+      "archive_path": "checks/tinyllama_jittor_preflight.json",
+      "sha256": "48636beb5ce93ef6a221d88adf9381d57e49f2d9877b24aeeb1faada40661c56"
+    },
+    "checks/tinyllama_official_preflight.json": {
+      "archive_path": "checks/tinyllama_official_preflight.json",
+      "sha256": "5b3b8908463d4899a70ea043d63fb55604b04a45c8901708368164c6b7bf525d"
+    },
+    "environments/official_pip_freeze.txt": {
+      "archive_path": "checks/official_packages.txt",
+      "sha256": "17cb7b9f838ec76f8ef5fe3ab8ddc86f112dab56bea4f84d647ba2ecc0139b3c"
+    },
+    "environments/jittor_pip_freeze.txt": {
+      "archive_path": "checks/jittor_packages.txt",
+      "sha256": "d39ac4363f1a4218892a415fb00d2b5eade49594ac02efdee7641ec65b9ac1d5"
+    },
+    "shared/mistral_sampling_s0.json": {
+      "archive_path": "shared/mistral_sampling_s0.json",
+      "sha256": "713f7519f5a5aeb1ed7612ccb584e86c1210c3bf709849368b322c54d92e18e9"
+    },
+    "shared/tinyllama_sampling_s0.json": {
+      "archive_path": "shared/tinyllama_sampling_s0.json",
+      "sha256": "c2ca7c6e66a85683a56e6921683294ce16fecf48dfaa89a2f41a183515b42f4f"
+    },
+    "training/mistral_jittor_train_s0/loss.csv": {
+      "archive_path": "rotations/mistral_jittor_train_s0/loss.csv",
+      "sha256": "f8270e7e09b7020940ce74a7b670efb036eecde6c4018978409b0d65abe5ebd0"
+    },
+    "training/mistral_official_train_s0/loss.csv": {
+      "archive_path": "rotations/mistral_official_train_s0/loss.csv",
+      "sha256": "8343d261efde6cd3260bb93e8b3e281145ed9877a3985e32015fad3adf12af02"
+    },
+    "training/tinyllama_jittor_train_s0/loss.csv": {
+      "archive_path": "rotations/tinyllama_jittor_train_s0/loss.csv",
+      "sha256": "77ff6c52a2f0c9317218822387df9ce36cfd102ad946b4a731a2c2a7731de857"
+    },
+    "training/tinyllama_official_train_s0/loss.csv": {
+      "archive_path": "rotations/tinyllama_official_train_s0/loss.csv",
+      "sha256": "971e65af0571e7a07de0893c6257a7c805c1d730d428644e2354b5428007e2db"
+    },
+    "figures/fixed_probe_loss.png": {
+      "archive_path": "analysis/figures/fixed_probe_loss.png",
+      "sha256": "37a54945d4d78d142b2853ace34036bf925b8625a604381c8d2074a76fe58150"
+    },
+    "figures/fixed_probe_loss.svg": {
+      "archive_path": "analysis/figures/fixed_probe_loss.svg",
+      "sha256": "d454e9594678c6ac51d198c4a436e4eb742c409c82cdbc0ee5dd97edf810e610"
+    },
+    "figures/loss_alignment.png": {
+      "archive_path": "analysis/figures/loss_alignment.png",
+      "sha256": "316c2dfed36cf45a11e052bd6b36d4f217cb03ca33efefaf860478ea32c7147d"
+    },
+    "figures/loss_alignment.svg": {
+      "archive_path": "analysis/figures/loss_alignment.svg",
+      "sha256": "99e52b2b954463be6fae1e5425fa98c42d87eb90d7f870da56cf8a77bf89be94"
+    },
+    "figures/ppl_comparison.png": {
+      "archive_path": "analysis/figures/ppl_comparison.png",
+      "sha256": "d51188c8ae9df5340222e150a6aaf4ff5de1bd10485ef70d06c2b4cfb9b4ff7c"
+    },
+    "figures/ppl_comparison.svg": {
+      "archive_path": "analysis/figures/ppl_comparison.svg",
+      "sha256": "19204fe81a8af7b93c65037249f487152f1ffac58f89e74ac5891365587ff4c6"
+    },
+    "figures/ppl_relative_difference.png": {
+      "archive_path": "analysis/figures/ppl_relative_difference.png",
+      "sha256": "0d0accaeb8f7e9115ef35b4acd6a75e15f8a77b6ec5190a25076f03620ca4ba2"
+    },
+    "figures/ppl_relative_difference.svg": {
+      "archive_path": "analysis/figures/ppl_relative_difference.svg",
+      "sha256": "5e1e4b356614d63a281cbf62c668b4b54346f7e8df56a4890a04fedca4ba276f"
+    },
+    "checks/full_archive_audit.json": {
+      "archive_path": "analysis/analysis_audit.json",
+      "sha256": "d325f13649755a9585ca674842f77168a13924a0f01ee0c8b8c582d6051dc58e"
+    },
+    "checks/original_analysis_data.json": {
+      "archive_path": "analysis/analysis_data.json",
+      "sha256": "b0541aaa18d146fdf3222b42f766d099b300497482c47f669477326c84e671ac"
+    },
+    "checks/original_report.md": {
+      "archive_path": "analysis/实验结果汇总.md",
+      "sha256": "085668757137bc6f4258b376031128dba2bdf5b31d7f88a7f93f6dadef5e7b4f"
+    }
+  },
+  "omitted_archive_files": {
+    ".ipynb_checkpoints/ppl_mean_std-checkpoint.csv": "31eb3ca686d2568d0b590db1738e4dca9211188451fb710701c90152b178261f",
+    ".ipynb_checkpoints/protocol-checkpoint.json": "938aeb0cd456680c9eeffc4c8b6d56a9173d07ed2537ba7c82cd4dd2bf1beab7",
+    ".ipynb_checkpoints/status-checkpoint.json": "c14f6c6254f400e89e51fdc22a8cb7c54239f09f392f7b19544ff6401a684bbe",
+    "PROTOCOL.md": "d9d8841071d99654589974d954ab784b080f23403ab2d25ec4917eb6537dc2f1",
+    "alignment.csv": "f9c84f7a937ea12c059b3f4ab3cea3f7a0689a95276b64558de4f00f8cc8f159",
+    "checks/mistral_jittor_preflight/R.npy": "8388fb2e1faf55a5eed78cfc209f1e0afee9aab991ab30b49b64882eae65ca0c",
+    "checks/mistral_jittor_preflight/loss.csv": "b66d96a05ae71f8b28db98e72a7da6e2a36818f9b2228fb44df515cc555e1da6",
+    "checks/mistral_official_preflight/R.bin": "a7a336f4901036f3f48744d3fa6fd27fc46b9da4e4499d06cc30f9ed87bcc188",
+    "checks/mistral_official_preflight/R.npy": "038da9ec076aac305432da216f1a09b50b1f66e966b6fb7cf39f9c0dea151a1a",
+    "checks/mistral_official_preflight/loss.csv": "043b8806e7ce8a112ca2a3ce3a4efab847209e9302d41eb1daf85ca6a950813d",
+    "checks/nvidia_smi.txt": "bc0528eed30386142491d3b79d40add73e1312a3d12bd2a76fad54ae94976deb",
+    "checks/tinyllama_jittor_preflight/R.npy": "f21a512e5fcb471fca192e541ca236cf18d58a1f56737c10a2a33ab619a1b533",
+    "checks/tinyllama_jittor_preflight/loss.csv": "b815a67896aa65c9d79a023ec055ff416d07f06fb786c5d7c00748ba3d6644ec",
+    "checks/tinyllama_official_preflight/R.bin": "4b08d08d8fd0b46e6e3e9a463ddcd311c36538b4b24f3106d21e36b60e91beb4",
+    "checks/tinyllama_official_preflight/R.npy": "56b3f13fe774fa8d1017cec7dead4ec2350f60cef6dcb3b49157a11594d8b0cd",
+    "checks/tinyllama_official_preflight/loss.csv": "d56f3be9f2882869a4902d10dc939e78d16ee8658f63fe81de602a9fe4806e06",
+    "figures/.ipynb_checkpoints/training_loss-checkpoint.svg": "fcdbe7b9fd32cdf78ccf5836fda5d412bec23ac46ca884e4deeaffecee1f5e96",
+    "figures/training_loss.svg": "fcdbe7b9fd32cdf78ccf5836fda5d412bec23ac46ca884e4deeaffecee1f5e96",
+    "ppl_mean_std.csv": "31eb3ca686d2568d0b590db1738e4dca9211188451fb710701c90152b178261f",
+    "results.csv": "39761517327df4d6316247e40e538467a2474e271915cc98083ebddd818cc5c4",
+    "rotations/mistral_jittor_train_s0/R.npy": "24ac58f25b82dfa38ff3d0551542272873e9a178006b1282cfb8b4b6a201425e",
+    "rotations/mistral_official_train_s0/R.bin": "a510db2e32b7a7ab096e2ca47e5e046ba76062f28dd1c466933a6b57fcc74d1f",
+    "rotations/mistral_official_train_s0/R.npy": "f8ad3bfd285572232ee8a3ca537decdcfbefc6ce2664d9069aed1394710dff04",
+    "rotations/tinyllama_jittor_train_s0/R.npy": "0a490118da42cf80685cdfb3b82fe35895b97a1dc332266de5f68ba96f86ddc3",
+    "rotations/tinyllama_official_train_s0/R.bin": "3b7ed2e18c96c6b682522cd8d2f1128be6dce525fbafbb8efc63e3b7061a7b14",
+    "rotations/tinyllama_official_train_s0/R.npy": "5515ae3518afa6744e8a1fe439d9a6f5fcebd684865ea39503e8a7c2c348c3f5",
+    "runner.pid": "b9ce539d6a6f656e86ba294cd50f899b51f777ca0d6665cd8951d2229546dca0",
+    "shared/mistral_init_s0.npy": "fd6e9ddc1d44c822b3c3e02d703264a56a93318a8a71a9374a17330262197990",
+    "shared/mistral_probe.npy": "86206b372acac48a1f9b4c94ab8ec6412c055d46bf38ff41fc09f3817a8683ea",
+    "shared/mistral_test.npy": "168d1667bc8ef768d3195ed07f6498ce3f4f8b6cdbb2ee968d793bec1155dce9",
+    "shared/mistral_train_s0.npy": "d5d76502e1b0da21e70df964be0fbc65515bb6753ca09f1a4e8caeeff40c7648",
+    "shared/tinyllama_gptq_s0.npy": "93bd8fd355ff9326de39ffb7ab8f39ef0f84f64c9bc4fe67f9b7427cee75ae2d",
+    "shared/tinyllama_init_s0.npy": "8ca5a0ea3d34d30eca38412c086118cedfeb33bd73ab140aa3bbb5affd6184c1",
+    "shared/tinyllama_probe.npy": "d3e9bbaf72baa44353e9d63f2f5f8be9110a6b0577cbff044367497d7aad5826",
+    "shared/tinyllama_test.npy": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+    "shared/tinyllama_train_s0.npy": "d31277395112280f43a3cd4e64a74e6dab262f8d4d760a31ab0328ea94292b6c",
+    "source/jittor/jittor_spinquant/core/.ipynb_checkpoints/fuse_norm-checkpoint.py": "692eb0358f5db850671822a8dd20e18dda6290541c6d4a050a18841ac90d1d72",
+    "source/jittor/jittor_spinquant/core/.ipynb_checkpoints/model-checkpoint.py": "ab9c04735eccccfc952b9ae016231ea975f8d27f60763b82f61b4391f066c9a8",
+    "source/jittor/jittor_spinquant/core/.ipynb_checkpoints/quant_linear-checkpoint.py": "51669505f0e19f1444301011e8f4a040ecf53cf50ef2fccd219d72b5ba2b725d",
+    "source/jittor/jittor_spinquant/io/.ipynb_checkpoints/data_utils-checkpoint.py": "e5990192c4058c2e27ed9ef87d104f123aa7cf764c0e95582b7d0992a0177451",
+    "source/jittor/jittor_spinquant/io/.ipynb_checkpoints/loader-checkpoint.py": "334f6b613425b3eb5248f9c6cdc87361e83f37c73b107531c7dacc6e0cad2a7c",
+    "source/jittor/jittor_spinquant/math/.ipynb_checkpoints/__init__-checkpoint.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/jittor/jittor_spinquant/math/.ipynb_checkpoints/hadamard-checkpoint.py": "3d98f485b101d62e36cf152912a9d52cda81acec5324f6c5d4ab096e1673d35e",
+    "source/jittor/jittor_spinquant/pipeline/.ipynb_checkpoints/eval_ptq-checkpoint.py": "0f5268f4c62e2d3d1f907762124db1b5ed84c1609d7d2e3dffa326af527a3282",
+    "source/jittor/jittor_spinquant/pipeline/.ipynb_checkpoints/evaluator-checkpoint.py": "2ca63f44d90d8bab1643c1f775388b1ea2ce4e0c7a02a10daee593c62934aa7e",
+    "source/jittor/jittor_spinquant/pipeline/.ipynb_checkpoints/prepare-checkpoint.py": "94b4d18a469bad01d7aec32f9115374642d118af9fe37cf71c1d4151a428d5c6",
+    "source/jittor/jittor_spinquant/tools/.ipynb_checkpoints/__init__-checkpoint.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/jittor/jittor_spinquant/tools/.ipynb_checkpoints/diag_forward-checkpoint.py": "51c64051b47e96e490bd6d55fb4dd4df663757773d24625c60032bd4fdca7438",
+    "source/jittor/jittor_spinquant/tools/.ipynb_checkpoints/smoke_real-checkpoint.py": "69b9c00ce1c82793c78da6a5767605a949e3289308f111e29777417769df2992",
+    "source/jittor/jittor_spinquant/tools/.ipynb_checkpoints/verify_math-checkpoint.py": "769b6d8d62f24f34c7b11dc70bb80a586c4c2dc48be3dfb3212fb45630fca681",
+    "source/jittor/jittor_spinquant/train/.ipynb_checkpoints/__init__-checkpoint.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/jittor/jittor_spinquant/train/.ipynb_checkpoints/train_rotation-checkpoint.py": "1aef43fc84ddfd80c0921d1df850b45fa7a040f03c3a5e5e8aef8e0227093217",
+    "source/official_compatibility.patch": "8b78f1718caa009b52a76246db3ff90165b40c2352507a1ac3d16933fddc3db8",
+    "training_loss.csv": "deb1b60c996fd8e737fb863948405a8772e223d7ab5c05460150ca754013f0a3",
+    "training_summary.csv": "769814d7eae8f655f457b113e802f55b5848dcf550df1771f059ca28181f5ae2"
+  },
+  "notes": [
+    "Included evidence is byte-identical to the local archive; published relative paths may change.",
+    "The complete original manifests remain unchanged and therefore list omitted files too.",
+    "Model weights, shared arrays, learned rotations, preflight checkpoints and GPU serial identifiers are not distributed.",
+    "Notebook checkpoint duplicates and the historical unused official_compatibility.patch are omitted.",
+    "Derived summary tables and the portable root launcher are separate from frozen evidence."
+  ]
+}

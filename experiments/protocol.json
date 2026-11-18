@@ -1,0 +1,394 @@
+{
+  "plan": "A",
+  "seeds": [
+    0
+  ],
+  "steps": 100,
+  "learning_rate": 1.5,
+  "scheduler": "cosine",
+  "batch_size": 1,
+  "gradient_accumulation": 1,
+  "gradient_clipping": 1.0,
+  "optimizer_seed": 42,
+  "official_gradient_checkpointing": true,
+  "train_w_bits": 16,
+  "train_akv_bits": 4,
+  "evaluation_seqlen": 2048,
+  "gptq_nsamples": 128,
+  "percdamp": 0.01,
+  "gptq_blocksize": 128,
+  "act_order": false,
+  "w_groupsize": -1,
+  "a_groupsize": -1,
+  "a_asym": true,
+  "k_asym": true,
+  "v_asym": true,
+  "w_clip": true,
+  "clip_ratio": 1.0,
+  "cpu_threads": 8,
+  "eval_warmup_blocks": 2,
+  "gpu_sample_interval": 10,
+  "gpu": 0,
+  "torch_python": "/root/miniconda3/envs/torch_env/bin/python",
+  "jittor_python": "/root/miniconda3/envs/jittor_env/bin/python",
+  "official_commit": "8f47aa3f00e8662caf1a484153920a07e5281c3a",
+  "official_source": "/root/autodl-tmp/SpinQuant_official_reference_8f47aa3",
+  "official_reference": "unmodified git archive; source scripts and Trainer defaults",
+  "models": {
+    "tinyllama": {
+      "path": "/root/autodl-tmp/SpinQuant_Project/data/models/TinyLlama-1.1B",
+      "dtype": "float32",
+      "train_seqlen": 2048,
+      "hidden_size": 2048,
+      "num_heads": 32,
+      "num_layers": 22,
+      "head_dim": 64
+    },
+    "mistral": {
+      "path": "/root/autodl-tmp/SpinQuant_Project/data/models/Mistral-7B-v0.1-jittor",
+      "dtype": "float16",
+      "train_seqlen": 512,
+      "hidden_size": 4096,
+      "num_heads": 32,
+      "num_layers": 32,
+      "head_dim": 128
+    }
+  },
+  "evaluation_definition": "nonoverlapping blocks; drop tail; mean FP32 next-token NLL; FP64 CPU aggregation; exp",
+  "caveats": [
+    "100-step resource-limited reproduction, not full paper-scale training.",
+    "TinyLlama exact upstream revision unconfirmed; local input hashes define model identity.",
+    "Mistral uses the same converted safetensors for both frameworks; conversion is checked tensor by tensor.",
+    "Official model, rotation, quantizer and optimizer modules run through a controlled adapter instead of HF Trainer.",
+    "No AMP loss scaling or warmup; clip global gradient norm to 1.0 per official Trainer default.",
+    "Official Trainer resets RNG to default training seed 42 after initialization; the adapter mirrors this in both frameworks.",
+    "Official gradient checkpointing is enabled; Jittor training has no checkpoint implementation. Memory/time therefore differ.",
+    "Official online weight rotations use FP64; Jittor uses working dtype. Numerical equivalence is not assumed.",
+    "Jittor SGDG uses NumPy and CPU; official uses torch. Finite precision differs.",
+    "GPTQ Hessian/factorization precision differs between frameworks.",
+    "Quantization time includes compile/setup; warmed PPL loop time is not an INT4 speed benchmark.",
+    "Fixed training probes are two held-out train blocks excluded from rotation optimization; not a test-set selection criterion."
+  ],
+  "tasks": [
+    {
+      "id": "tinyllama_official_float_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "float",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false
+    },
+    {
+      "id": "tinyllama_official_rtn_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "rtn",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false
+    },
+    {
+      "id": "tinyllama_official_rtn_a4_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "rtn",
+      "bits": 4,
+      "seed": 0,
+      "rotate": false
+    },
+    {
+      "id": "tinyllama_jittor_float_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "float",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false
+    },
+    {
+      "id": "tinyllama_jittor_rtn_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "rtn",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false
+    },
+    {
+      "id": "tinyllama_jittor_rtn_a4_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "rtn",
+      "bits": 4,
+      "seed": 0,
+      "rotate": false
+    },
+    {
+      "id": "mistral_official_float_a16_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "official",
+      "method": "float",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false
+    },
+    {
+      "id": "mistral_official_rtn_a16_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "official",
+      "method": "rtn",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false
+    },
+    {
+      "id": "mistral_official_rtn_a4_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "official",
+      "method": "rtn",
+      "bits": 4,
+      "seed": 0,
+      "rotate": false
+    },
+    {
+      "id": "mistral_jittor_float_a16_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "jittor",
+      "method": "float",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false
+    },
+    {
+      "id": "mistral_jittor_rtn_a16_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "jittor",
+      "method": "rtn",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false
+    },
+    {
+      "id": "mistral_jittor_rtn_a4_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "jittor",
+      "method": "rtn",
+      "bits": 4,
+      "seed": 0,
+      "rotate": false
+    },
+    {
+      "id": "tinyllama_official_train_s0",
+      "kind": "train",
+      "model": "tinyllama",
+      "stack": "official",
+      "seed": 0
+    },
+    {
+      "id": "tinyllama_official_sq_rtn_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "rtn",
+      "bits": 16,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "tinyllama_official_train_s0"
+    },
+    {
+      "id": "tinyllama_official_sq_rtn_a4_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "rtn",
+      "bits": 4,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "tinyllama_official_train_s0"
+    },
+    {
+      "id": "tinyllama_jittor_train_s0",
+      "kind": "train",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "seed": 0
+    },
+    {
+      "id": "tinyllama_jittor_sq_rtn_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "rtn",
+      "bits": 16,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "tinyllama_jittor_train_s0"
+    },
+    {
+      "id": "tinyllama_jittor_sq_rtn_a4_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "rtn",
+      "bits": 4,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "tinyllama_jittor_train_s0"
+    },
+    {
+      "id": "mistral_official_train_s0",
+      "kind": "train",
+      "model": "mistral",
+      "stack": "official",
+      "seed": 0
+    },
+    {
+      "id": "mistral_official_sq_rtn_a16_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "official",
+      "method": "rtn",
+      "bits": 16,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "mistral_official_train_s0"
+    },
+    {
+      "id": "mistral_official_sq_rtn_a4_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "official",
+      "method": "rtn",
+      "bits": 4,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "mistral_official_train_s0"
+    },
+    {
+      "id": "mistral_jittor_train_s0",
+      "kind": "train",
+      "model": "mistral",
+      "stack": "jittor",
+      "seed": 0
+    },
+    {
+      "id": "mistral_jittor_sq_rtn_a16_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "jittor",
+      "method": "rtn",
+      "bits": 16,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "mistral_jittor_train_s0"
+    },
+    {
+      "id": "mistral_jittor_sq_rtn_a4_s0",
+      "kind": "eval",
+      "model": "mistral",
+      "stack": "jittor",
+      "method": "rtn",
+      "bits": 4,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "mistral_jittor_train_s0"
+    },
+    {
+      "id": "tinyllama_official_gptq_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "gptq",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false
+    },
+    {
+      "id": "tinyllama_official_gptq_a4_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "gptq",
+      "bits": 4,
+      "seed": 0,
+      "rotate": false
+    },
+    {
+      "id": "tinyllama_official_sq_gptq_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "gptq",
+      "bits": 16,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "tinyllama_official_train_s0"
+    },
+    {
+      "id": "tinyllama_official_sq_gptq_a4_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "official",
+      "method": "gptq",
+      "bits": 4,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "tinyllama_official_train_s0"
+    },
+    {
+      "id": "tinyllama_jittor_gptq_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "gptq",
+      "bits": 16,
+      "seed": 0,
+      "rotate": false
+    },
+    {
+      "id": "tinyllama_jittor_gptq_a4_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "gptq",
+      "bits": 4,
+      "seed": 0,
+      "rotate": false
+    },
+    {
+      "id": "tinyllama_jittor_sq_gptq_a16_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "gptq",
+      "bits": 16,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "tinyllama_jittor_train_s0"
+    },
+    {
+      "id": "tinyllama_jittor_sq_gptq_a4_s0",
+      "kind": "eval",
+      "model": "tinyllama",
+      "stack": "jittor",
+      "method": "gptq",
+      "bits": 4,
+      "seed": 0,
+      "rotate": true,
+      "dependency": "tinyllama_jittor_train_s0"
+    }
+  ]
+}

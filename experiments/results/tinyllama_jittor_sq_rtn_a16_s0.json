@@ -1,0 +1,31 @@
+{
+  "ppl": 9.201868251498812,
+  "nll_sum": 754158.7791525763,
+  "evaluated_tokens": 339802,
+  "test_blocks": 166,
+  "quant_seconds": 25.983308656141162,
+  "warmup_seconds": 0.7047870457172394,
+  "eval_seconds": 27.63733711093664,
+  "evaluated_tokens_per_second": 12295.034019957502,
+  "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+  "rotation_sha256": "0a490118da42cf80685cdfb3b82fe35895b97a1dc332266de5f68ba96f86ddc3",
+  "id": "tinyllama_jittor_sq_rtn_a16_s0",
+  "kind": "eval",
+  "model": "tinyllama",
+  "stack": "jittor",
+  "method": "rtn",
+  "bits": 16,
+  "seed": 0,
+  "rotate": true,
+  "dependency": "tinyllama_jittor_train_s0",
+  "status": "complete",
+  "base_weight_dtype": "float32",
+  "model_load_seconds": 7.629512943327427,
+  "worker_seconds": 61.974519515410066,
+  "max_rss_kib": 9142524,
+  "versions": {
+    "jittor": "1.3.8.5",
+    "transformers": "5.20.2",
+    "numpy": "1.26.4"
+  }
+}

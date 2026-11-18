@@ -1,0 +1,16 @@
+# SpinQuant -- Jittor single-card port.  Excludes distributed / FSDP / ExecuTorch.
+#
+# Core (required):
+jittor>=1.3.8
+numpy>=1.23
+safetensors>=0.4
+transformers>=4.40
+tokenizers>=0.19
+
+# Calibration / evaluation data (WikiText-2) -- only needed for the actual
+# rotation-training / PTQ-eval runs (not for the code to import):
+datasets>=2.18
+
+# (Optional) torch is NOT required by the Jittor path.  The two-env setup on the
+# target box uses `jittor_env` for Jittor and `torch_env` for anything torch-based;
+# the loader reads HF checkpoints via safetensors (no torch) by default.

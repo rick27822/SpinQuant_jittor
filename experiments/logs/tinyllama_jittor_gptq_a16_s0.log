@@ -1,0 +1,707 @@
+BEGIN_TASK {"id": "tinyllama_jittor_gptq_a16_s0", "kind": "eval", "model": "tinyllama", "stack": "jittor", "method": "gptq", "bits": 16, "seed": 0, "rotate": false}
+[i 1118 10:00:09.159528 72 compiler.py:964] Jittor(1.3.8.5) src: /root/miniconda3/envs/jittor_env/lib/python3.10/site-packages/jittor
+[i 1118 10:00:09.163477 72 compiler.py:965] g++ at /usr/bin/g++(11.3.0)
+[i 1118 10:00:09.163512 72 compiler.py:966] cache_path: /root/.cache/jittor/jt1.3.8/g++11.3.0/py3.10.22/Linux-5.15.0-7x34/IntelRXeonRPlaxb0/default
+[i 1118 10:00:09.167025 72 compiler.py:909] Found nvcc(12.8.93) at /root/miniconda3/envs/jittor_env/bin/nvcc
+[i 1118 10:00:09.170238 72 __init__.py:411] Found addr2line(2.38) at /usr/bin/addr2line.
+[i 1118 10:00:09.413850 72 compiler.py:1019] cuda key:cu12.8.93_sm_120
+[i 1118 10:00:09.650022 72 __init__.py:227] Total mem: 1007.50GB, using 16 procs for compiling.
+[i 1118 10:00:09.724640 72 jit_compiler.cc:28] Load cc_path: /usr/bin/g++
+[i 1118 10:00:09.724659 72 jit_compiler.cc:31] Load nvcc_path: /root/miniconda3/envs/jittor_env/bin/nvcc
+[i 1118 10:00:10.003782 72 init.cc:62] Found cuda archs: [120,]
+[w 1118 10:00:10.034226 72 compile_extern.py:203] CUDA related path found in LD_LIBRARY_PATH or PATH(['/root/autodl-tmp/cuda128_lib', '/root/miniconda3/bin', '/root/miniconda3/condabin', '/root/miniconda3/bin', '/usr/local/bin', '/usr/local/nvidia/bin', '/usr/local/cuda/bin', '/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin']), This path may cause jittor found the wrong libs, please unset LD_LIBRARY_PATH and remove cuda lib path in Path. 
+Or you can let jittor install cuda for you: `python3.x -m jittor_utils.install_cuda`
+[i 1118 10:00:10.337606 72 cuda_flags.cc:49] CUDA enabled.
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[w 1118 10:00:10.937442 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.937532 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.937711 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.937741 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.937870 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.937899 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.938011 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.938045 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.938220 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.938248 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.938373 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.938400 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.938506 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.938531 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.938634 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.938659 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.938775 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.938801 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.938915 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.938941 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.939058 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.939085 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.939199 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.939224 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.939334 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.939362 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.939477 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.939505 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.939613 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.939639 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.939751 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.939797 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.939931 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.939961 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.940077 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.940102 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.940212 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.940236 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.940347 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.940372 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.940483 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.940508 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.940616 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.940641 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+[w 1118 10:00:10.940681 72 nn.py:2280]  The `Parameter` interface isn't needed in Jittor, this interface
+does nothings and it is just used for compatible.
+    
+A Jittor Var is a Parameter
+when it is a member of Module, if you don't want a Jittor
+Var menber is treated as a Parameter, just name it startswith
+underscore `_`.
+    
+2026-11-18 10:00:16,193 - spinquant - INFO - Starting GPTQ weight quantization.
+2026-11-18 10:00:16,193 INFO Starting GPTQ weight quantization.
+2026-11-18 10:00:27,890 - spinquant - INFO - GPTQ layer 0 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:00:27,890 INFO GPTQ layer 0 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:00:28,731 - spinquant - INFO - GPTQ layer 0 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:00:28,731 INFO GPTQ layer 0 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:00:29,586 - spinquant - INFO - GPTQ layer 0 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:00:29,586 INFO GPTQ layer 0 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:00:34,031 - spinquant - INFO - GPTQ layer 0 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:00:34,031 INFO GPTQ layer 0 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:00:40,909 - spinquant - INFO - GPTQ layer 0 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:00:40,909 INFO GPTQ layer 0 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:00:42,289 - spinquant - INFO - GPTQ layer 0 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:00:42,289 INFO GPTQ layer 0 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:01:17,305 - spinquant - INFO - GPTQ layer 0 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:01:17,305 INFO GPTQ layer 0 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:01:28,656 - spinquant - INFO - GPTQ layer 1 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:01:28,656 INFO GPTQ layer 1 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:01:29,594 - spinquant - INFO - GPTQ layer 1 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:01:29,594 INFO GPTQ layer 1 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:01:30,558 - spinquant - INFO - GPTQ layer 1 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:01:30,558 INFO GPTQ layer 1 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:01:34,971 - spinquant - INFO - GPTQ layer 1 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:01:34,971 INFO GPTQ layer 1 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:01:41,831 - spinquant - INFO - GPTQ layer 1 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:01:41,831 INFO GPTQ layer 1 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:01:43,298 - spinquant - INFO - GPTQ layer 1 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:01:43,298 INFO GPTQ layer 1 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:02:18,768 - spinquant - INFO - GPTQ layer 1 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:02:18,768 INFO GPTQ layer 1 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:02:29,928 - spinquant - INFO - GPTQ layer 2 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:02:29,928 INFO GPTQ layer 2 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:02:30,860 - spinquant - INFO - GPTQ layer 2 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:02:30,860 INFO GPTQ layer 2 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:02:31,778 - spinquant - INFO - GPTQ layer 2 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:02:31,778 INFO GPTQ layer 2 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:02:36,115 - spinquant - INFO - GPTQ layer 2 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:02:36,115 INFO GPTQ layer 2 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:02:42,968 - spinquant - INFO - GPTQ layer 2 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:02:42,968 INFO GPTQ layer 2 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:02:44,420 - spinquant - INFO - GPTQ layer 2 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:02:44,420 INFO GPTQ layer 2 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:03:21,188 - spinquant - INFO - GPTQ layer 2 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:03:21,188 INFO GPTQ layer 2 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:03:31,891 - spinquant - INFO - GPTQ layer 3 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:03:31,891 INFO GPTQ layer 3 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:03:32,820 - spinquant - INFO - GPTQ layer 3 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:03:32,820 INFO GPTQ layer 3 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:03:33,734 - spinquant - INFO - GPTQ layer 3 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:03:33,734 INFO GPTQ layer 3 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:03:37,720 - spinquant - INFO - GPTQ layer 3 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:03:37,720 INFO GPTQ layer 3 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:03:44,413 - spinquant - INFO - GPTQ layer 3 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:03:44,413 INFO GPTQ layer 3 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:03:45,864 - spinquant - INFO - GPTQ layer 3 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:03:45,864 INFO GPTQ layer 3 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:04:20,522 - spinquant - INFO - GPTQ layer 3 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:04:20,522 INFO GPTQ layer 3 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:04:31,741 - spinquant - INFO - GPTQ layer 4 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:04:31,741 INFO GPTQ layer 4 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:04:32,661 - spinquant - INFO - GPTQ layer 4 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:04:32,661 INFO GPTQ layer 4 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:04:33,587 - spinquant - INFO - GPTQ layer 4 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:04:33,587 INFO GPTQ layer 4 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:04:38,107 - spinquant - INFO - GPTQ layer 4 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:04:38,107 INFO GPTQ layer 4 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:04:45,388 - spinquant - INFO - GPTQ layer 4 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:04:45,388 INFO GPTQ layer 4 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:04:46,864 - spinquant - INFO - GPTQ layer 4 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:04:46,864 INFO GPTQ layer 4 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:05:23,542 - spinquant - INFO - GPTQ layer 4 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:05:23,542 INFO GPTQ layer 4 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:05:34,388 - spinquant - INFO - GPTQ layer 5 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:05:34,388 INFO GPTQ layer 5 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:05:35,272 - spinquant - INFO - GPTQ layer 5 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:05:35,272 INFO GPTQ layer 5 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:05:36,152 - spinquant - INFO - GPTQ layer 5 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:05:36,152 INFO GPTQ layer 5 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:05:40,603 - spinquant - INFO - GPTQ layer 5 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:05:40,603 INFO GPTQ layer 5 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:05:47,242 - spinquant - INFO - GPTQ layer 5 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:05:47,242 INFO GPTQ layer 5 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:05:48,628 - spinquant - INFO - GPTQ layer 5 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:05:48,628 INFO GPTQ layer 5 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:06:24,210 - spinquant - INFO - GPTQ layer 5 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:06:24,210 INFO GPTQ layer 5 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:06:35,480 - spinquant - INFO - GPTQ layer 6 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:06:35,480 INFO GPTQ layer 6 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:06:36,448 - spinquant - INFO - GPTQ layer 6 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:06:36,448 INFO GPTQ layer 6 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:06:37,380 - spinquant - INFO - GPTQ layer 6 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:06:37,380 INFO GPTQ layer 6 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:06:42,094 - spinquant - INFO - GPTQ layer 6 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:06:42,094 INFO GPTQ layer 6 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:06:49,453 - spinquant - INFO - GPTQ layer 6 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:06:49,453 INFO GPTQ layer 6 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:06:50,928 - spinquant - INFO - GPTQ layer 6 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:06:50,928 INFO GPTQ layer 6 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:07:27,362 - spinquant - INFO - GPTQ layer 6 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:07:27,362 INFO GPTQ layer 6 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:07:38,270 - spinquant - INFO - GPTQ layer 7 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:07:38,270 INFO GPTQ layer 7 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:07:39,163 - spinquant - INFO - GPTQ layer 7 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:07:39,163 INFO GPTQ layer 7 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:07:40,060 - spinquant - INFO - GPTQ layer 7 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:07:40,060 INFO GPTQ layer 7 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:07:44,343 - spinquant - INFO - GPTQ layer 7 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:07:44,343 INFO GPTQ layer 7 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:07:50,976 - spinquant - INFO - GPTQ layer 7 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:07:50,976 INFO GPTQ layer 7 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:07:52,398 - spinquant - INFO - GPTQ layer 7 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:07:52,398 INFO GPTQ layer 7 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:08:28,143 - spinquant - INFO - GPTQ layer 7 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:08:28,143 INFO GPTQ layer 7 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:08:39,019 - spinquant - INFO - GPTQ layer 8 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:08:39,019 INFO GPTQ layer 8 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:08:39,941 - spinquant - INFO - GPTQ layer 8 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:08:39,941 INFO GPTQ layer 8 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:08:40,841 - spinquant - INFO - GPTQ layer 8 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:08:40,841 INFO GPTQ layer 8 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:08:45,462 - spinquant - INFO - GPTQ layer 8 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:08:45,462 INFO GPTQ layer 8 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:08:52,743 - spinquant - INFO - GPTQ layer 8 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:08:52,743 INFO GPTQ layer 8 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:08:54,219 - spinquant - INFO - GPTQ layer 8 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:08:54,219 INFO GPTQ layer 8 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:09:30,960 - spinquant - INFO - GPTQ layer 8 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:09:30,960 INFO GPTQ layer 8 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:09:42,023 - spinquant - INFO - GPTQ layer 9 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:09:42,023 INFO GPTQ layer 9 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:09:42,946 - spinquant - INFO - GPTQ layer 9 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:09:42,946 INFO GPTQ layer 9 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:09:43,864 - spinquant - INFO - GPTQ layer 9 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:09:43,864 INFO GPTQ layer 9 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:09:48,326 - spinquant - INFO - GPTQ layer 9 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:09:48,326 INFO GPTQ layer 9 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:09:54,926 - spinquant - INFO - GPTQ layer 9 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:09:54,926 INFO GPTQ layer 9 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:09:56,354 - spinquant - INFO - GPTQ layer 9 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:09:56,354 INFO GPTQ layer 9 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:10:31,972 - spinquant - INFO - GPTQ layer 9 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:10:31,972 INFO GPTQ layer 9 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:10:42,579 - spinquant - INFO - GPTQ layer 10 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:10:42,579 INFO GPTQ layer 10 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:10:43,491 - spinquant - INFO - GPTQ layer 10 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:10:43,491 INFO GPTQ layer 10 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:10:44,390 - spinquant - INFO - GPTQ layer 10 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:10:44,390 INFO GPTQ layer 10 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:10:49,220 - spinquant - INFO - GPTQ layer 10 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:10:49,220 INFO GPTQ layer 10 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:10:56,480 - spinquant - INFO - GPTQ layer 10 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:10:56,480 INFO GPTQ layer 10 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:10:57,922 - spinquant - INFO - GPTQ layer 10 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:10:57,922 INFO GPTQ layer 10 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:11:35,156 - spinquant - INFO - GPTQ layer 10 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:11:35,156 INFO GPTQ layer 10 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:11:46,056 - spinquant - INFO - GPTQ layer 11 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:11:46,056 INFO GPTQ layer 11 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:11:46,959 - spinquant - INFO - GPTQ layer 11 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:11:46,959 INFO GPTQ layer 11 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:11:47,866 - spinquant - INFO - GPTQ layer 11 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:11:47,866 INFO GPTQ layer 11 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:11:52,158 - spinquant - INFO - GPTQ layer 11 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:11:52,158 INFO GPTQ layer 11 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:11:58,786 - spinquant - INFO - GPTQ layer 11 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:11:58,786 INFO GPTQ layer 11 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:12:00,224 - spinquant - INFO - GPTQ layer 11 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:12:00,224 INFO GPTQ layer 11 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:12:35,484 - spinquant - INFO - GPTQ layer 11 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:12:35,484 INFO GPTQ layer 11 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:12:46,191 - spinquant - INFO - GPTQ layer 12 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:12:46,191 INFO GPTQ layer 12 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:12:47,157 - spinquant - INFO - GPTQ layer 12 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:12:47,157 INFO GPTQ layer 12 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:12:48,062 - spinquant - INFO - GPTQ layer 12 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:12:48,062 INFO GPTQ layer 12 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:12:52,498 - spinquant - INFO - GPTQ layer 12 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:12:52,498 INFO GPTQ layer 12 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:12:59,519 - spinquant - INFO - GPTQ layer 12 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:12:59,519 INFO GPTQ layer 12 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:13:00,968 - spinquant - INFO - GPTQ layer 12 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:13:00,968 INFO GPTQ layer 12 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:13:39,108 - spinquant - INFO - GPTQ layer 12 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:13:39,108 INFO GPTQ layer 12 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:13:50,053 - spinquant - INFO - GPTQ layer 13 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:13:50,053 INFO GPTQ layer 13 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:13:50,958 - spinquant - INFO - GPTQ layer 13 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:13:50,958 INFO GPTQ layer 13 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:13:51,822 - spinquant - INFO - GPTQ layer 13 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:13:51,822 INFO GPTQ layer 13 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:13:56,284 - spinquant - INFO - GPTQ layer 13 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:13:56,284 INFO GPTQ layer 13 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:14:02,840 - spinquant - INFO - GPTQ layer 13 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:14:02,840 INFO GPTQ layer 13 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:14:04,223 - spinquant - INFO - GPTQ layer 13 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:14:04,223 INFO GPTQ layer 13 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:14:38,652 - spinquant - INFO - GPTQ layer 13 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:14:38,652 INFO GPTQ layer 13 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:14:49,537 - spinquant - INFO - GPTQ layer 14 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:14:49,537 INFO GPTQ layer 14 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:14:50,509 - spinquant - INFO - GPTQ layer 14 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:14:50,509 INFO GPTQ layer 14 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:14:51,456 - spinquant - INFO - GPTQ layer 14 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:14:51,456 INFO GPTQ layer 14 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:14:56,117 - spinquant - INFO - GPTQ layer 14 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:14:56,117 INFO GPTQ layer 14 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:15:03,530 - spinquant - INFO - GPTQ layer 14 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:15:03,530 INFO GPTQ layer 14 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:15:05,037 - spinquant - INFO - GPTQ layer 14 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:15:05,037 INFO GPTQ layer 14 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:15:42,679 - spinquant - INFO - GPTQ layer 14 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:15:42,679 INFO GPTQ layer 14 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:15:53,845 - spinquant - INFO - GPTQ layer 15 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:15:53,845 INFO GPTQ layer 15 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:15:54,738 - spinquant - INFO - GPTQ layer 15 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:15:54,738 INFO GPTQ layer 15 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:15:55,642 - spinquant - INFO - GPTQ layer 15 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:15:55,642 INFO GPTQ layer 15 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:15:59,953 - spinquant - INFO - GPTQ layer 15 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:15:59,953 INFO GPTQ layer 15 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:16:06,610 - spinquant - INFO - GPTQ layer 15 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:16:06,610 INFO GPTQ layer 15 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:16:08,015 - spinquant - INFO - GPTQ layer 15 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:16:08,015 INFO GPTQ layer 15 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:16:43,085 - spinquant - INFO - GPTQ layer 15 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:16:43,085 INFO GPTQ layer 15 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:16:53,842 - spinquant - INFO - GPTQ layer 16 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:16:53,842 INFO GPTQ layer 16 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:16:54,762 - spinquant - INFO - GPTQ layer 16 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:16:54,762 INFO GPTQ layer 16 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:16:55,677 - spinquant - INFO - GPTQ layer 16 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:16:55,677 INFO GPTQ layer 16 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:17:00,107 - spinquant - INFO - GPTQ layer 16 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:17:00,107 INFO GPTQ layer 16 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:17:07,153 - spinquant - INFO - GPTQ layer 16 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:17:07,153 INFO GPTQ layer 16 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:17:08,569 - spinquant - INFO - GPTQ layer 16 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:17:08,569 INFO GPTQ layer 16 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:17:45,728 - spinquant - INFO - GPTQ layer 16 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:17:45,728 INFO GPTQ layer 16 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:17:56,786 - spinquant - INFO - GPTQ layer 17 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:17:56,786 INFO GPTQ layer 17 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:17:57,675 - spinquant - INFO - GPTQ layer 17 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:17:57,675 INFO GPTQ layer 17 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:17:58,612 - spinquant - INFO - GPTQ layer 17 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:17:58,612 INFO GPTQ layer 17 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:18:02,874 - spinquant - INFO - GPTQ layer 17 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:18:02,874 INFO GPTQ layer 17 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:18:09,582 - spinquant - INFO - GPTQ layer 17 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:18:09,582 INFO GPTQ layer 17 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:18:11,013 - spinquant - INFO - GPTQ layer 17 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:18:11,013 INFO GPTQ layer 17 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:18:46,303 - spinquant - INFO - GPTQ layer 17 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:18:46,303 INFO GPTQ layer 17 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:18:53,842 - spinquant - INFO - GPTQ layer 18 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:18:53,842 INFO GPTQ layer 18 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:18:54,601 - spinquant - INFO - GPTQ layer 18 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:18:54,601 INFO GPTQ layer 18 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:18:55,360 - spinquant - INFO - GPTQ layer 18 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:18:55,360 INFO GPTQ layer 18 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:18:58,678 - spinquant - INFO - GPTQ layer 18 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:18:58,678 INFO GPTQ layer 18 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:03,499 - spinquant - INFO - GPTQ layer 18 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:03,499 INFO GPTQ layer 18 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:04,602 - spinquant - INFO - GPTQ layer 18 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:04,602 INFO GPTQ layer 18 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:24,773 - spinquant - INFO - GPTQ layer 18 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:24,773 INFO GPTQ layer 18 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:34,543 - spinquant - INFO - GPTQ layer 19 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:34,543 INFO GPTQ layer 19 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:35,458 - spinquant - INFO - GPTQ layer 19 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:35,458 INFO GPTQ layer 19 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:36,328 - spinquant - INFO - GPTQ layer 19 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:36,328 INFO GPTQ layer 19 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:40,563 - spinquant - INFO - GPTQ layer 19 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:40,563 INFO GPTQ layer 19 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:47,543 - spinquant - INFO - GPTQ layer 19 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:47,543 INFO GPTQ layer 19 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:48,950 - spinquant - INFO - GPTQ layer 19 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:19:48,950 INFO GPTQ layer 19 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:20:24,237 - spinquant - INFO - GPTQ layer 19 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:20:24,237 INFO GPTQ layer 19 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:20:31,912 - spinquant - INFO - GPTQ layer 20 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:20:31,912 INFO GPTQ layer 20 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:20:32,665 - spinquant - INFO - GPTQ layer 20 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:20:32,665 INFO GPTQ layer 20 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:20:33,415 - spinquant - INFO - GPTQ layer 20 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:20:33,415 INFO GPTQ layer 20 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:20:36,315 - spinquant - INFO - GPTQ layer 20 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:20:36,315 INFO GPTQ layer 20 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:20:40,863 - spinquant - INFO - GPTQ layer 20 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:20:40,863 INFO GPTQ layer 20 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:20:41,973 - spinquant - INFO - GPTQ layer 20 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:20:41,973 INFO GPTQ layer 20 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:21:02,105 - spinquant - INFO - GPTQ layer 20 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:21:02,105 INFO GPTQ layer 20 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:21:11,833 - spinquant - INFO - GPTQ layer 21 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:21:11,833 INFO GPTQ layer 21 self_attn.q_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:21:12,724 - spinquant - INFO - GPTQ layer 21 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:21:12,724 INFO GPTQ layer 21 self_attn.k_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:21:13,631 - spinquant - INFO - GPTQ layer 21 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:21:13,631 INFO GPTQ layer 21 self_attn.v_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:21:17,647 - spinquant - INFO - GPTQ layer 21 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:21:17,647 INFO GPTQ layer 21 self_attn.o_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:21:24,562 - spinquant - INFO - GPTQ layer 21 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:21:24,562 INFO GPTQ layer 21 mlp.up_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:21:26,008 - spinquant - INFO - GPTQ layer 21 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:21:26,008 INFO GPTQ layer 21 mlp.gate_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:22:01,143 - spinquant - INFO - GPTQ layer 21 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:22:01,143 INFO GPTQ layer 21 mlp.down_proj.module: 128 batches / 262144 tokens
+2026-11-18 10:22:03,428 - spinquant - INFO - Weight quantization complete.
+2026-11-18 10:22:03,428 INFO Weight quantization complete.
+QUANTIZATION_COMPLETE 1307.2515395134687
+PPL_PROGRESS 1/166 elapsed=0.1s
+PPL_PROGRESS 10/166 elapsed=1.5s
+PPL_PROGRESS 20/166 elapsed=3.0s
+PPL_PROGRESS 30/166 elapsed=4.4s
+PPL_PROGRESS 40/166 elapsed=5.9s
+PPL_PROGRESS 50/166 elapsed=7.3s
+PPL_PROGRESS 60/166 elapsed=8.8s
+PPL_PROGRESS 70/166 elapsed=10.3s
+PPL_PROGRESS 80/166 elapsed=11.7s
+PPL_PROGRESS 90/166 elapsed=13.2s
+PPL_PROGRESS 100/166 elapsed=14.7s
+PPL_PROGRESS 110/166 elapsed=16.2s
+PPL_PROGRESS 120/166 elapsed=17.6s
+PPL_PROGRESS 130/166 elapsed=19.1s
+PPL_PROGRESS 140/166 elapsed=20.5s
+PPL_PROGRESS 150/166 elapsed=22.0s
+PPL_PROGRESS 160/166 elapsed=23.5s
+PPL_PROGRESS 166/166 elapsed=24.3s
+FINAL_RESULT {"ppl": 9.032440949106931, "nll_sum": 747843.9368974345, "evaluated_tokens": 339802, "test_blocks": 166, "quant_seconds": 1307.2515395134687, "warmup_seconds": 0.3254456799477339, "eval_seconds": 24.345814617350698, "evaluated_tokens_per_second": 13957.306639385604, "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7", "calibration_sha256": "93bd8fd355ff9326de39ffb7ab8f39ef0f84f64c9bc4fe67f9b7427cee75ae2d", "id": "tinyllama_jittor_gptq_a16_s0", "kind": "eval", "model": "tinyllama", "stack": "jittor", "method": "gptq", "bits": 16, "seed": 0, "rotate": false, "status": "complete", "base_weight_dtype": "float32", "model_load_seconds": 7.109731642529368, "worker_seconds": 1339.0415896568447, "max_rss_kib": 14724200, "versions": {"jittor": "1.3.8.5", "transformers": "5.20.2", "numpy": "1.26.4"}}

@@ -1,0 +1,25 @@
+BEGIN_TASK {"id": "mistral_official_float_a16_s0", "kind": "eval", "model": "mistral", "stack": "official", "method": "float", "bits": 16, "seed": 0, "rotate": false}
+2026-11-18 05:31:48,443 INFO PyTorch version 2.11.0+cu128 available.
+/root/miniconda3/envs/torch_env/lib/python3.10/site-packages/transformers/modeling_utils.py:4713: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+QUANTIZATION_COMPLETE 0.7924936339259148
+2026-11-18 05:31:48,954 WARNING Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+PPL_PROGRESS 1/163 elapsed=0.2s
+PPL_PROGRESS 10/163 elapsed=2.0s
+PPL_PROGRESS 20/163 elapsed=3.9s
+PPL_PROGRESS 30/163 elapsed=5.9s
+PPL_PROGRESS 40/163 elapsed=7.9s
+PPL_PROGRESS 50/163 elapsed=9.8s
+PPL_PROGRESS 60/163 elapsed=11.8s
+PPL_PROGRESS 70/163 elapsed=13.8s
+PPL_PROGRESS 80/163 elapsed=15.8s
+PPL_PROGRESS 90/163 elapsed=17.7s
+PPL_PROGRESS 100/163 elapsed=19.7s
+PPL_PROGRESS 110/163 elapsed=21.7s
+PPL_PROGRESS 120/163 elapsed=23.6s
+PPL_PROGRESS 130/163 elapsed=25.6s
+PPL_PROGRESS 140/163 elapsed=27.6s
+PPL_PROGRESS 150/163 elapsed=29.6s
+PPL_PROGRESS 160/163 elapsed=31.5s
+PPL_PROGRESS 163/163 elapsed=32.1s
+FINAL_RESULT {"ppl": 5.253506688734234, "nll_sum": 553508.8296358463, "evaluated_tokens": 333661, "test_blocks": 163, "quant_seconds": 0.7924936339259148, "warmup_seconds": 0.6709811892360449, "eval_seconds": 32.122615898028016, "evaluated_tokens_per_second": 10387.105491632243, "test_sha256": "168d1667bc8ef768d3195ed07f6498ce3f4f8b6cdbb2ee968d793bec1155dce9", "id": "mistral_official_float_a16_s0", "kind": "eval", "model": "mistral", "stack": "official", "method": "float", "bits": 16, "seed": 0, "rotate": false, "status": "complete", "base_weight_dtype": "float16", "model_load_seconds": 5.451991181820631, "worker_seconds": 39.044796995818615, "max_rss_kib": 28927352, "versions": {"torch": "2.11.0+cu128", "transformers": "4.44.2", "numpy": "1.26.4"}, "torch_peak_allocated_bytes": 15676571136, "torch_peak_reserved_bytes": 15839789056}

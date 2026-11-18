@@ -1,0 +1,15 @@
+# Linux x86_64; Python 3.10.22; CUDA toolkit 12.8.93.
+# torch version is confirmed in all four result JSONs.
+# Other versions read from the same server environment during publication preparation.
+# Install torch separately using --index-url https://download.pytorch.org/whl/cu128.
+# Build fast-hadamard-transform from commit e7706faf8d1c3b9f241e36860640ad1dac644ede.
+torch==2.11.0+cu128
+transformers==4.44.2
+tokenizers==0.19.1
+datasets==2.20.0
+accelerate==0.34.2
+numpy==1.26.4
+safetensors==0.8.0
+sentencepiece==0.2.2
+tensorboardX==2.6.5
+matplotlib==3.10.9

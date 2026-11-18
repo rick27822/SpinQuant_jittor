@@ -1,0 +1,31 @@
+{
+  "ppl": 7.970236877105125,
+  "nll_sum": 705331.8411596535,
+  "evaluated_tokens": 339802,
+  "test_blocks": 166,
+  "quant_seconds": 0.7503842040896416,
+  "warmup_seconds": 0.540514912456274,
+  "eval_seconds": 25.099849684163928,
+  "evaluated_tokens_per_second": 13538.009361641272,
+  "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7",
+  "id": "tinyllama_official_float_a16_s0",
+  "kind": "eval",
+  "model": "tinyllama",
+  "stack": "official",
+  "method": "float",
+  "bits": 16,
+  "seed": 0,
+  "rotate": false,
+  "status": "complete",
+  "base_weight_dtype": "float32",
+  "model_load_seconds": 2.4683571998029947,
+  "worker_seconds": 28.86668937280774,
+  "max_rss_kib": 7085340,
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "4.44.2",
+    "numpy": "1.26.4"
+  },
+  "torch_peak_allocated_bytes": 5601473024,
+  "torch_peak_reserved_bytes": 6157238272
+}

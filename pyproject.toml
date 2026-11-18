@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spinquant-jittor"
+version = "0.1.0"
+description = "Single-GPU SpinQuant rotation learning and RTN/GPTQ fake quantization in Jittor"
+requires-python = ">=3.10"
+# Runtime dependencies are installed from requirements.txt in the CUDA environment.
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["jittor_spinquant*"]
+exclude = ["*.tests*", "*.ipynb_checkpoints*"]
+
+[tool.setuptools.package-data]
+jittor_spinquant = ["math/hadamard_data.npz"]

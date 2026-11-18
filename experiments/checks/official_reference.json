@@ -1,0 +1,11 @@
+{
+  "commit": "8f47aa3f00e8662caf1a484153920a07e5281c3a",
+  "train_script_sha256": "4569601e5d11ebf01c64f5659dfdb771817afc83915c3f13de7427f36f43b987",
+  "max_grad_norm": 1.0,
+  "trainer_seed": 42,
+  "warmup_steps": 0,
+  "warmup_ratio": 0.0,
+  "gradient_accumulation_steps": 1,
+  "data_order": "CustomJsonDataset iterable order; first 100 blocks, no permutation",
+  "initialization": "official random_hadamard_matrix with rotation seed 0; shared after FP32 cast"
+}

@@ -1,0 +1,10 @@
+{
+  "state": "passed",
+  "published_evidence_files_verified": 242,
+  "train": 4,
+  "eval": 28,
+  "paired_eval": 14,
+  "loss_records": 400,
+  "performance_records": 32,
+  "scope": "Published logs/source bytes, result consistency and recorded omitted-input hashes. No model execution or omitted binary revalidation."
+}

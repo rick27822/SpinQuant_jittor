@@ -1,0 +1,52 @@
+BEGIN_TASK {"id": "tinyllama_official_gptq_a4_s0", "kind": "eval", "model": "tinyllama", "stack": "official", "method": "gptq", "bits": 4, "seed": 0, "rotate": false}
+2026-11-18 09:48:26,255 INFO PyTorch version 2.11.0+cu128 available.
+/root/miniconda3/envs/torch_env/lib/python3.10/site-packages/transformers/modeling_utils.py:4713: FutureWarning: `_is_quantized_training_enabled` is going to be deprecated in transformers 4.39.0. Please use `model.hf_quantizer.is_trainable` instead
+  warnings.warn(
+2026-11-18 09:48:26,386 INFO -----GPTQ Quantization-----
+
+Layer 0: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  2026-11-18 09:48:26,859 WARNING The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 1: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 2: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 3: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 4: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 5: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 6: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 7: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 8: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 9: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 10: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 11: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 12: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 13: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 14: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 15: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 16: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 17: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 18: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 19: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 20: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  
+Layer 21: self_attn.k_proj.module  self_attn.v_proj.module  self_attn.q_proj.module  self_attn.o_proj.module  mlp.up_proj.module  mlp.gate_proj.module  mlp.down_proj.module  2026-11-18 09:51:30,477 INFO GPU memory (from gptq_fwrd): 4.28 -> 4.28 GB (0.00 GB)
+2026-11-18 09:51:30,478 INFO -----GPTQ Quantization Done-----
+
+QUANTIZATION_COMPLETE 186.03661824204028
+2026-11-18 09:51:31,901 WARNING Starting from v4.46, the `logits` model output will have the same type as the model (except at train time, where it will always be FP32)
+PPL_PROGRESS 1/166 elapsed=0.2s
+PPL_PROGRESS 10/166 elapsed=1.9s
+PPL_PROGRESS 20/166 elapsed=3.9s
+PPL_PROGRESS 30/166 elapsed=5.8s
+PPL_PROGRESS 40/166 elapsed=7.8s
+PPL_PROGRESS 50/166 elapsed=9.7s
+PPL_PROGRESS 60/166 elapsed=11.7s
+PPL_PROGRESS 70/166 elapsed=13.6s
+PPL_PROGRESS 80/166 elapsed=15.6s
+PPL_PROGRESS 90/166 elapsed=17.5s
+PPL_PROGRESS 100/166 elapsed=19.4s
+PPL_PROGRESS 110/166 elapsed=21.4s
+PPL_PROGRESS 120/166 elapsed=23.3s
+PPL_PROGRESS 130/166 elapsed=25.3s
+PPL_PROGRESS 140/166 elapsed=27.2s
+PPL_PROGRESS 150/166 elapsed=29.2s
+PPL_PROGRESS 160/166 elapsed=31.1s
+PPL_PROGRESS 166/166 elapsed=32.3s
+FINAL_RESULT {"ppl": 90.45472928108542, "nll_sum": 1530756.8686475342, "evaluated_tokens": 339802, "test_blocks": 166, "quant_seconds": 186.03661824204028, "warmup_seconds": 0.4158002007752657, "eval_seconds": 32.26645716279745, "evaluated_tokens_per_second": 10531.122096409908, "test_sha256": "7a360da4bf79adc7e1f43b2a4b94c5631d2a9079b8b99a9166ecddebf21c37e7", "calibration_sha256": "93bd8fd355ff9326de39ffb7ab8f39ef0f84f64c9bc4fe67f9b7427cee75ae2d", "id": "tinyllama_official_gptq_a4_s0", "kind": "eval", "model": "tinyllama", "stack": "official", "method": "gptq", "bits": 4, "seed": 0, "rotate": false, "status": "complete", "base_weight_dtype": "float32", "model_load_seconds": 2.5048270002007484, "worker_seconds": 221.232084043324, "max_rss_kib": 7085196, "versions": {"torch": "2.11.0+cu128", "transformers": "4.44.2", "numpy": "1.26.4"}, "torch_peak_allocated_bytes": 7765589504, "torch_peak_reserved_bytes": 7811891200}
